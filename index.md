@@ -1,6 +1,11 @@
 ---
-# You don't need to edit this file, it's empty on purpose.
-# Edit theme's home layout instead if you wanna make some changes
-# See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 layout: home
 ---
+
+Hello! Welcome to my homepage~
+
+I'm an instructor & developer at [Hackbright
+Academy](https://hackbrightacademy.com). 
+
+This is mostly a vanity site; it exists as a convenient way to promote my
+terminal color schemes, hobbies, and opinions <(￣︶￣)>
