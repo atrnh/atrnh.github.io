@@ -1,6 +1,19 @@
 <div class="container main header grid">
   <div class="cell -3of12"></div>
   <div class="container cell -9of12">
-    <header><h1>Ashley Trinh</h1></header>
+    <header>
+      <a href="/"><h1>Ashley Trinh</h1></a>
+      {%- if page.title and page.title != "Ashley Trinh" -%}
+        {%- if page.parent -%}
+          <a href="{{ page.parent.url | relative_url }}">
+            <h1 class="parent-page"></h1>
+          </a>
+        {%- endif -%}
+
+        <a href="{{ page.url | relative_url }}">
+          <h1>{{ page.title | escape }}</h1>
+        </a>
+      {%- endif -%}
+    </header>
   </div>
 </div>
