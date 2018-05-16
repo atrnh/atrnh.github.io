@@ -1,5 +1,5 @@
 ---
 layout: color-schemes 
-title: Color Schemes
-permalink: /color-schemes/
+title: Terminal Themes 
+permalink: /term-themes/
 ---
