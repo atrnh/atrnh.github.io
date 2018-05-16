@@ -1,25 +1,69 @@
 .hack, .hack blockquote, .hack code, .hack em, .hack h1, .hack h2, .hack h3, 
 .hack h4, .hack h5, .hack h6, .hack strong {
-  font-family: 'Fira Mono', monospace;
+  font-family: $monospace;
   font-size: 1.2rem;
 }
 
-.container.header {
-  margin-top: 4rem;
+.hack {
+  hr::after {
+    content:
+    "------------------------------------------------------------------------------------------------------------------------------------------------------------------";
+  }
 }
 
-.container.header header h1 {
-  line-height: 1rem;
-  font-size: 2.6rem;
-  padding-bottom: 40px;
+
+.container.header {
+  margin-top: 4rem;
+
+  header {
+
+    h1 {
+      line-height: 1rem;
+      font-size: 2.6rem;
+      padding-bottom: 40px;
+    }
+
+    a {
+      color: black;
+      border-bottom: 0;
+    }
+
+    a + a::before {
+      font-size: 2.6rem;
+      content: "/";
+      position: relative;
+      margin: 0 8px;
+    }
+
+    a:hover {
+      color: $accent-color;
+      background-color: transparent;
+    }
+
+    a + a:hover::before {
+      color: black;
+    }
+
+    .parent-page::before {
+      content: "*";
+      position: relative;
+    }
+  }
 }
+
 
 .container.main {
   max-width: 80rem;
+  min-height: 5rem;
+
+  footer {
+    font-size: 0.9rem;
+  }
 }
 
 .container.content {
   min-height: 700px;
+  padding-bottom: 10rem;
 }
 
 .main .nav div.wrapper {
@@ -34,25 +78,34 @@
 
 .card .menu {
   padding: 10px 0;
-}
 
-.card .menu .menu-item {
-  margin: 3px 0;
-  padding: 0 10px;
-}
-
-.svg-icon {
-  width: 20px;
-  height: 20px;
-  fill: #616161;
+  .menu-item {
+    margin: 3px 0;
+    padding: 0 10px;
+  }
+  
+  .menu-item:hover {
+    color: $accent-color;
+  }
 }
 
 a:hover .svg-icon {
-  fill: #000;
+  fill: $accent-color;
+}
+.svg-icon {
+  width: 20px;
+  height: 20px;
+  fill: $menu-text-color;
 }
 
-.post-header > h2 {
+
+
+.container header.post-header, .container header.page-header {
   margin-top: 20px;
+}
+
+.inner :first-child {
+  margin-top: 0;
 }
 
 .page-image {
@@ -68,27 +121,40 @@ a:hover .svg-icon {
   max-height: 100%;
 }
 
-.hack div > footer {
-  margin-top: 20px;
-  height: 20rem;
-}
-
 .color-scheme-bg {
   flex-direction: column;
   justify-content: center;
   padding: 2rem;
+
+  .color-scheme-row {
+    align-content: center;
+  }
+  
+  .color-scheme-row:first-child {
+    padding-bottom: 1rem;
+  }
+
+  .color-scheme-row > div {
+    flex: 1;
+    margin: 0 auto;
+    text-align: center;
+  }
 }
 
-.color-scheme-row {
-  align-content: center;
+.card.color-scheme {
+  margin-bottom: 20px;
+  .color-scheme-title {
+    color: black;
+    border-bottom: 1px solid black;
+  }
 }
 
-.color-scheme-bg .color-scheme-row:first-child {
-  padding-bottom: 1rem;
+.card.color-scheme:hover {
+  border-color: $accent-color;
+
+  .color-scheme-title {
+    border-bottom: 0;
+    color: $accent-color;
+  }
 }
 
-.color-scheme-bg .color-scheme-row > div {
-  flex: 1;
-  margin: 0 auto;
-  text-align: center;
-}
