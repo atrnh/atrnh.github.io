@@ -1,4 +1,5 @@
 *.lock
 _site/
 node_modules/
+*.swp
 
