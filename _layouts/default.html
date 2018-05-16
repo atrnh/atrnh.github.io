@@ -13,6 +13,9 @@
       <main class="cell -9of12" aria-label="Content">
         <div class="wrapper">
           {{ content }}
+          {%- if page.under_construction -%}
+            {%- include under-construction.html -%}
+          {%- endif -%}
         </div>
       </main>
 
