@@ -26,8 +26,10 @@ github_username: atrnh
 # Build settings
 markdown: kramdown
 plugins:
+  - jemoji
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-mentions
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
