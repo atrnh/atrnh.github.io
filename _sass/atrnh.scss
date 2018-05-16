@@ -56,7 +56,8 @@ a:hover .svg-icon {
 }
 
 .page-image {
-  width: 40rem;
+  width: 90%;
+  max-width: 40rem;
   font-size: 0.9rem;
   line-height: 1.3rem;
   margin: 0 auto;
@@ -70,4 +71,24 @@ a:hover .svg-icon {
 .hack div > footer {
   margin-top: 20px;
   height: 20rem;
+}
+
+.color-scheme-bg {
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.color-scheme-row {
+  align-content: center;
+}
+
+.color-scheme-bg .color-scheme-row:first-child {
+  padding-bottom: 1rem;
+}
+
+.color-scheme-bg .color-scheme-row > div {
+  flex: 1;
+  margin: 0 auto;
+  text-align: center;
 }
