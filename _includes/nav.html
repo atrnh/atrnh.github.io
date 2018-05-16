@@ -1,5 +1,4 @@
 <nav class="nav cell -3of12" role="banner">
-
   <div class="wrapper card">
     <div class="card-header">Menu</div>
     {%- assign default_paths = site.pages | map: "path" -%}
@@ -33,17 +32,19 @@
         </div>
           GitHub
         </a>
-        {%- endif -%}
+      {%- endif -%}
       {%- if site.twitter_username-%}
         <a class="menu-item" href="https://www.twitter.com/{{ site.twitter_username|
           cgi_escape | escape }}">
           <div class="pull-left">
-          <svg class="svg-icon">
-            <use xlink:href="{{ '/assets/minima-social-icons.svg#twitter' | relative_url }}"></use>
-          </svg>
-        </div>
+            <svg class="svg-icon">
+              <use xlink:href="{{ '/assets/minima-social-icons.svg#twitter' | relative_url }}"></use>
+            </svg>
+          </div>
           Twitter
         </a>
       {%- endif -%}
+    </div>
   </div>
+
 </nav>
