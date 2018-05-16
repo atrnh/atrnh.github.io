@@ -1,0 +1,37 @@
+---
+layout: default
+---
+
+<div class="container grid">
+  <article class="post cell -12of12">
+    <header class="post-header">
+      <h2 class="post-title">{{ page.title | escape }}</h2>
+    </header>
+
+    <div class="post-content cell -12of12">
+      <div class="grid color-scheme-bg"
+        style="background-color: {{ page.bg }}">
+        <div class="color-scheme-row grid cell -12of12">
+          <div style="color: {{ page.light_black }}">black</div>
+          <div style="color: {{ page.light_red }}">red</div>
+          <div style="color: {{ page.light_green }}">green</div>
+          <div style="color: {{ page.light_yellow }}">yellow</div>
+          <div style="color: {{ page.light_blue }}">blue</div>
+          <div style="color: {{ page.light_magenta }}">magenta</div>
+          <div style="color: {{ page.light_cyan }}">cyan</div>
+          <div style="color: {{ page.light_white }}">white</div>
+        </div>
+        <div class="cell -12of12 grid color-scheme-row">
+          <div style="color: {{ page.black }}">black</div>
+          <div style="color: {{ page.red }}">red</div>
+          <div style="color: {{ page.green }}">green</div>
+          <div style="color: {{ page.yellow }}">yellow</div>
+          <div style="color: {{ page.blue }}">blue</div>
+          <div style="color: {{ page.magenta }}">magenta</div>
+          <div style="color: {{ page.cyan }}">cyan</div>
+          <div style="color: {{ page.white }}">white</div>
+        </div>
+      </div>
+    </div>
+  </article>
+</div>
