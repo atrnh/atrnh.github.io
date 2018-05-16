@@ -1,9 +1,6 @@
-.hack {
-  font-family: 'Fira Mono', monospace;
-}
-
 .hack, .hack blockquote, .hack code, .hack em, .hack h1, .hack h2, .hack h3, 
 .hack h4, .hack h5, .hack h6, .hack strong {
+  font-family: 'Fira Mono', monospace;
   font-size: 1.2rem;
 }
 
@@ -52,4 +49,25 @@
 
 a:hover .svg-icon {
   fill: #000;
+}
+
+.post-header > h2 {
+  margin-top: 20px;
+}
+
+.page-image {
+  width: 40rem;
+  font-size: 0.9rem;
+  line-height: 1.3rem;
+  margin: 0 auto;
+}
+
+.page-image img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.hack div > footer {
+  margin-top: 20px;
+  height: 20rem;
 }
