@@ -1,7 +1,27 @@
 ---
 layout: default
 ---
-
-{%- for post in site.posts | where:"layout","color-scheme" -%}
-    {{ post.title }}
-{%- endfor -%}
+<div class="container">
+  <header class="page-header">
+    <h2>Terminal Color Schemes</h2>
+  </header>
+  {%- assign color_schemes = site.posts | where: "layout","color-scheme" -%}
+  {%- for post in color_schemes -%}
+  <div>
+    <a href="{{ post.url | relative_url }}">
+      <div class="card color-scheme">
+        <div class="card-body">
+          <div class="inner">
+            <p>
+              <span class="color-scheme-title">
+                {{ post.title | escape }}
+              </span>
+            </p>
+            {%- include color-scheme.html colors=post.colors -%}
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+  {%- endfor -%}
+</div>
