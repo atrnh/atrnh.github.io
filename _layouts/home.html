@@ -9,6 +9,12 @@ layout: default
 
   {{ content }}
 
+  {%- if page.under_construction -%}
+    <div class="alert alert-info">
+      (」°ロ°)」 This page is still under construction!
+    </div>
+  {%- endif -%}
+
   {%- if site.posts.size > 0 -%}
     <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
     <ul class="post-list">
