@@ -1,5 +1,6 @@
 ---
 layout: home
+under_construction: true
 ---
 
 Hello! Welcome to my homepage~
