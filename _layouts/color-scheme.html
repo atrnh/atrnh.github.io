@@ -13,8 +13,16 @@ layout: default
       {{ content }}
       <h3>Download:</h3>
       <ul>
-        <li><a href="{{ page.downloads.kitty }}">kitty.conf</a></li>
-        <li><a href="{{ page.downloads.xresources }}">.Xresources</a></li>
+        <li>
+          <a href="{{ site.github_raw }}{{ page.downloads.kitty }}">
+            kitty.conf
+          </a>
+        </li>
+        <li>
+          <a href="{{ site.github_raw }}{{ page.downloads.xresources | escape }}">
+            .Xresources
+          </a>
+        </li>
       </ul>
     </div>
   </article>
