@@ -4,6 +4,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^8.5.0",
-    "postcss": "^6.0.22"
+    "postcss": "^6.0.22",
+    "postcss-cli": "^5.0.0"
   }
 }
