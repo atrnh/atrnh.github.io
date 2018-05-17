@@ -1,5 +1,9 @@
 {
   "dependencies": {
     "hack": "^0.8.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^8.5.0",
+    "postcss": "^6.0.22"
   }
 }
