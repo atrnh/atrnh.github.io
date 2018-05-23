@@ -24,6 +24,13 @@ layout: default
           </a>
         </li>
       </ul>
+
+      {%- if page.screenshots -%}
+        <h3>Screenshots:</h3>
+        {%- for img_url in page.screenshots -%}
+          <img src="{{ site.github_raw }}{{ img_url | escape }}>
+        {%- endfor -%}
+      {%- endif -%}
     </div>
   </article>
 </div>
