@@ -28,7 +28,7 @@ layout: default
       {%- if page.screenshots -%}
         <h3>Screenshots:</h3>
         {%- for img_url in page.screenshots -%}
-          <img src="{{ site.github_raw }}{{ img_url | escape }}>
+          <img src="{{ site.github_raw }}{{ img_url | escape }}">
         {%- endfor -%}
       {%- endif -%}
     </div>
