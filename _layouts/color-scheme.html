@@ -30,7 +30,7 @@ layout: default
         {%- for img_url in page.screenshots -%}
           <div class="page-image">
             <div class="alert alert-info">
-              <img src="{{ site.github_raw }}{{ img_url | escape }}">
+              <img src="{{ img_url | escape }}">
             </div>
           </div>
         {%- endfor -%}
