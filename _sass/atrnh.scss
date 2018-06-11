@@ -22,6 +22,10 @@
       font-size: 2.6rem;
       padding-bottom: 40px;
       display: inline-block;
+
+      ::after {
+        content: none;
+      }
     }
 
     a {
@@ -29,27 +33,11 @@
       border-bottom: 0;
     }
 
-    a + a::before {
-      font-size: 2.6rem;
-      content: "/";
-      position: relative;
-      margin: 0 8px;
-      bottom: 33px;
-    }
-
     a:hover {
       color: $accent-color;
       background-color: transparent;
     }
 
-    a + a:hover::before {
-      color: black;
-    }
-
-    .parent-page::before {
-      content: "*";
-      position: relative;
-    }
   }
 }
 
