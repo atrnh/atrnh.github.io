@@ -1,7 +1,23 @@
-.hack, .hack blockquote, .hack code, .hack em, .hack h1, .hack h2, .hack h3, 
-.hack h4, .hack h5, .hack h6, .hack strong {
+.hack, .hack code, .hack em, .hack h1, .hack h2, .hack h3, 
+.hack h4, .hack h5, .hack h6, .hack strong  {
   font-family: $monospace;
   font-size: 1.2rem;
+}
+
+.hack a, .hack strong, .hack em, .hack strong, .hack code {
+  font-family: $monospace;
+  font-size: 1em;
+}
+
+.hack p, .hack li, .hack blockquote {
+  font-family: Roboto, sans-serif;
+  font-size: 1.4rem;
+  font-weight: 300;
+  line-height: 1.6em;
+}
+
+.hack blockquote::after {
+  line-height: 1.6em;
 }
 
 .hack {
@@ -22,10 +38,6 @@
       font-size: 2.6rem;
       padding-bottom: 40px;
       display: inline-block;
-
-      ::after {
-        content: none;
-      }
     }
 
     a {
@@ -41,6 +53,9 @@
   }
 }
 
+#main-header::after {
+  content: none;
+}
 
 .container.main {
   max-width: 80rem;
@@ -90,8 +105,14 @@ a:hover .svg-icon {
 
 
 
-.container header.post-header, .container header.page-header {
+.container .post-meta, .container header.page-header {
   margin-top: 20px;
+
+  h1 {
+    padding-top: 0;
+    display: inline-block;
+    font-size: 2rem;
+  }
 }
 
 .inner :first-child {
@@ -149,3 +170,41 @@ a:hover .svg-icon {
   }
 }
 
+.color-scheme-post .post-content p:first-child {
+  margin-top: 0;
+}
+
+.post-meta {
+  font-size: 10px;
+  color: #ccc;
+}
+
+h1.post-title {
+  font-size: 1.3em;
+}
+
+.hack .post-content {
+  em, strong {
+    font-family: Roboto, sans-serif;
+    font-size: 1em;
+  }
+
+  em { font-style: italic; }
+
+  em::before, em::after {
+    content: none;
+  }
+
+  code {
+    color: rgb(188, 69, 219);
+    font-weight: 400;
+    background-color: #f4f4f4;
+    border-radius: 4px;
+    font-size: 0.85em;
+    padding: 3px 8px;
+  }
+
+  code::before, code::after {
+    content: none;
+  }
+}

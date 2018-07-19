@@ -4,6 +4,8 @@ title: About
 permalink: /about/
 ---
 
+Some things about me:
+
 - **Terminal:** [kitty](https://github.com/kovidgoyal/kitty)
 - **Text editor:** [vim](https://wiki.archlinux.org/index.php/vim)
 - **Shell:** [zsh](https://github.com/robbyrussell/oh-my-zsh)
@@ -15,7 +17,7 @@ permalink: /about/
 - **Pantone Color of the Year:**
     [2016](https://www.pantone.com/color-of-the-year-2016)
 
-### Tl;DR version of my bio
+## Tl;DR version of my bio
 
 <blockquote>
 Fine artist at University of Ca., San Diego <br>

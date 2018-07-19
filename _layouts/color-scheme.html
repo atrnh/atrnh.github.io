@@ -3,15 +3,15 @@ layout: default
 ---
 
 <div class="container grid">
-  <article class="post cell -12of12">
+  <article class="color-scheme-post post cell -12of12">
     <header class="post-header">
-      <h2 class="post-title">{{ page.title | escape }}</h2>
+      <h1 class="post-title">{{ page.title | escape }}</h1>
     </header>
 
     <div class="post-content cell -12of12">
       {%- include color-scheme.html colors=page.colors -%}  
       {{ content }}
-      <h3>Download:</h3>
+      <h2>Download:</h2>
       <ul>
         <li>
           <a href="{{ site.github_raw }}{{ page.downloads.kitty }}">
@@ -26,7 +26,7 @@ layout: default
       </ul>
 
       {%- if page.screenshots -%}
-        <h3>Screenshots:</h3>
+        <h2>Screenshots:</h2>
         {%- for img_url in page.screenshots -%}
           <div class="page-image">
             <div class="alert alert-info">
