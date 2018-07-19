@@ -182,6 +182,10 @@ h1.post-title {
 }
 
 .hack .post-content {
+  strong {
+    font-weight: bold;
+  }
+
   em, strong {
     font-family: $serif;
     font-size: 1em;
