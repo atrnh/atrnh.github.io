@@ -1,0 +1,31 @@
+---
+layout: default
+---
+<div class="container">
+  <header class="page-header">
+    <h1>Blog</h1>
+  </header>
+  {%- assign blog = site.posts | where: "layout","post" -%}
+  {%- for post in blog -%}
+    <div class="media">
+      <div class="media-body">
+        <section class="post-meta">
+          <p>{{ post.date | date: '%B %d, %Y' }}</p>
+        </section>
+
+        <section class="media-header">
+          <h2>
+            <a href="{{ post.url | relative_url }}">
+              {{ post.title | escape }}
+            </a>
+          </h2>
+        </section>
+        <section class="media-content">
+          {%- if post.desc -%}
+            <p>{{ post.desc | escape }}</p>
+          {%- endif -%}
+        </section>
+      </div>
+    </div>
+  {%- endfor -%}
+</div>

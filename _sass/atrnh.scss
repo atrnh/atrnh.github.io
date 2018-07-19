@@ -5,19 +5,18 @@
 }
 
 .hack a, .hack strong, .hack em, .hack strong, .hack code {
-  font-family: $monospace;
   font-size: 1em;
 }
 
 .hack p, .hack li, .hack blockquote {
-  font-family: Roboto, sans-serif;
-  font-size: 1.4rem;
+  font-family: $serif;
+  font-size: 1.25rem;
   font-weight: 300;
-  line-height: 1.6em;
+  line-height: 2em;
 }
 
 .hack blockquote::after {
-  line-height: 1.6em;
+  line-height: 2em;
 }
 
 .hack {
@@ -61,8 +60,10 @@
   max-width: 80rem;
   min-height: 5rem;
 
-  footer {
-    font-size: 0.9rem;
+  footer p {
+    font-family: $monospace;
+    font-weight: 300;
+    font-size: 1rem;
   }
 }
 
@@ -135,20 +136,17 @@ a:hover .svg-icon {
 .color-scheme-bg {
   flex-direction: column;
   justify-content: center;
-  padding: 2rem;
-  height: 100px;
+  padding: 1.5rem 2rem;
+  flex: 1 1 auto;
+  min-height: 100px;
 
   .color-scheme-row {
     align-content: center;
   }
   
-  .color-scheme-row:first-child {
-    padding-bottom: 1rem;
-  }
-
   .color-scheme-row > div {
     flex: 1;
-    margin: 0 auto;
+    margin: auto;
     text-align: center;
   }
 }
@@ -180,12 +178,12 @@ a:hover .svg-icon {
 }
 
 h1.post-title {
-  font-size: 1.3em;
+  font-size: 1.8rem;
 }
 
 .hack .post-content {
   em, strong {
-    font-family: Roboto, sans-serif;
+    font-family: $serif;
     font-size: 1em;
   }
 
@@ -196,6 +194,7 @@ h1.post-title {
   }
 
   code {
+    display: inline-block;
     color: rgb(188, 69, 219);
     font-weight: 400;
     background-color: #f4f4f4;
@@ -206,5 +205,45 @@ h1.post-title {
 
   code::before, code::after {
     content: none;
+  }
+
+  pre code {
+    background-color: unset;
+    border-radius: 0;
+    color: initial;
+  }
+
+  h1, h2 {
+    font-size: 1.7rem;
+  }
+
+  h2, h3, h4 {
+    margin-top: 1.75em;
+    margin-bottom: 0;
+  }
+
+  h3, h4 {
+    font-size: 1.1em;
+  }
+}
+
+.hack {
+  .media {
+
+    .media-header h2 a {
+      font-size: 1.4em;
+    }
+
+    .media-header h2::before {
+      content: none;
+    }
+
+    .post-meta p {
+      font-size: 1em;
+      font-family: $monospace;
+      margin-top: 0;
+      margin-bottom: 0.5em;
+    }
+
   }
 }
