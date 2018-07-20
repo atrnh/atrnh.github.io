@@ -1,0 +1,21 @@
+<div class="post-li">
+  <div class="post-li-body">
+    <section class="post-li-meta">
+      <p class="post-meta">{{ include.post.date | date: '%B %d, %Y' }}</p>
+    </section>
+
+    <section class="post-li-title">
+      <h2>
+        <a href="{{ include.post.url | relative_url }}">
+          {{ include.post.title | escape }}
+        </a>
+      </h2>
+    </section>
+
+    <section class="post-li-desc">
+      {%- if include.post.desc -%}
+        <p>{{ include.post.desc | escape }}</p>
+      {%- endif -%}
+    </section>
+  </div>
+</div>

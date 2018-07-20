@@ -7,15 +7,12 @@ permalink: /about/
 Some things about me:
 
 - **Terminal:** [kitty](https://github.com/kovidgoyal/kitty)
-- **Text editor:** [vim](https://wiki.archlinux.org/index.php/vim)
+- **Text editor:** [nvim](https://neovim.io)
 - **Shell:** [zsh](https://github.com/robbyrussell/oh-my-zsh)
 - **Pizza:** [New York](https://www.regentspizza.com/)
-- **Boardgame:** [Arkham Horror: The Card
-    Game](https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/arkham-horror-card-game/)
-- **Videogame:** [The End is
-    Nigh](https://store.steampowered.com/app/583470/The_End_Is_Nigh/)
 - **Pantone Color of the Year:**
     [2016](https://www.pantone.com/color-of-the-year-2016)
+- [More tools](#)
 
 ## Tl;DR version of my bio
 
@@ -23,26 +20,24 @@ Some things about me:
 Fine artist at University of Ca., San Diego <br>
 Took some programming classes though <br>
 </blockquote>
-<div class="page-image">
- <div class="alert alert-info">
-   <img src="/assets/kube.png">
-   Screenshot from Prof. Paul Kube's <a
-   href="http://cseweb.ucsd.edu/~kube/">homepage</a>. Yes, that is a drawing
-   of him. And yes, he did actually say that during lecture.
- </div>
-</div>
+{% include article-img.html 
+  src='/assets/kube.png'
+  alt='Kube\'s Homepage'
+  caption='Screenshot from Prof. Paul Kube\'s
+    <a href="http://cseweb.ucsd.edu/~kube">homepage</a>.
+    Yes, that is a drawing of him. And yes, he did actually say that during lecture.'
+%}
 <blockquote>
 Started programming as a hobby <br>
 Got sick in the middle of my degree <br>
 Went home; continued programming <br>
 Programming is way more fun than fine arts <br>
 </blockquote>
-<div class="page-image">
- <div class="alert alert-info">
-   <img src="/assets/arts.png">
-   Screenshot from my old fine arts portfolio. The newest of new media /s
- </div>
-</div>
+{% include article-img.html
+  src='/assets/arts.png'
+  alt='Art stuff'
+  caption='Screenshot from my old fine arts portfolio.'
+  %}
 <blockquote>
 Got better <br>
 cestlavie.jpg <br>

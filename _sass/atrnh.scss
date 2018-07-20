@@ -1,31 +1,10 @@
-.hack, .hack code, .hack em, .hack h1, .hack h2, .hack h3, 
-.hack h4, .hack h5, .hack h6, .hack strong  {
-  font-family: $monospace;
-  font-size: 1.2rem;
+%blue-border {
+  padding: 1em;
+  color: #00bcd4;
+  border: 1px solid #00bcd4; 
 }
 
-.hack a, .hack strong, .hack em, .hack strong, .hack code {
-  font-size: 1em;
-}
-
-.hack p, .hack li, .hack blockquote {
-  font-family: $serif;
-  font-size: 1.25rem;
-  font-weight: 300;
-  line-height: 2em;
-}
-
-.hack blockquote::after {
-  line-height: 2em;
-}
-
-.hack {
-  hr::after {
-    content:
-    "------------------------------------------------------------------------------------------------------------------------------------------------------------------";
-  }
-}
-
+%top-margin { margin-top: 20px; }
 
 .container.header {
   margin-top: 4rem;
@@ -72,42 +51,8 @@
   padding-bottom: 10rem;
 }
 
-.main .nav div.wrapper {
-  margin-right: 2rem;
-  font-size: 0.78em;
-}
-
-.main .nav .card {
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-.card .menu {
-  padding: 10px 0;
-
-  .menu-item {
-    margin: 3px 0;
-    padding: 0 10px;
-  }
-  
-  .menu-item:hover {
-    color: $accent-color;
-  }
-}
-
-a:hover .svg-icon {
-  fill: $accent-color;
-}
-.svg-icon {
-  width: 20px;
-  height: 20px;
-  fill: $menu-text-color;
-}
-
-
-
-.container .post-meta, .container header.page-header {
-  margin-top: 20px;
+.container header.page-header {
+  @extend %top-margin;
 
   h1 {
     padding-top: 0;
@@ -118,19 +63,6 @@ a:hover .svg-icon {
 
 .inner :first-child {
   margin-top: 0;
-}
-
-.page-image {
-  width: 90%;
-  max-width: 40rem;
-  font-size: 0.9rem;
-  line-height: 1.3rem;
-  margin: 0 auto;
-}
-
-.page-image img {
-  max-width: 100%;
-  max-height: 100%;
 }
 
 .color-scheme-bg {
@@ -170,84 +102,4 @@ a:hover .svg-icon {
 
 .color-scheme-post .post-content p:first-child {
   margin-top: 0;
-}
-
-.post-meta {
-  font-size: 10px;
-  color: #ccc;
-}
-
-h1.post-title {
-  font-size: 1.8rem;
-}
-
-.hack .post-content {
-  strong {
-    font-weight: bold;
-  }
-
-  em, strong {
-    font-family: $serif;
-    font-size: 1em;
-  }
-
-  em { font-style: italic; }
-
-  em::before, em::after {
-    content: none;
-  }
-
-  code {
-    display: inline-block;
-    color: rgb(188, 69, 219);
-    font-weight: 400;
-    background-color: #f4f4f4;
-    border-radius: 4px;
-    font-size: 0.85em;
-    padding: 3px 8px;
-  }
-
-  code::before, code::after {
-    content: none;
-  }
-
-  pre code {
-    background-color: unset;
-    border-radius: 0;
-    color: initial;
-  }
-
-  h1, h2 {
-    font-size: 1.7rem;
-  }
-
-  h2, h3, h4 {
-    margin-top: 1.75em;
-    margin-bottom: 0;
-  }
-
-  h3, h4 {
-    font-size: 1.1em;
-  }
-}
-
-.hack {
-  .media {
-
-    .media-header h2 a {
-      font-size: 1.4em;
-    }
-
-    .media-header h2::before {
-      content: none;
-    }
-
-    .post-meta p {
-      font-size: 1em;
-      font-family: $monospace;
-      margin-top: 0;
-      margin-bottom: 0.5em;
-    }
-
-  }
 }

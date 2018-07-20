@@ -1,0 +1,26 @@
+.postlist {
+  .post-li {
+    .post-li-body {
+      display: table-cell;
+      vertical-align: top;
+
+      .post-li-meta {
+        margin-top: 20px;
+
+        p.post-meta {
+          font-family: $monospace;
+          font-size: 13px;
+          color: #b5b5b5;
+          margin-top: 0;
+          margin-bottom: 0.5em;
+        }
+      }
+
+      .post-li-title h2 {
+        &::before { content: none; }
+
+        a { font-size: 1.4em; }
+      }
+    }
+  }
+}

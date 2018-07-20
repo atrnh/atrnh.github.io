@@ -1,0 +1,54 @@
+.hack .post {
+  .post-meta {
+    @extend %top-margin;
+    color: #b5b5b5;
+  }
+
+  h1.post-title {
+    font-size: 1.8rem;
+  }
+
+  strong { font-weight: bold; }
+
+  em, strong {
+    font-family: $serif;
+    font-size: 1em;
+  }
+
+  em { 
+    font-style: italic;
+
+    &::before, &::after {
+      content: none;
+    }
+  }
+
+  code {
+    display: inline-block;
+    color: rgb(188, 69, 219);
+    font-weight: 400;
+    background-color: #f4f4f4;
+    border-radius: 4px;
+    font-size: 1em;
+    padding: 3px 8px;
+
+    &::before, &::after { content: none; }
+  }
+
+  pre {
+    code {
+      background-color: unset;
+      border-radius: 0;
+      color: initial;
+    }
+  }
+
+  h1, h2 { font-size: 1.7rem; }
+
+  h2, h3, h4 {
+    margin-top: 1.75em;
+    margin-bottom: 0;
+  }
+
+  h3, h4 { font-size: 1.25em; }
+}
