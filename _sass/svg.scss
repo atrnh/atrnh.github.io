@@ -1,0 +1,17 @@
+g.annotation {
+  cursor: pointer;
+
+  text {
+    font-size: 12px;
+    font-family: $monospace;
+    fill: white;
+  }
+
+  rect, circle {
+    fill: black;
+  }
+
+  &:hover circle, &:hover rect {
+    fill: #ff2e88;
+  }
+}

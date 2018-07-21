@@ -1,0 +1,55 @@
+<style>
+  #screenshot {
+    background-image: url('/assets/screenshots/chunkwm.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100%;
+  }
+</style>
+
+<div id="screenshot">
+  <svg viewBox="0 0 700 580" xmlns="http://www.w3.org/2000/svg">
+    <g class="annotation" data-gotoid="ubersicht">
+      <circle cx="112" cy="10" r="8" fill="black" />
+      <text x="109" y="14" class="num">1</text>
+      <rect x="122" y="1" width="140" height="16"/>
+      <text x="125" y="14" class="desc">widgets (ubersicht)</text>
+    </g>
+    <g class="annotation" data-gotoid="spaceship-ampm">
+      <circle cx="55" cy="46" r="8" fill="black" />
+      <text x="52" y="50" class="num">2</text>
+			<rect height="16" x="62" width="168" y="53"></rect>
+      <text x="64" class="desc" y="66">prompt (spaceship/ampm)</text>
+    </g>
+    <g class="annotation" data-gotoid="chunkwm">
+      <circle cx="350" cy="225" r="8" fill="black" />
+      <text x="347" y="229" class="num">3</text>
+      <rect height="16" x="264" y="237" width="173"></rect>
+      <text class="num" x="264" y="250">tiling windows (chunkwm)</text>
+    </g>
+    <g class="annotation" data-gotoid="neovim">
+      <circle cx="164" cy="328" r="8" fill="black" />
+      <text class="num" y="332" x="160">4</text>
+			<rect height="16" x="10" width="146" y="333"></rect>
+			<text class="num" y="346" x="12">text editor (neovim)</text>
+    </g>
+    <g class="annotation" data-gotoid="kitty">
+      <circle cx="549" cy="369" r="8" fill="black" />
+      <text x="546" y="373" class="num">5</text>
+      <rect height="16" width="116" x="560" y="373"></rect>
+      <text class="num" x="560" y="386">terminal (kitty)</text>
+    </g>
+  </svg>
+</div>
+
+<script>
+  const annotations = document.querySelectorAll('g');
+  annotations.forEach(g => {
+    g.addEventListener('click', e => {
+      const annotation = e.target.parentElement;
+      if (annotation.dataset.gotoid) {
+        document.getElementById(annotation.dataset.gotoid).scrollIntoView();
+      }
+    });
+  });
+</script>
