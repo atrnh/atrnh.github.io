@@ -47,3 +47,11 @@ SPACESHIP_DIR_COLOR="5"
 
 SPACESHIP_EXEC_TIME_SUFFIX=" 🔮"
 ```
+## Chunkwm
+
+- [GitHub](https://github.com/koekeishiya/chunkwm)
+- [Installation instructions](https://koekeishiya.github.io/chunkwm/docs/userguide.html)
+
+I use this tiling windows manager with khd for keyboard shortcuts. I wrote a
+quick guide on using khd
+[here](/tools/2018/07/19/modal-keyboard-shortcuts.html)
