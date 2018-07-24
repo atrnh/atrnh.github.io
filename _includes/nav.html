@@ -1,7 +1,8 @@
 <nav class="cell -3of12" role="banner">
   <div class="wrapper card">
     <div class="card-header">Menu</div>
-    {%- assign default_paths = site.pages | map: "path" -%}
+    {%- assign pages = site.pages | sort: 'title' %}
+    {%- assign default_paths = pages | map: 'path' -%}
     {%- assign page_paths = site.header_pages | default: default_paths -%}
     {%- if page_paths -%}
       <div class="menu">

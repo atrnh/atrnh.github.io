@@ -1,5 +1,17 @@
+%metafont {
+  font-family: $monospace;
+  font-size: 13px;
+}
+
+%catfont {
+  font-family: $monospace;
+  font-size: 10px;
+}
+
 .postlist {
   .post-li {
+    margin-bottom: 1.5em;
+
     .post-li-body {
       display: table-cell;
       vertical-align: top;
@@ -8,8 +20,7 @@
         margin-top: 20px;
 
         p.post-meta {
-          font-family: $monospace;
-          font-size: 13px;
+          @extend %metafont;
           color: #b5b5b5;
           margin-top: 0;
           margin-bottom: 0.5em;
@@ -20,6 +31,35 @@
         &::before { content: none; }
 
         a { font-size: 1.4em; }
+      }
+
+      .post-li-desc {
+        p {
+          margin-bottom: 0.6em;
+        }
+      }
+
+      .post-li-categories {
+
+        p {
+          @extend %catfont;
+          display: inline-block;
+          margin: 0;
+        }
+
+        ul {
+          display: inline-block;
+          margin: 0;
+        }
+
+        li {
+          @extend %catfont;
+          margin: 0;
+          padding: 0;
+          &::after {
+            content: none;
+          }
+        }
       }
     }
   }

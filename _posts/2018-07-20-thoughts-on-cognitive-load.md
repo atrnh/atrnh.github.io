@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Cognitive load vs. learning goals
+categories: ['teaching']
 desc: Incomplete thoughts on reducing students' cognitive load while teaching
       them lots of stuff; teaching efficiently so that students learn
       effectively.

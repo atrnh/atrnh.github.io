@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Modal Keyboard Shortcuts
+categories: ['tools']
 desc: How to use and configure khd, a modal hotkey daemon that I use to
       interface with my tiling windows manager. Also, what's a modal hotkey
       daemon and why modes make life so convenient.

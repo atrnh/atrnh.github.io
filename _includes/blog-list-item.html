@@ -13,9 +13,20 @@
     </section>
 
     <section class="post-li-desc">
-      {%- if include.post.desc -%}
+      {% if include.post.desc %}
         <p>{{ include.post.desc | escape }}</p>
-      {%- endif -%}
+      {% endif %}
     </section>
+
+    {% if include.post.categories %}
+      <section class="post-li-categories">
+        <p>Filed under:</p>
+        <ul>
+          {% for category in include.post.categories %}
+            <li> {{ category }}</li>
+          {% endfor %}
+        </ul>
+      </section>
+    {% endif %}
   </div>
 </div>
