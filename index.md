@@ -3,8 +3,6 @@ layout: home
 under_construction: true
 ---
 
-Hello! Welcome to my homepage~
-
 I'm an instructor & developer at [Hackbright
 Academy](https://hackbrightacademy.com). 
 
