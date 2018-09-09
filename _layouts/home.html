@@ -8,4 +8,31 @@ layout: default
   {%- endif -%}
 
   {{ content }}
+
+  {%- include under-construction.html -%}
+
+  <section class="new-content">
+    <header class="page-header">
+      <h1>New!</h1>
+    </header>
+    <ul class="new-content">
+      {%- for post in site.posts limit: 7 -%}
+        <li>
+          <span class="date">{{ post.date | date: '%m/%d/%y' }}</span>
+          <span class="layout-type-title">
+            {%- case post.layout -%}
+              {%- when 'post' -%}
+                Blog Post:
+              {%- when 'color-scheme' -%}
+                Terminal Theme:
+            {%- endcase -%}
+            &nbsp;
+            <a href="{{ post.url | relative_url }}">
+              {{ post.title | escape }}
+            </a>
+          </span>
+        </li>
+      {%- endfor -%}
+    </ul>
+  </section>
 </div>
