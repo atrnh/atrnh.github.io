@@ -4,8 +4,6 @@
   border: 1px solid #00bcd4; 
 }
 
-%top-margin { margin-top: 20px; }
-
 .container.header {
   margin-top: 4rem;
 
@@ -102,4 +100,8 @@
 
 .color-scheme-post .post-content p:first-child {
   margin-top: 0;
+}
+
+.hack .date {
+  @extend %metadata-font;
 }
