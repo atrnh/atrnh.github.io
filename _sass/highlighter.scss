@@ -1,6 +1,10 @@
-.hack .post-content .highlighter-rouge pre code{
+.hack .highlighter-rouge pre code{
   .c {
     font-style: italic;
     color: $syntax-c-color;
+  }
+
+  .s2 {
+    color: $syntax-s2-color;
   }
 }
