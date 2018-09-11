@@ -1,9 +1,45 @@
+%monospace { font-family: $monospace; }
+%serif { font-family: $serif; }
+
 // fonts
-%metadata-font { font-family: $monospace; }
-%category-font { font-family: $monospace; }
-%font-size-sm { font-size: 1.2rem; }
-%font-size-xs { font-size: 0.8rem; }
+%header-font { @extend %monospace; }
+%metadata-font { @extend %monospace; }
+%category-font { @extend %monospace; }
+%footer-font {
+  @extend %monospace;
+  font-weight: 300;
+}
 
+%content-font { @extend %serif; }
+
+// sizes
+%mono-font-sm { font-size: 1.2rem; }
+%mono-font-xs { font-size: 0.8rem; }
+%mono-font-md { font-size: 1.75rem; }
+%mono-font-lg { font-size: 2rem; }
+
+%serif-font-md {
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+%serif-font-xl {
+  font-size: 2.6rem;
+  line-height: 1rem;
+}
+
+%relative-1 {
+  font-size: 1em;
+}
+
+%double-spaced {
+  line-height: 2em;
+}
+
+%font-black { color: black; }
+
+%no-top-margin { margin-top: 0; }
+%no-content { content: none; }
 %top-margin { margin-top: 20px; }
-
+%p-margin { margin: 20px 0; }
+%first-header { padding-top: 0; }
 %blue-border { border: 1px solid $blue; }

@@ -1,0 +1,42 @@
+.color-scheme-bg {
+  flex-direction: column;
+  justify-content: center;
+  padding: 1.5rem 2rem;
+  flex: 1 1 auto;
+  min-height: 100px;
+
+  .color-scheme-row {
+    align-content: center;
+  }
+  
+  .color-scheme-row > div {
+    flex: 1;
+    margin: auto;
+    text-align: center;
+  }
+}
+
+.card.color-scheme {
+  @extend %p-margin;
+  display: block;
+
+  &:hover {
+    background-color: transparent;
+    border-color: $accent-color;
+    color: $accent-color;
+  }
+
+  .color-scheme-title {
+    color: black;
+    border-bottom: 1px solid black;
+  }
+}
+
+.card.color-scheme:hover {
+  border-color: $accent-color;
+
+  .color-scheme-title {
+    border-bottom: 0;
+    color: $accent-color;
+  }
+}

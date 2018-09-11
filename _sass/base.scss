@@ -1,0 +1,94 @@
+// hack overrides
+.hack {
+  h1, h2, h3, h4, h5, h6 {
+    @extend %header-font;
+  }
+
+  h2 {
+    @extend %mono-font-md;
+  }
+
+  h3 { font-size: 1.3rem; }
+
+  p, li, blockquote, blockquote::after {
+    @extend %content-font;
+    @extend %serif-font-md;
+    @extend %double-spaced;
+  }
+
+  a {
+    .svg-icon {
+      width: 20px;
+      height: 20px;
+      fill: $menu-text-color;
+    }
+
+    &:hover {
+      .svg-icon {
+        fill: $accent-color;
+      }
+    }
+  }
+
+  hr::after {
+    content: "------------------------------------------------------------------------------------------------------------------------------------------------------------------";
+  }
+
+  footer p {
+    @extend %footer-font;
+  }
+
+  main {
+    @extend %top-margin;
+  }
+
+  code {
+    @extend %relative-1;
+    display: inline-block;
+    color: $code-color;
+    font-weight: 400;
+    background-color: #f4f4f4;
+    border-radius: 4px;
+    padding: 3px 8px;
+
+    &::before, &::after { @extend %no-content; }
+  }
+
+  pre {
+    code {
+      background-color: unset;
+      border-radius: 0;
+      color: initial;
+
+      &::before, &::after { @extend %no-content; }
+    }
+  }
+
+  strong {
+    @extend %relative-1;
+    @extend %serif;
+    font-weight: bold;
+
+    &::before, &::after { @extend %no-content; }
+  }
+
+  em {
+    @extend %relative-1;
+    @extend %serif;
+    font-style: italic;
+
+    &::before, &::after { @extend %no-content; }
+  }
+
+  .date { @extend %metadata-font; }
+}
+
+.main {
+  max-width: 80rem;
+  min-height: 5rem;
+}
+
+.content {
+  min-height: 700px;
+  padding-bottom: 10rem;
+}

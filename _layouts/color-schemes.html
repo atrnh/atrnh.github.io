@@ -7,21 +7,17 @@ layout: default
   </header>
   {%- assign color_schemes = site.posts | where: "layout","color-scheme" -%}
   {%- for post in color_schemes -%}
-  <div>
-    <a href="{{ post.url | relative_url }}">
-      <div class="card color-scheme">
-        <div class="card-body">
-          <div class="inner">
-            <p>
-              <span class="color-scheme-title">
-                {{ post.title | escape }}
-              </span>
-            </p>
-            {%- include color-scheme.html colors=post.colors -%}
-          </div>
+    <a class="card color-scheme" href="{{ post.url | relative_url }}">
+      <div class="card-body">
+        <div class="inner">
+          <p>
+            <span class="color-scheme-title">
+              {{ post.title | escape }}
+            </span>
+          </p>
+          {%- include color-scheme.html colors=post.colors -%}
         </div>
       </div>
     </a>
-  </div>
   {%- endfor -%}
 </div>

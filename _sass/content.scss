@@ -1,0 +1,47 @@
+%page-header {
+  @extend %first-header;
+  @extend %mono-font-lg;
+  display: inline-block;
+}
+
+#main-header {
+  margin-top: 4rem;
+
+  h1 {
+    @extend %serif-font-xl;
+    padding-bottom: 40px;
+    display: inline-block;
+
+    &::after { content: none; }
+
+    a {
+      @extend %font-black;
+      border-bottom: 0;
+
+      &:hover {
+        color: $accent-color;
+        background-color: transparent;
+      }
+    }
+  }
+}
+
+.page-header {
+  h1 { @extend %page-header; }
+}
+
+header.post-header {
+  @extend %top-margin;
+
+  h1 { @extend %page-header; }
+}
+
+.post-content p:first-child { @extend %no-top-margin; }
+
+.inner p:first-child { @extend %no-top-margin; }
+
+.post {
+  .post-meta {
+    color: $meta-color;
+  }
+}
