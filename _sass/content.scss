@@ -31,10 +31,14 @@
 }
 
 header.post-header {
-  @extend %top-margin;
+  @extend %no-top-margin;
 
   h1 { @extend %page-header; }
 }
+
+article header.post-header { @extend %top-margin; }
+
+.home p:first-child { @extend %no-top-margin; }
 
 .post-content p:first-child { @extend %no-top-margin; }
 

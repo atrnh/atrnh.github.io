@@ -4,6 +4,10 @@
     @extend %header-font;
   }
 
+  h1, { 
+    @extend %mono-font-lg;
+  }
+
   h2 {
     @extend %mono-font-md;
   }
@@ -80,7 +84,7 @@
     &::before, &::after { @extend %no-content; }
   }
 
-  .date { @extend %metadata-font; }
+  .date, time { @extend %metadata-font; }
 }
 
 .main {
