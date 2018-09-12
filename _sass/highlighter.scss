@@ -1,10 +1,32 @@
-.hack .highlighter-rouge pre code{
+.hack pre code {
+  font-size: 1.05rem;
+  line-height: 2rem;
+
   .c {
     font-style: italic;
-    color: $syntax-c-color;
+    color: $trmlightblack;
   }
 
-  .s2 {
-    color: $syntax-s2-color;
+  .s, .s2 {
+    color: $trmwhite;
   }
+
+  .k, .ow {
+    color: $trmlightmagenta;
+    font-weight: bold;
+  }
+
+  .nb {
+    color: $trmcyan;
+  }
+
+  .p {
+    color: $trmblue;
+  }
+
+  .mf {
+    color: $trmmagenta;
+  }
+  
+  .o { font-weight: bold; color: $trmblack; }
 }

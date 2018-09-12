@@ -2,9 +2,7 @@
 layout: post
 title: Modal Keyboard Shortcuts
 categories: ['tools']
-desc: How to use and configure khd, a modal hotkey daemon that I use to
-      interface with my tiling windows manager. Also, what's a modal hotkey
-      daemon and why modes make life so convenient.
+excerpt_separator: <!--more-->
 ---
 
 I don't like taking my hands off my keyboard.
@@ -18,6 +16,8 @@ windows/applications.
     (`cmd+r`, `cmd-shift+r`, `ctrl-cmd-shift+r`, etc...)
 - **Solution:** [khd](https://github.com/koekeishiya/khd) — a modal hotkey
   daemon!
+
+<!--more-->
 
 ## Modal hotkey daemon??
 

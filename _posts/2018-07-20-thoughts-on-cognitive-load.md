@@ -2,13 +2,13 @@
 layout: post
 title: Cognitive load vs. learning goals
 categories: ['teaching']
-desc: Incomplete thoughts on reducing students' cognitive load while teaching
-      them lots of stuff; teaching efficiently so that students learn
-      effectively.
+excerpt_separator: <!--more-->
 ---
 
 Teaching is a balancing act between a student's working memory
 (cognitive load) and the desire to have them reach ambitious learning goals.
+
+<!--more-->
 
 - More cognitive load → less learning
 - More things to learn → more cognitive load

@@ -13,9 +13,10 @@
     </section>
 
     <section class="post-li-desc">
-      {% if include.post.desc %}
-        <p>{{ include.post.desc | escape }}</p>
-      {% endif %}
+      <p>
+        {{ include.post.excerpt }}
+        (<a href="{{ include.post.url | relative_url }}">read more...</a>)
+      </p>
     </section>
 
     {% if include.post.categories %}
