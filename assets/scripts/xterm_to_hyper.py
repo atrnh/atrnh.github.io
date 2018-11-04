@@ -25,28 +25,29 @@ COLOR_NAMES = [
 
 
 def make_colors_js(colors):
-    """kdkddkd."""
+    """..."""
 
     js = []
+    js_color_names = COLOR_NAMES[3::2]
 
-    js.append("foregroundColor: '{}',".format(colors[0]))
-    js.append("backgroundColor: '{}',".format(colors[1]))
-    js.append("cursorColor: '{}',".format(colors[2]))
+    # Special colors
+    js.append(f"foregroundColor: '{colors[0]}',")
+    js.append(f"backgroundColor: '{colors[1]}',")
+    js.append(f"cursorColor: '{colors[2]}',")
     js.append("colors: {")
 
-    colors = list(reversed(colors[3::]))
-    color_pairs = []
-    while len(colors) > 0:
-        color_pairs.append((colors.pop(), colors.pop()))
+    # All other colors
+    colors = colors[3:]
 
+    color_pairs = [
+        tuple(colors[i * 2 - 2:i * 2])
+        for i in range(1, len(colors[3:]) - 4)
+    ]
+    for i, color in enumerate(js_color_names):
+        js.append(f"  {color}: '{color_pairs[i][0]}',")
+        js.append(f"  light{color.capitalize()}: '{color_pairs[i][1]}',")
 
-
-    for i, c_name in enumerate(COLOR_NAMES):
-        js.append("  {}: '{}',".format(c_name, color_pairs[i][0]))
-        js.append("  light{}: '{}',".format(c_name.capitalize(),
-                                              color_pairs[i][1]
-                                              ))
-
+    # Close JSON
     js.append('}')
 
     return '\n'.join(js)
@@ -57,11 +58,11 @@ def get_colors(lines):
 
     patt = re.compile('\#\w+')
 
-    colors = [patt.search(line).group(0)
-              for line in lines
-              if patt.search(line)
-              ]
-    return colors
+    return [
+        patt.search(line).group(0)
+        for line in lines
+        if patt.search(line)
+    ]
 
 
 def get_file_lines(filename):
@@ -80,8 +81,8 @@ def xterm_to_hyper(filename):
 
     colors = get_colors(xterm)
 
-    with open('hypercolors.txt', 'w') as hyper:
-        hyper.write(make_colors_js(colors))
+    with open('colors.json', 'w') as json:
+        json.write(make_colors_js(colors))
 
 
 def xterm_to_kitty(filename):
