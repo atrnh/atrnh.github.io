@@ -4,3 +4,4 @@ node_modules/
 *.swp
 to_kitty_out
 to_yaml_out
+.DS_Store
