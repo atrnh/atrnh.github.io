@@ -9,14 +9,31 @@
         <a class="menu-item" href="{{ "/" | relative_url }}">Home</a>
         {%- for path in page_paths -%}
           {%- assign my_page = site.pages | where: "path", path | first -%}
-          {%- if my_page.title and my_page.title != "Ashley Trinh" -%}
+          {%- if my_page.title and my_page.title != "Ashley Trinh" and my_page.mainMenu -%}
           <a class="menu-item" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
           {%- endif -%}
         {% endfor -%}
       </div>
     {%- endif -%}
   </div>
-
+  <div class="wrapper card">
+    <div class="card-header">Categories</div>
+    {%- assign pages = site.pages | sort: 'title' %}
+    {%- assign default_paths = pages | map: 'path' -%}
+    {%- assign page_paths = site.header_pages | default: default_paths -%}
+    {%- if page_paths -%}
+      <div class="menu">
+        {%- for path in page_paths -%}
+          {%- assign my_page = site.pages | where: "path", path | first -%}
+          {%- if my_page.title and my_page.title != "Ashley Trinh" and
+          my_page.getCategory -%}
+          <a class="menu-item" href="{{ my_page.url | relative_url }}">{{
+            my_page.getCategory | capitalize | escape }}</a>
+          {%- endif -%}
+        {% endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
   <div class="wrapper card">
     <div class="card-header">Contact</div>
     <div class="menu">
