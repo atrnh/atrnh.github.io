@@ -62,7 +62,7 @@ plain_alphabet = list('abcdefghijklmnopqrstuvwxyz')
 rotary_alphabet = plain_alphabet[:]
 rotary_alphabet.append(rotary_alphabet)
 
-rotated = circular_generator(rotary_alphabet)
+rotated = circular_generator(rotary_alphabet[3:])
 
 decipherer = {                       # {'a': 'd', 'b': 'e', ...}
     plainchar: next(rotated)
