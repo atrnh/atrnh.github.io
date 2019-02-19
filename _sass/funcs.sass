@@ -1,0 +1,17 @@
+@function grid-width($n)
+  @return $n * $grid-width + ($n - 1) * $gutter-widt
+
+@function header-content($char)
+  $str: $char
+  @for $n from 0 through 101
+    $str: $str + $char
+  @return $str
+
+
+@mixin rst-header-after($char)
+  &:after
+    content: header-content($char)
+    position: absolute
+    left: 0
+    bottom: 0
+    line-height: 0.5em

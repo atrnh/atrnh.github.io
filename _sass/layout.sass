@@ -1,0 +1,56 @@
+.first-child
+  padding: 1rem
+
+.no-padding
+  padding: 0
+
+.no-margin-bottom
+  margin-bottom: 0
+.no-margin-top
+  margin-top: 0
+
+.column
+  @extend .no-padding
+  margin: 0.75rem
+
+.full-height
+  min-height: 100%
+
+.family-monospace
+  font-family: $family-monospace
+
+body
+  min-height: 600px
+  width: 1200px
+  margin: 0 auto
+
+.override
+  div.columns
+    &.header
+      @extend .no-margin-bottom
+    &.main
+      aside, main
+        padding-bottom: 10em
+
+  aside, main
+    div:first-child
+      @extend .first-child
+
+  header
+    margin-top: 4rem
+    div:first-child
+      padding: 0 1rem
+
+  aside
+    border-right: 2px solid $blue
+    nav
+      li
+        a:hover
+          border-bottom: 1px solid $blue
+
+  .content
+    p
+      margin: 1rem 0
+    *:first-child
+      margin-top: 0
+

@@ -1,0 +1,12 @@
+<nav>
+  <ul class="pages">
+    {% assign pages = site.pages | where_exp: "page","page.categories contains 'page'"%}
+    {% for page in pages %}
+      <li>
+        <a href="{{ page.permalink }}">
+          {{ page.title }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</nav>

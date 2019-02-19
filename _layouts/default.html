@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
+</head>
+<body class="override">
+  <div class="columns header">
+    <header class="column">
+      <div>
+        <a href="/">{{ site.title }}</a>
+      </div>
+    </header>
+  </div>
+  <div class="columns main">
+    <aside class="column is-one-quarter">
+      <div>
+        {% include nav.html %}
+      </div>
+    </aside>
+    <main class="column" aria-label="Content">
+      <div class="content">
+        {{ content }}
+      </div>
+    </main>
+  </div>
+</body>
+</html>
