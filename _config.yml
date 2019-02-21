@@ -23,8 +23,6 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: atrnh
 github_username:  atrnh
 
-permalink: /:categories/:year/:month/:day/:slug
-
 # Build settings
 markdown: CommonMarkGhPages
 theme:
@@ -39,3 +37,11 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
+
+collections:
+  keymaps:
+    output: true
+  blog:
+    output: true
+  terminal_themes:
+    output: true

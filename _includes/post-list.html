@@ -1,0 +1,36 @@
+{% for post in include.posts %}
+  <div class="post-box">
+    <article class="post">
+      <div class="meta small">
+        {% assign date = post.date | date_to_string | split: ' ' %}
+        <p>{{ date[1] }} {{ date[0] }}, {{ date[2] }}</p>
+      </div>
+      <div class="content">
+        <a
+          class="title"
+          href="{{ post.url | relative_url }}"
+        >
+          {{ post.title }}
+        </a>
+        {% if post.excerpt %}
+          <p class="excerpt">
+            {{ post.excerpt }}
+          </p>
+          <a class="small continue" href="{{ post.url | relative_url }}">
+            continue reading...
+          </a>
+        {% endif %}
+      </div>
+      {% if include.show_categories and post.category %}
+        <div class="categories smaller">
+          <p>
+            filed under:
+            {% assign url = '/blog/' | append: post.category %}
+            <a href="{{ url | relative-url }}">
+              {{ post.category }}
+            </a>
+        </div>
+      {% endif %}
+    </article>
+  </div>
+{% endfor %}

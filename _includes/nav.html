@@ -1,12 +1,33 @@
 <nav>
   <ul class="pages">
-    {% assign pages = site.pages | where_exp: "page","page.categories contains 'page'"%}
+    {% assign pages = site.pages
+      | where_exp: "page","page.categories contains 'page'"
+      | sort: 'order'
+    %}
     {% for page in pages %}
       <li>
-        <a href="{{ page.permalink }}">
+        <a href="{{ page.url | relative_url }}">
           {{ page.title }}
         </a>
       </li>
+      {% if page.has_subcategories %}
+        {% assign collection = site.collections
+          | where_exp: "c", "c.label == page.collection_label"
+          | first
+        %}
+        {% assign categories = collection.docs
+          | where: "layout", "subcategory"
+        %}
+        <ul class="subcategories">
+          {% for d in categories %}
+            <li>
+              <a href="{{ d.url | relative_url }}">
+                {{ d.title }}
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
     {% endfor %}
   </ul>
 </nav>

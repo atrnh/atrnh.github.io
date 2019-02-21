@@ -1,12 +1,17 @@
 .color-blue
-  color: $blue
+  color: $blue !important
 
 .rst-header
   margin-bottom: 0
-  display: inline-block
   overflow: hidden
   position: relative
   padding-bottom: 0.5em
+
+.rst-ul
+  &:before
+    content: "-"
+    position: relative
+    right: 1em
 
 body
   font-size: $size-6
@@ -14,7 +19,7 @@ body
 a
   text-decoration: underline
   &:hover
-    @extend .color-blue
+    // @extend .color-blue
     text-decoration: none
 
 header
@@ -23,7 +28,7 @@ header
   a
     text-decoration: none
     &:hover
-      @extend .color-blue
+      // @extend .color-blue
       border-bottom: 1px solid $blue
 
 nav
@@ -33,32 +38,30 @@ nav
     text-decoration: none
 
 .override
+  *
+    @extend .color-blue
   .content
     h1, h2, h3, h4, h5, h6
-      @extend .family-monospace, .color-blue
-      font-weight: normal
+      @extend .family-monospace // , .color-blue
+      font-weight: 500
     h1, h2
       @extend .rst-header
+      font-weight: normal
     h1
-      font-size: $size-4
+      font-size: 1.75rem
       @include rst-header-after("=")
 
     h2
-      font-size: 1.75rem
+      font-size: $size-5
       @include rst-header-after("-")
     h3
-      font-size: $size-5
-      &:before
-        content: "### "
+      font-size: $size-6
     strong
-      @extend .color-blue
+      // @extend .color-blue
     ul
       list-style: none
       li
-        &:before
-          content: "-"
-          position: relative
-          right: 1rem
+        @extend .rst-ul
     code
-      @extend .color-blue
+      // @extend .color-blue
 

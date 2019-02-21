@@ -1,8 +1,9 @@
 ---
 layout: post
 title: Cognitive load vs. learning goals
-categories: ['teaching']
 excerpt_separator: <!--more-->
+permalink: /blog/teaching/thoughts-on-cognitive-load
+category: teaching
 ---
 
 Teaching is a balancing act between a student's working memory

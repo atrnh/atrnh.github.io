@@ -1,0 +1,13 @@
+---
+layout: default
+---
+
+{{ content }}
+
+<h3>Keymaps</h3>
+<ul>
+  {% for keymap in site.keymaps %}
+    <li><a href="{{ keymap.permalink }}">{{ keymap.title }}</a></li>
+  {% endfor %}
+</ul>
+

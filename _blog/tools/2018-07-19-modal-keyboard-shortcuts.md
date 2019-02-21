@@ -1,8 +1,9 @@
 ---
 layout: post
 title: Modal Keyboard Shortcuts
-categories: ['tools']
 excerpt_separator: <!--more-->
+permalink: /blog/tools/modal-keyboard-shortcuts
+category: tools
 ---
 
 I don't like taking my hands off my keyboard.
@@ -113,7 +114,7 @@ window + ctrl - f   : khd -e "mode activate default"
 switcher - escape   : khd -e "mode activate default"
 swap - escape       : khd -e "mode activate default"
 space - escape      : khd -e "mode activate default"
-window - escape     : khd -e "mode activate default"  
+window - escape     : khd -e "mode activate default"
 ```
 
 ### Everything else

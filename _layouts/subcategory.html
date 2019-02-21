@@ -1,0 +1,16 @@
+---
+layout: default
+---
+
+<h1>Filed under: {{ page.title }}</h1>
+
+{{ content }}
+
+<div class="posts">
+  {% assign posts = site.blog
+    | where_exp: "post", "post.layout == 'post'"
+    | where_exp: "post", "post.category == page.post_category"
+  %}
+  {% include post-list.html posts=posts %}
+</div>
+

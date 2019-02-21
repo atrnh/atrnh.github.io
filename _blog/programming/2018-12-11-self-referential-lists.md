@@ -1,8 +1,9 @@
 ---
 layout: post
 title: Self-referential lists in Python
-categories: ['python']
 excerpt_separator: <!--more-->
+permalink: /blog/programming/self-referential-lists-python
+category: programming
 ---
 
 Let's say you need to rotate a list but you don't want to bother doing tedious

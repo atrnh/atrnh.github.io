@@ -3,6 +3,7 @@ layout: page
 title: About
 permalink: /about
 categories: ['page']
+order: 0
 ---
 
 # About
