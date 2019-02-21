@@ -1,11 +1,11 @@
 ---
 ---
 
-@import '../vendor/bulma/sass/utilities/initial-variables';
-@import '../vendor/bulma/sass/utilities/functions';
+@import './vendor/bulma/sass/utilities/initial-variables';
+@import './vendor/bulma/sass/utilities/functions';
 @import 'vars';
-@import '../vendor/bulma/sass/utilities/derived-variables';
-@import '../vendor/bulma/bulma';
+@import './vendor/bulma/sass/utilities/derived-variables';
+@import './vendor/bulma/bulma';
 @import 'funcs';
 @import 'layout';
 @import 'type';
