@@ -18,7 +18,7 @@
         {% assign categories = collection.docs
           | where: "layout", "subcategory"
         %}
-        <ul class="subcategories">
+        <ul class="subcategories is-hidden-touch">
           {% for d in categories %}
             <li>
               <a href="{{ d.url | relative_url }}">

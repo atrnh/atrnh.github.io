@@ -24,7 +24,7 @@ a
 
 header
   @extend .family-monospace
-  font-size: $size-4
+  font-size: 1.5em
   a
     text-decoration: none
     &:hover
@@ -33,9 +33,11 @@ header
 
 nav
   @extend .family-monospace
-  font-size: $size-6
+  font-size: 1.25em
   li a
     text-decoration: none
+  @include touch
+    font-size: $size-7
 
 .override
   *
@@ -48,11 +50,11 @@ nav
       @extend .rst-header
       font-weight: normal
     h1
-      font-size: 1.75rem
+      font-size: 1.5em
       @include rst-header-after("=")
 
     h2
-      font-size: $size-5
+      font-size: 1.25em
       @include rst-header-after("-")
     h3
       font-size: $size-6

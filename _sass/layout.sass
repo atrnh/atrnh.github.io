@@ -1,3 +1,6 @@
+html, body
+  width: 100%
+
 .first-child
   padding: 1rem
 
@@ -10,8 +13,8 @@
   margin-top: 0
 
 .column
-  @extend .no-padding
-  margin: 0.75rem
+  // @extend .no-padding
+  margin: 1em 0
 
 .full-height
   min-height: 100%
@@ -20,33 +23,53 @@
   font-family: $family-monospace
 
 body
-  min-height: 600px
-  width: 1200px
-  margin: 0 auto
+  @extend .container
+  @include touch
+    flex-direction: column
 
 .override
   div.columns
-    &.header
-      @extend .no-margin-bottom
     &.main
-      aside, main
-        padding-bottom: 10em
+      @include touch
+        flex-direction: column
+        aside, main
+            padding-bottom: 0
+        margin-left: 2em
+        margin-right: 2em
 
   aside, main
     & > div:first-child
-      @extend .first-child
+      width: 100%
+      // @extend .first-child
+
+  main
+    padding-left: 2em
+    padding-right: 2em
 
   header
     margin-top: 4rem
-    div:first-child
-      padding: 0 1rem
+    margin-bottom: 0
+    @include touch
+      & > div
+        text-align: center
 
   aside
     border-right: 2px solid $blue
+    @include touch
+      flex: 1 1 auto
+      min-width: 100%
+      border-right: 0
+      border-bottom: 2px solid $blue
     nav
       li
         a:hover
           border-bottom: 1px solid $blue
+      @include touch
+        ul
+          display: flex
+          li
+            flex: 1 1 auto
+            text-align: center
 
   .content
     p
