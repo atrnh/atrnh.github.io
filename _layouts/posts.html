@@ -8,6 +8,7 @@ layout: default
   {% assign posts = site.blog
     | where_exp: "post", "post.layout =='post'"
     | sort: 'date'
+    | reverse
   %}
   {% include post-list.html posts=posts show_categories=true %}
 </div>
