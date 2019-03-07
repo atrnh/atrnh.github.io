@@ -36,15 +36,14 @@ Instead, we'll write a generator that takes a self-referential list and
 
 ```python
 def circular_generator(infinite_list):
-    try:
-        for x in infinite_list:
-            yield from next_item(x)
-    except:
-        yield infinite_list
+    for x in infinite_list:
+        if isinstance(x, list):
+            yield from circular_generator(x)
+        yield x
 ```
 
 ```python
->>> g = circular_generator(a)
+>>> g = next_item(a)
 >>> next(g)
 1
 >>> next(g)
@@ -70,3 +69,21 @@ decipherer = {                       # {'a': 'd', 'b': 'e', ...}
     for plainchar in plain_alphabet
 }
 ```
+
+*Edit 3/7*: I had to fix the code in my `circular_generator` function because it
+didn't work. At all. Whoops!
+
+Also, you'll probably notice that we don't actually need a self-referential
+list to accomplish any of this. I'll admit that this was an attempt to get
+students to think about self-referential lists and imagine a possible, practical
+application.
+
+Here's the `circular_generator` function that takes in a normal list:
+
+```python
+def circular_generator(l):
+    for x in l:
+        yield x
+    yield from circular_generator(l)
+```
+
