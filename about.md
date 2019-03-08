@@ -10,10 +10,6 @@ order: 0
 
 ## Tools
 
-Click an annotation for details & download links.
-
-<!-- include tools-screenshot.html %} -->
-
 ### Ubersicht
 
 - [Download/install](http://tracesof.net/uebersicht/)

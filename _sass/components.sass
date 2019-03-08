@@ -44,8 +44,36 @@ ul.subcategories
   font-weight: 500
   margin-left: 1em
   li
-    @extend .rst-ul
-    &:before
-      right: 0.1em
+    @extend .rst-li
     margin: 0.5em 0
+
+.override
+  .content
+    ul.new-posts
+      li
+        display: table
+        padding: 0
+        &:after
+          display: none
+        a
+          display: table-row
+          text-decoration: unset
+          & > span
+            display: table-cell
+            padding-right: 0.75em
+            padding-bottom: 0.5em
+          span
+            &.date, &.collection
+              @extend .family-monospace
+              text-decoration: none
+            &.date
+              font-size: 0.75em
+              font-weight: bold
+            &.url
+              position: relative
+              left: -0.25em
+              font-size: 1.2em
+              text-decoration: underline
+              &:hover
+                text-decoration: unset
 

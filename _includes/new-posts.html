@@ -1,0 +1,19 @@
+<ul class="new-posts">
+{% for post in site.documents limit: 7 %}
+  {% if post.layout != 'subcategory' %}
+    <li>
+      <a href="{{ post.url | relative_url }}">
+        <span class="date">{{ post.date | date: '%m/%d/%y' }}</span>
+        <span class="post-info">
+          <span class="collection">
+            {{ post.collection | capitalize }}:
+          </span>
+          <span class="url">
+            {{ post.title }}
+          </span>
+        </span>
+      </a>
+    </li>
+  {% endif %}
+{% endfor %}
+</ul>

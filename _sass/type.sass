@@ -7,19 +7,18 @@
   position: relative
   padding-bottom: 0.5em
 
-.rst-ul
-  &:before
-    content: "-"
-    position: relative
-    right: 1em
-
-body
-  font-size: $size-6
+.rst-li
+  position: relative
+  padding-left: 1em
+  &:after
+    content: '-'
+    position: absolute
+    top: 0
+    left: 0
 
 a
   text-decoration: underline
   &:hover
-    // @extend .color-blue
     text-decoration: none
 
 header
@@ -28,7 +27,6 @@ header
   a
     text-decoration: none
     &:hover
-      // @extend .color-blue
       border-bottom: 1px solid $blue
 
 nav
@@ -40,11 +38,13 @@ nav
     font-size: $size-7
 
 .override
+  body
+    font-size: 1em
   *
     @extend .color-blue
   .content
     h1, h2, h3, h4, h5, h6
-      @extend .family-monospace // , .color-blue
+      @extend .family-monospace
       font-weight: 500
     h1, h2
       @extend .rst-header
@@ -58,12 +58,9 @@ nav
       @include rst-header-after("-")
     h3
       font-size: $size-6
-    strong
-      // @extend .color-blue
     ul
       list-style: none
+      margin: 0
+      padding: 0
       li
-        @extend .rst-ul
-    code
-      // @extend .color-blue
-
+        @extend .rst-li

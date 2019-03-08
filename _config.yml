@@ -39,9 +39,11 @@ exclude:
   - vendor/ruby/
 
 collections:
-  keymaps:
+  keymap:
     output: true
   blog:
     output: true
-  terminal_themes:
+  terminal_theme:
+    output: true
+  jupyter:
     output: true
