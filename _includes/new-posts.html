@@ -3,7 +3,12 @@
   {% if post.layout != 'subcategory' %}
     <li>
       <a href="{{ post.url | relative_url }}">
-        <span class="date">{{ post.date | date: '%m/%d/%y' }}</span>
+        {% capture date_str %}
+          {% assign dt = post.date | split: ' ' %}
+          {% assign date = dt[0] | split: '-' %}
+          {{ date[1] }}/{{ date[2] }}/{{ date[0] }}
+        {% endcapture %}
+        <span class="date">{{ date_str }}</span>
         <span class="post-info">
           <span class="collection">
             {{ post.collection | capitalize }}:
