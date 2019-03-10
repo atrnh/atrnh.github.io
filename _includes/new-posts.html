@@ -8,6 +8,9 @@
           {% assign date = dt[0] | split: '-' %}
           {{ date[1] }}/{{ date[2] }}/{{ date[0] }}
         {% endcapture %}
+        {% if post.date_str %}
+          {% assign date_str = post.date_str %}
+        {% endif %}
         <span class="date">{{ date_str }}</span>
         <span class="post-info">
           <span class="collection">
