@@ -8,6 +8,9 @@ order: 0
 
 # About
 
+**<a target="_blank" href="assets/resume.html">Click here to view my resume.</a>**
+(It's printer-friendly!)
+
 ## Tools
 
 ### Ubersicht

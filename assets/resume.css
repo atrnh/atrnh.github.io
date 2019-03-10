@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,700');
+* { box-sizing: border-box; }
+html { min-width: 100%; min-height: 100%; }
+
+body {
+  font-size: 1rem;
+  max-width: 900px;
+  margin: 0 auto;
+  font-family: 'Helvetica Neue', 'IBM Plex Sans', 'System', sans-serif;
+  font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+  border-bottom: 0.1em solid rgb(0, 0, 238, 1.0);
+  transition: border-bottom-color 0.2s;
+}
+
+a:visited {
+  border-bottom-color: rgba(85, 26, 139, 1.0);
+}
+
+a:visited:hover {
+  border-bottom-color: rgba(85, 26, 139, 0);
+}
+
+a:hover {
+  border-bottom-color: rgba(0, 0, 238, 0);
+}
+
+h1, h2, h3 {
+  margin: 0.5em 0;
+  font-weight: 700;
+}
+
+div h3 {
+  margin: 0;
+}
+
+h2 {
+  display: block;
+  border-bottom: 0.11em solid black;
+  padding-bottom: 0.2em;
+  margin-bottom: 0.75em;
+  font-size: 1.3em;
+}
+
+h3 {
+  font-size: 1em;
+}
+
+h1 {
+  font-size: 1.75em;
+}
+
+p {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 0.5em;
+}
+
+header ul {
+  display: flex;
+}
+
+header ul > li {
+  margin: 0 0.5em;
+}
+
+main ul:not(.education) > li {
+  position: relative;
+  padding-left: 0.75em;
+  margin: 0.5em 0;
+}
+
+main ul:not(.education) li:after {
+  content: '-';
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.columns, .contact ul > li {
+  display: flex;
+}
+
+.contact ul > li {
+  align-items: center;
+}
+
+.contact ul > li > svg {
+  margin-right: 0.25em;
+}
+
+.columns section:not(:last-child) {
+  padding-right: 1.5em;
+}
+
+.data-title, .school, .contact {
+  font-weight: 700;
+}
+
+.employer {
+  font-style: italic;
+}
+
+section > section {
+  margin-bottom: 1.25em;
+}
+
+header:before, footer:after {
+  content: '';
+  display: block;
+  min-height: 5em;
+}
+
+footer:after {
+  min-height: 10em;
+}
+
+footer {
+  font-size: 0.8em;
+  line-height: 1.5em;
+}
+
+footer a {
+  font-weight: 700;
+}
+
+@media print {
+  @page {
+    margin: -1in;
+  }
+  body {
+    margin: 1.4in 1.5in;
+    font-size: 10pt;
+  }
+  a, a:visited {
+    color: black;
+    border-color: black;
+  }
+
+  header:before, footer:after {
+    display: none;
+  }
+  
+  section > section, header, footer {
+    page-break-inside: avoid;
+    margin-bottom: 1em;
+  }
+  footer h2 {
+    font-size: 1em;
+  }
+}
