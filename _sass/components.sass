@@ -1,53 +1,53 @@
-.posts
-  margin-top: $size-5
-  .post-box
-    margin: 1.75rem 0
-    padding: 1.75rem 0 0.25rem 0
-    border-bottom: 1px solid $blue
-    &:last-child
-      border-bottom: 0
-    .post
-      .continue
-        font-weight: bold
-      .small
-        p
-          margin: 0
-        @extend .family-monospace
-        font-size: $size-7
-      .smaller
-        @extend .family-monospace
-        font-size: 1rem
-    .content
-      .title
-        color: $text
-        font-family: $family-monospace
-        font-size: $size-5
-
-#keymaps
-  margin: 1rem 0
-  table
-    font-family: $family-monospace
-    font-size: 0.85em
-    tr
-      td
-        border: 1px solid
-        height: 3rem
-        width: 4rem
-        &.long-code
-          font-size: 0.7em
-          text-transform: uppercase
-        &.kc-thru
-          opacity: 0.5
-
-ul.subcategories
-  font-size: 0.85rem
-  font-weight: 500
-  margin-left: 1em
-  li
-    @extend .rst-li
-    margin: 0.5em 0
-
 .override
+  .posts
+    margin-top: $size-5
+    .post-box
+      margin: 1.75rem 0
+      padding: 1.75rem 0 0.25rem 0
+      border-bottom: 1px solid $blue
+      &:last-child
+        border-bottom: 0
+      .post
+        .continue
+          font-weight: bold
+        .small
+          p
+            margin: 0
+          @extend .family-monospace
+          font-size: $size-7
+        .smaller
+          @extend .family-monospace
+          font-size: 1rem
+      .content
+        .title
+          color: $text
+          font-family: $family-monospace
+          font-size: $size-5
+
+  #keymaps
+    margin: 1rem 0
+    table
+      font-family: $family-monospace
+      font-size: 0.85em
+      tr
+        td
+          border: 1px solid
+          height: 3rem
+          width: 4rem
+          &.long-code
+            font-size: 0.7em
+            text-transform: uppercase
+          &.kc-thru
+            opacity: 0.5
+
+  ul.subcategories
+    font-size: 0.85rem
+    font-weight: 500
+    margin-left: 1em
+    li
+      @extend .rst-li
+      margin: 0.5em 0
+
   .content
     ul.new-posts
       li
@@ -76,4 +76,44 @@ ul.subcategories
               text-decoration: underline
               &:hover
                 text-decoration: unset
+
+  a.term-theme
+    text-decoration: none
+    .media
+      text-decoration: none
+      display: block
+      padding: 1em
+      border: $border-1
+      margin: 2em 0
+
+      .media-header
+        h2
+          display: inline-block
+          padding-bottom: 0
+          border-bottom: $border-1
+          &:after
+            content: none
+      .media-content
+        margin-top: 0.5em
+    &:hover
+      .media
+        border-color: rgba(0, 40, 184, 0.3)
+      .media-header
+        h2
+          border-bottom: 0
+
+  .term-colors
+    font-size: 0.75em
+    font-family: $family-monospace
+    padding: 0.5em
+    .row
+      display: flex
+      justify-content: center
+      align-items: center
+      div
+        @extend .row
+        text-align: center
+        min-width: 4em
+        min-height: 3em
+        flex: 1 1 auto
 

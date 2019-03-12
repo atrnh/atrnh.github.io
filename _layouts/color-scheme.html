@@ -1,0 +1,21 @@
+---
+layout: default
+---
+
+<h1>{{ page.title }}</h1>
+<p>
+  {% include term-theme-colors.html theme=page %}
+</p>
+
+{{ content }}
+
+<h3>Download:</h3>
+<ul>
+  {% for link in page.downloads %}
+    <li>
+      <a href="{{ link | last }}">
+        {{ link | first }}
+      </a>
+    </li>
+  {% endfor %}
+</ul>

@@ -1,0 +1,17 @@
+<div class="term-colors" style="background-color: {{ include.theme.colors.bg }} !important;">
+  <div class="row">
+    {% for color_pair in include.theme.colors offset: 3 %}
+      {% if color_pair[0] contains 'light' %}
+        {% assign c = color_pair[0] | split: '_' | last %}
+        <div style="color: {{ color_pair[1] }} !important;">{{ c }}</div>
+      {% endif %}
+    {% endfor %}
+  </div>
+  <div class="row">
+    {% for color_pair in include.theme.colors offset: 3 %}
+      {% if color_pair[0].size < 8 %}
+        <div style="color: {{ color_pair[1] }} !important;">{{ color_pair[0] }}</div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>

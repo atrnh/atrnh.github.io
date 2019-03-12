@@ -7,7 +7,6 @@
     $str: $str + $char
   @return $str
 
-
 @mixin rst-header-after($char)
   &:after
     content: header-content($char)
@@ -15,3 +14,22 @@
     left: 0
     bottom: 0
     line-height: 0.5em
+
+.first-child
+  padding: 1rem
+
+.no-padding
+  padding: 0
+.no-margin-bottom
+  margin-bottom: 0
+.no-margin-top
+  margin-top: 0
+
+.column
+  margin: 1em 0
+
+.full-height
+  min-height: 100%
+
+.family-monospace
+  font-family: $family-monospace

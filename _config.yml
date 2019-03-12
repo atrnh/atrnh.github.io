@@ -43,7 +43,7 @@ collections:
     output: true
   blog:
     output: true
-  terminal_theme:
+  terminal_themes:
     output: true
   jupyter:
     output: true

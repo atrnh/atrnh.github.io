@@ -2,9 +2,8 @@
 layout: color-scheme
 title: Hyper Light Drifter
 tags: color-scheme
-parent:
-    title: Terminal Themes
-    url: /term-themes/
+permalink: /terminal-theme/hyper-light-drifter
+category: terminal_theme
 colors: 
     fg: '#4b4b4b'
     bg: '#ffffff'
