@@ -3,7 +3,7 @@ layout: default
 title: Miscellaneous
 permalink: /misc
 categories: ['page']
-order: 3
+order: 4
 ---
 
 # Miscellaneous stuff
@@ -15,15 +15,9 @@ order: 3
   {% endfor %}
 </ul>
 
-<h3>Slide Decks</h3>
-<ul>
-  <li><a href="/assets/bootcamp-gradschool">Bootcamp Gradschool</a></li>
-</ul>
-
 <h3>Learning Resources</h3>
 <ul>
   <li><a href="https://codepen.io/collection/nMozpv">React Demos</a> &mdash; a collection
     of all the React demos I've ever written for a student, ever.
   </li>
-  <li><a href="/jupyter/magic-methods.html">Python Magic Methods</a></li>
 </ul>
