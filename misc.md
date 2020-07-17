@@ -17,7 +17,7 @@ order: 3
 
 <h3>Slide Decks</h3>
 <ul>
-  <li><a href="/assets/bootcamp-gradschool.html">Bootcamp Gradschool</a></li>
+  <li><a href="/assets/bootcamp-gradschool">Bootcamp Gradschool</a></li>
 </ul>
 
 <h3>Learning Resources</h3>
