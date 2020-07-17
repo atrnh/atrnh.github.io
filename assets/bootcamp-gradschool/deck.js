@@ -36778,7 +36778,37 @@ function MDXContentWrapperSlide22(props) {
       "href": "https://gulpjs.com"
     }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("inlineCode", {
       parentName: "a"
-    }, `gulp`))))), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("li", {
+    }, `gulp`)))))));
+  }
+
+  ;
+  MDXContent.isMDXComponent = true;
+  return Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])(MDXContent, props);
+}
+
+;
+MDXContentWrapperSlide22.isMDXComponent = true;
+
+function MDXContentWrapperSlide23(props) {
+  /* @jsx mdx */
+  const makeShortcode = name => function MDXDefaultShortcode(props) {
+    console.warn("Component " + name + " was not imported, exported, or provided by MDXProvider as global scope");
+    return Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("div", props);
+  };
+
+  const layoutProps = {
+    testProp
+  };
+  const MDXLayout = "wrapper";
+
+  function MDXContent({
+    components,
+    ...props
+  }) {
+    return Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])(MDXLayout, _extends({}, layoutProps, props, {
+      components: components,
+      mdxType: "MDXLayout"
+    }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("ul", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("li", {
       parentName: "ul"
     }, `Most/all Python task runners are bad and don't completely work`, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("ul", {
       parentName: "li"
@@ -36811,9 +36841,9 @@ function MDXContentWrapperSlide22(props) {
 }
 
 ;
-MDXContentWrapperSlide22.isMDXComponent = true;
+MDXContentWrapperSlide23.isMDXComponent = true;
 
-function MDXContentWrapperSlide23(props) {
+function MDXContentWrapperSlide24(props) {
   /* @jsx mdx */
   const makeShortcode = name => function MDXDefaultShortcode(props) {
     console.warn("Component " + name + " was not imported, exported, or provided by MDXProvider as global scope");
@@ -36853,9 +36883,9 @@ function MDXContentWrapperSlide23(props) {
 }
 
 ;
-MDXContentWrapperSlide23.isMDXComponent = true;
+MDXContentWrapperSlide24.isMDXComponent = true;
 
-function MDXContentWrapperSlide24(props) {
+function MDXContentWrapperSlide25(props) {
   /* @jsx mdx */
   const makeShortcode = name => function MDXDefaultShortcode(props) {
     console.warn("Component " + name + " was not imported, exported, or provided by MDXProvider as global scope");
@@ -36874,7 +36904,7 @@ function MDXContentWrapperSlide24(props) {
     return Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])(MDXLayout, _extends({}, layoutProps, props, {
       components: components,
       mdxType: "MDXLayout"
-    }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("h1", null, `Jargon/slang`));
+    }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("h1", null, `Jargon & slang`));
   }
 
   ;
@@ -36883,9 +36913,9 @@ function MDXContentWrapperSlide24(props) {
 }
 
 ;
-MDXContentWrapperSlide24.isMDXComponent = true;
+MDXContentWrapperSlide25.isMDXComponent = true;
 
-function MDXContentWrapperSlide25(props) {
+function MDXContentWrapperSlide26(props) {
   /* @jsx mdx */
   const makeShortcode = name => function MDXDefaultShortcode(props) {
     console.warn("Component " + name + " was not imported, exported, or provided by MDXProvider as global scope");
@@ -36921,9 +36951,9 @@ function MDXContentWrapperSlide25(props) {
 }
 
 ;
-MDXContentWrapperSlide25.isMDXComponent = true;
+MDXContentWrapperSlide26.isMDXComponent = true;
 
-function MDXContentWrapperSlide26(props) {
+function MDXContentWrapperSlide27(props) {
   /* @jsx mdx */
   const makeShortcode = name => function MDXDefaultShortcode(props) {
     console.warn("Component " + name + " was not imported, exported, or provided by MDXProvider as global scope");
@@ -36963,9 +36993,9 @@ function MDXContentWrapperSlide26(props) {
 }
 
 ;
-MDXContentWrapperSlide26.isMDXComponent = true;
+MDXContentWrapperSlide27.isMDXComponent = true;
 
-function MDXContentWrapperSlide27(props) {
+function MDXContentWrapperSlide28(props) {
   /* @jsx mdx */
   const makeShortcode = name => function MDXDefaultShortcode(props) {
     console.warn("Component " + name + " was not imported, exported, or provided by MDXProvider as global scope");
@@ -37001,9 +37031,9 @@ function MDXContentWrapperSlide27(props) {
 }
 
 ;
-MDXContentWrapperSlide27.isMDXComponent = true;
+MDXContentWrapperSlide28.isMDXComponent = true;
 
-function MDXContentWrapperSlide28(props) {
+function MDXContentWrapperSlide29(props) {
   /* @jsx mdx */
   const makeShortcode = name => function MDXDefaultShortcode(props) {
     console.warn("Component " + name + " was not imported, exported, or provided by MDXProvider as global scope");
@@ -37039,36 +37069,6 @@ function MDXContentWrapperSlide28(props) {
 }
 
 ;
-MDXContentWrapperSlide28.isMDXComponent = true;
-
-function MDXContentWrapperSlide29(props) {
-  /* @jsx mdx */
-  const makeShortcode = name => function MDXDefaultShortcode(props) {
-    console.warn("Component " + name + " was not imported, exported, or provided by MDXProvider as global scope");
-    return Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("div", props);
-  };
-
-  const layoutProps = {
-    testProp
-  };
-  const MDXLayout = "wrapper";
-
-  function MDXContent({
-    components,
-    ...props
-  }) {
-    return Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])(MDXLayout, _extends({}, layoutProps, props, {
-      components: components,
-      mdxType: "MDXLayout"
-    }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("h1", null, `Further Study`));
-  }
-
-  ;
-  MDXContent.isMDXComponent = true;
-  return Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])(MDXContent, props);
-}
-
-;
 MDXContentWrapperSlide29.isMDXComponent = true;
 
 function MDXContentWrapperSlide30(props) {
@@ -37090,7 +37090,7 @@ function MDXContentWrapperSlide30(props) {
     return Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])(MDXLayout, _extends({}, layoutProps, props, {
       components: components,
       mdxType: "MDXLayout"
-    }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("h2", null, `Recommended reading`));
+    }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("h1", null, `Further Study`));
   }
 
   ;
@@ -37120,28 +37120,7 @@ function MDXContentWrapperSlide31(props) {
     return Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])(MDXLayout, _extends({}, layoutProps, props, {
       components: components,
       mdxType: "MDXLayout"
-    }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("h3", null, `General knowledge`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("ul", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("li", {
-      parentName: "ul"
-    }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("a", _extends({
-      parentName: "li"
-    }, {
-      "href": "https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project"
-    }), `OWASP Top Ten`), ` — top 10
-security exploits/vulnerabilities`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("li", {
-      parentName: "ul"
-    }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("a", _extends({
-      parentName: "li"
-    }, {
-      "href": "https://developers.google.com/web/fundamentals"
-    }), `Google Web Fundamentals`), ` —
-a must-read after Hackbright `), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("li", {
-      parentName: "ul"
-    }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("a", _extends({
-      parentName: "li"
-    }, {
-      "href": "https://kunststube.net/encoding"
-    }), `Primer on binary encoding & text encoding`), ` —
-also essential knowledge, especially for debugging weirdness`)));
+    }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("h2", null, `Recommended reading`));
   }
 
   ;
@@ -37171,31 +37150,26 @@ function MDXContentWrapperSlide32(props) {
     return Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])(MDXLayout, _extends({}, layoutProps, props, {
       components: components,
       mdxType: "MDXLayout"
-    }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("h3", null, `DEEP dives`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("ul", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("li", {
+    }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("h3", null, `General knowledge`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("p", null, ` `, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("a", _extends({
+      parentName: "p"
+    }, {
+      "href": "https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project"
+    }), `OWASP Top Ten`), ` — top 10
+security exploits/vulnerabilities`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("ul", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("li", {
       parentName: "ul"
     }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("a", _extends({
       parentName: "li"
     }, {
-      "href": "https://nand2tetris.org"
-    }), `From Nand to Tetris`), ` — beginner friendly course,
-you go from learning about logic gates to writing a computer. Great way to
-undersrtand how computers work at the lowest level`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("li", {
+      "href": "https://developers.google.com/web/fundamentals"
+    }), `Google Web Fundamentals`), ` —
+a must-read after Hackbright `), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("li", {
       parentName: "ul"
     }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("a", _extends({
       parentName: "li"
     }, {
-      "href": "https://exploit.education"
-    }), `Exploit.education`), ` — list of resources to learn
-and practice cyber security-related stuff (exploit development, binary
-analysis, etc.)`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("li", {
-      parentName: "ul"
-    }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("a", _extends({
-      parentName: "li"
-    }, {
-      "href": "https://use-the-index-luke.com"
-    }), `Use the Index, Luke`), ` — this book is so good.
-It's a book about SQL databases geared towards software devs (not database
-engineers!). Great way to understand how SQL works so you can optimize runtime`)));
+      "href": "https://kunststube.net/encoding"
+    }), `Primer on binary encoding & text encoding`), ` —
+also essential knowledge, especially for debugging weirdness`)));
   }
 
   ;
@@ -37225,7 +37199,15 @@ function MDXContentWrapperSlide33(props) {
     return Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])(MDXLayout, _extends({}, layoutProps, props, {
       components: components,
       mdxType: "MDXLayout"
-    }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("h2", null, `Languages to learn next`));
+    }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("h3", null, `DEEP dives`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("ul", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("li", {
+      parentName: "ul"
+    }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("a", _extends({
+      parentName: "li"
+    }, {
+      "href": "https://nand2tetris.org"
+    }), `From Nand to Tetris`), ` — beginner friendly course,
+you go from learning about logic gates to writing a computer. Great way to
+undersrtand how computers work at the lowest level`)));
   }
 
   ;
@@ -37237,6 +37219,112 @@ function MDXContentWrapperSlide33(props) {
 MDXContentWrapperSlide33.isMDXComponent = true;
 
 function MDXContentWrapperSlide34(props) {
+  /* @jsx mdx */
+  const makeShortcode = name => function MDXDefaultShortcode(props) {
+    console.warn("Component " + name + " was not imported, exported, or provided by MDXProvider as global scope");
+    return Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("div", props);
+  };
+
+  const layoutProps = {
+    testProp
+  };
+  const MDXLayout = "wrapper";
+
+  function MDXContent({
+    components,
+    ...props
+  }) {
+    return Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])(MDXLayout, _extends({}, layoutProps, props, {
+      components: components,
+      mdxType: "MDXLayout"
+    }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("ul", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("li", {
+      parentName: "ul"
+    }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("a", _extends({
+      parentName: "li"
+    }, {
+      "href": "https://exploit.education"
+    }), `Exploit.education`), ` — list of resources to learn
+and practice cyber security-related stuff (exploit development, binary
+analysis, etc.)`)));
+  }
+
+  ;
+  MDXContent.isMDXComponent = true;
+  return Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])(MDXContent, props);
+}
+
+;
+MDXContentWrapperSlide34.isMDXComponent = true;
+
+function MDXContentWrapperSlide35(props) {
+  /* @jsx mdx */
+  const makeShortcode = name => function MDXDefaultShortcode(props) {
+    console.warn("Component " + name + " was not imported, exported, or provided by MDXProvider as global scope");
+    return Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("div", props);
+  };
+
+  const layoutProps = {
+    testProp
+  };
+  const MDXLayout = "wrapper";
+
+  function MDXContent({
+    components,
+    ...props
+  }) {
+    return Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])(MDXLayout, _extends({}, layoutProps, props, {
+      components: components,
+      mdxType: "MDXLayout"
+    }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("ul", null, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("li", {
+      parentName: "ul"
+    }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("a", _extends({
+      parentName: "li"
+    }, {
+      "href": "https://use-the-index-luke.com"
+    }), `Use the Index, Luke`), ` — this book is so good.
+It's a book about SQL databases geared towards software devs (not database
+engineers!). Great way to understand how SQL works so you can optimize runtime`)));
+  }
+
+  ;
+  MDXContent.isMDXComponent = true;
+  return Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])(MDXContent, props);
+}
+
+;
+MDXContentWrapperSlide35.isMDXComponent = true;
+
+function MDXContentWrapperSlide36(props) {
+  /* @jsx mdx */
+  const makeShortcode = name => function MDXDefaultShortcode(props) {
+    console.warn("Component " + name + " was not imported, exported, or provided by MDXProvider as global scope");
+    return Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("div", props);
+  };
+
+  const layoutProps = {
+    testProp
+  };
+  const MDXLayout = "wrapper";
+
+  function MDXContent({
+    components,
+    ...props
+  }) {
+    return Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])(MDXLayout, _extends({}, layoutProps, props, {
+      components: components,
+      mdxType: "MDXLayout"
+    }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("h2", null, `Languages to learn next`));
+  }
+
+  ;
+  MDXContent.isMDXComponent = true;
+  return Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])(MDXContent, props);
+}
+
+;
+MDXContentWrapperSlide36.isMDXComponent = true;
+
+function MDXContentWrapperSlide37(props) {
   /* @jsx mdx */
   const makeShortcode = name => function MDXDefaultShortcode(props) {
     console.warn("Component " + name + " was not imported, exported, or provided by MDXProvider as global scope");
@@ -37269,14 +37357,7 @@ function MDXContentWrapperSlide34(props) {
       parentName: "li"
     }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("li", {
       parentName: "ul"
-    }, `Super beginner-friendly, really great diagrams about computer memory`))), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("li", {
-      parentName: "ul"
-    }, `Great project to make is a command line application (they have
-`, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("a", _extends({
-      parentName: "li"
-    }, {
-      "href": "https://rust-cli.github.io/book/index.html"
-    }), `an official book for that as well!`), `)`)));
+    }, `Super beginner-friendly, really great diagrams about computer memory`)))));
   }
 
   ;
@@ -37285,9 +37366,44 @@ function MDXContentWrapperSlide34(props) {
 }
 
 ;
-MDXContentWrapperSlide34.isMDXComponent = true;
+MDXContentWrapperSlide37.isMDXComponent = true;
 
-function MDXContentWrapperSlide35(props) {
+function MDXContentWrapperSlide38(props) {
+  /* @jsx mdx */
+  const makeShortcode = name => function MDXDefaultShortcode(props) {
+    console.warn("Component " + name + " was not imported, exported, or provided by MDXProvider as global scope");
+    return Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("div", props);
+  };
+
+  const layoutProps = {
+    testProp
+  };
+  const MDXLayout = "wrapper";
+
+  function MDXContent({
+    components,
+    ...props
+  }) {
+    return Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])(MDXLayout, _extends({}, layoutProps, props, {
+      components: components,
+      mdxType: "MDXLayout"
+    }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("p", null, `Great project to make is a command line application (they have
+`, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("a", _extends({
+      parentName: "p"
+    }, {
+      "href": "https://rust-cli.github.io/book/index.html"
+    }), `an official book for that as well!`), `)`));
+  }
+
+  ;
+  MDXContent.isMDXComponent = true;
+  return Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])(MDXContent, props);
+}
+
+;
+MDXContentWrapperSlide38.isMDXComponent = true;
+
+function MDXContentWrapperSlide39(props) {
   /* @jsx mdx */
   const makeShortcode = name => function MDXDefaultShortcode(props) {
     console.warn("Component " + name + " was not imported, exported, or provided by MDXProvider as global scope");
@@ -37318,14 +37434,7 @@ better than Python can`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx
     }, {
       "href": "https://elixir-lang.org/getting-started/introduction.html"
     }), `the beginners' guide in their offical
-docs`), ` just fine`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("li", {
-      parentName: "ul"
-    }, `Great project to make is a web app using an Elixir web framework called
-`, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("a", _extends({
-      parentName: "li"
-    }, {
-      "href": "https://phoenixframework.org"
-    }), `Phoenix`))));
+docs`), ` just fine`)));
   }
 
   ;
@@ -37334,9 +37443,9 @@ docs`), ` just fine`), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])
 }
 
 ;
-MDXContentWrapperSlide35.isMDXComponent = true;
+MDXContentWrapperSlide39.isMDXComponent = true;
 
-function MDXContentWrapperSlide36(props) {
+function MDXContentWrapperSlide40(props) {
   /* @jsx mdx */
   const makeShortcode = name => function MDXDefaultShortcode(props) {
     console.warn("Component " + name + " was not imported, exported, or provided by MDXProvider as global scope");
@@ -37355,7 +37464,12 @@ function MDXContentWrapperSlide36(props) {
     return Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])(MDXLayout, _extends({}, layoutProps, props, {
       components: components,
       mdxType: "MDXLayout"
-    }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("h1", null, `News/culture`));
+    }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("p", null, `Great project to make is a web app using an Elixir web framework called
+`, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("a", _extends({
+      parentName: "p"
+    }, {
+      "href": "https://phoenixframework.org"
+    }), `Phoenix`)));
   }
 
   ;
@@ -37364,9 +37478,39 @@ function MDXContentWrapperSlide36(props) {
 }
 
 ;
-MDXContentWrapperSlide36.isMDXComponent = true;
+MDXContentWrapperSlide40.isMDXComponent = true;
 
-function MDXContentWrapperSlide37(props) {
+function MDXContentWrapperSlide41(props) {
+  /* @jsx mdx */
+  const makeShortcode = name => function MDXDefaultShortcode(props) {
+    console.warn("Component " + name + " was not imported, exported, or provided by MDXProvider as global scope");
+    return Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("div", props);
+  };
+
+  const layoutProps = {
+    testProp
+  };
+  const MDXLayout = "wrapper";
+
+  function MDXContent({
+    components,
+    ...props
+  }) {
+    return Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])(MDXLayout, _extends({}, layoutProps, props, {
+      components: components,
+      mdxType: "MDXLayout"
+    }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("h1", null, `News & culture`));
+  }
+
+  ;
+  MDXContent.isMDXComponent = true;
+  return Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])(MDXContent, props);
+}
+
+;
+MDXContentWrapperSlide41.isMDXComponent = true;
+
+function MDXContentWrapperSlide42(props) {
   /* @jsx mdx */
   const makeShortcode = name => function MDXDefaultShortcode(props) {
     console.warn("Component " + name + " was not imported, exported, or provided by MDXProvider as global scope");
@@ -37413,9 +37557,9 @@ super high-quality but good for getting a read on what everyone's talking about`
 }
 
 ;
-MDXContentWrapperSlide37.isMDXComponent = true;
+MDXContentWrapperSlide42.isMDXComponent = true;
 
-function MDXContentWrapperSlide38(props) {
+function MDXContentWrapperSlide43(props) {
   /* @jsx mdx */
   const makeShortcode = name => function MDXDefaultShortcode(props) {
     console.warn("Component " + name + " was not imported, exported, or provided by MDXProvider as global scope");
@@ -37452,7 +37596,7 @@ community, not Hackbright-affiliated`)));
 }
 
 ;
-MDXContentWrapperSlide38.isMDXComponent = true;
+MDXContentWrapperSlide43.isMDXComponent = true;
 
 function MDXContentWrapperNotes0(props) {
   /* @jsx mdx */
@@ -38623,8 +38767,158 @@ function MDXContentWrapperNotes38(props) {
 
 ;
 MDXContentWrapperNotes38.isMDXComponent = true;
-const notes = [MDXContentWrapperNotes0, MDXContentWrapperNotes1, MDXContentWrapperNotes2, MDXContentWrapperNotes3, MDXContentWrapperNotes4, MDXContentWrapperNotes5, MDXContentWrapperNotes6, MDXContentWrapperNotes7, MDXContentWrapperNotes8, MDXContentWrapperNotes9, MDXContentWrapperNotes10, MDXContentWrapperNotes11, MDXContentWrapperNotes12, MDXContentWrapperNotes13, MDXContentWrapperNotes14, MDXContentWrapperNotes15, MDXContentWrapperNotes16, MDXContentWrapperNotes17, MDXContentWrapperNotes18, MDXContentWrapperNotes19, MDXContentWrapperNotes20, MDXContentWrapperNotes21, MDXContentWrapperNotes22, MDXContentWrapperNotes23, MDXContentWrapperNotes24, MDXContentWrapperNotes25, MDXContentWrapperNotes26, MDXContentWrapperNotes27, MDXContentWrapperNotes28, MDXContentWrapperNotes29, MDXContentWrapperNotes30, MDXContentWrapperNotes31, MDXContentWrapperNotes32, MDXContentWrapperNotes33, MDXContentWrapperNotes34, MDXContentWrapperNotes35, MDXContentWrapperNotes36, MDXContentWrapperNotes37, MDXContentWrapperNotes38];
-/* harmony default export */ __webpack_exports__["default"] = ([MDXContentWrapperSlide0, MDXContentWrapperSlide1, MDXContentWrapperSlide2, MDXContentWrapperSlide3, MDXContentWrapperSlide4, MDXContentWrapperSlide5, MDXContentWrapperSlide6, MDXContentWrapperSlide7, MDXContentWrapperSlide8, MDXContentWrapperSlide9, MDXContentWrapperSlide10, MDXContentWrapperSlide11, MDXContentWrapperSlide12, MDXContentWrapperSlide13, MDXContentWrapperSlide14, MDXContentWrapperSlide15, MDXContentWrapperSlide16, MDXContentWrapperSlide17, MDXContentWrapperSlide18, MDXContentWrapperSlide19, MDXContentWrapperSlide20, MDXContentWrapperSlide21, MDXContentWrapperSlide22, MDXContentWrapperSlide23, MDXContentWrapperSlide24, MDXContentWrapperSlide25, MDXContentWrapperSlide26, MDXContentWrapperSlide27, MDXContentWrapperSlide28, MDXContentWrapperSlide29, MDXContentWrapperSlide30, MDXContentWrapperSlide31, MDXContentWrapperSlide32, MDXContentWrapperSlide33, MDXContentWrapperSlide34, MDXContentWrapperSlide35, MDXContentWrapperSlide36, MDXContentWrapperSlide37, MDXContentWrapperSlide38]);
+
+function MDXContentWrapperNotes39(props) {
+  /* @jsx mdx */
+  const makeShortcode = name => function MDXDefaultShortcode(props) {
+    console.warn("Component " + name + " was not imported, exported, or provided by MDXProvider as global scope");
+    return Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("div", props);
+  };
+
+  const layoutProps = {
+    testProp
+  };
+  const MDXLayout = "wrapper";
+
+  function MDXContent({
+    components,
+    ...props
+  }) {
+    return Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])(MDXLayout, _extends({}, layoutProps, props, {
+      components: components,
+      mdxType: "MDXLayout"
+    }));
+  }
+
+  ;
+  MDXContent.isMDXComponent = true;
+  return Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])(MDXContent, props);
+}
+
+;
+MDXContentWrapperNotes39.isMDXComponent = true;
+
+function MDXContentWrapperNotes40(props) {
+  /* @jsx mdx */
+  const makeShortcode = name => function MDXDefaultShortcode(props) {
+    console.warn("Component " + name + " was not imported, exported, or provided by MDXProvider as global scope");
+    return Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("div", props);
+  };
+
+  const layoutProps = {
+    testProp
+  };
+  const MDXLayout = "wrapper";
+
+  function MDXContent({
+    components,
+    ...props
+  }) {
+    return Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])(MDXLayout, _extends({}, layoutProps, props, {
+      components: components,
+      mdxType: "MDXLayout"
+    }));
+  }
+
+  ;
+  MDXContent.isMDXComponent = true;
+  return Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])(MDXContent, props);
+}
+
+;
+MDXContentWrapperNotes40.isMDXComponent = true;
+
+function MDXContentWrapperNotes41(props) {
+  /* @jsx mdx */
+  const makeShortcode = name => function MDXDefaultShortcode(props) {
+    console.warn("Component " + name + " was not imported, exported, or provided by MDXProvider as global scope");
+    return Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("div", props);
+  };
+
+  const layoutProps = {
+    testProp
+  };
+  const MDXLayout = "wrapper";
+
+  function MDXContent({
+    components,
+    ...props
+  }) {
+    return Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])(MDXLayout, _extends({}, layoutProps, props, {
+      components: components,
+      mdxType: "MDXLayout"
+    }));
+  }
+
+  ;
+  MDXContent.isMDXComponent = true;
+  return Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])(MDXContent, props);
+}
+
+;
+MDXContentWrapperNotes41.isMDXComponent = true;
+
+function MDXContentWrapperNotes42(props) {
+  /* @jsx mdx */
+  const makeShortcode = name => function MDXDefaultShortcode(props) {
+    console.warn("Component " + name + " was not imported, exported, or provided by MDXProvider as global scope");
+    return Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("div", props);
+  };
+
+  const layoutProps = {
+    testProp
+  };
+  const MDXLayout = "wrapper";
+
+  function MDXContent({
+    components,
+    ...props
+  }) {
+    return Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])(MDXLayout, _extends({}, layoutProps, props, {
+      components: components,
+      mdxType: "MDXLayout"
+    }));
+  }
+
+  ;
+  MDXContent.isMDXComponent = true;
+  return Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])(MDXContent, props);
+}
+
+;
+MDXContentWrapperNotes42.isMDXComponent = true;
+
+function MDXContentWrapperNotes43(props) {
+  /* @jsx mdx */
+  const makeShortcode = name => function MDXDefaultShortcode(props) {
+    console.warn("Component " + name + " was not imported, exported, or provided by MDXProvider as global scope");
+    return Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])("div", props);
+  };
+
+  const layoutProps = {
+    testProp
+  };
+  const MDXLayout = "wrapper";
+
+  function MDXContent({
+    components,
+    ...props
+  }) {
+    return Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])(MDXLayout, _extends({}, layoutProps, props, {
+      components: components,
+      mdxType: "MDXLayout"
+    }));
+  }
+
+  ;
+  MDXContent.isMDXComponent = true;
+  return Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_1__["mdx"])(MDXContent, props);
+}
+
+;
+MDXContentWrapperNotes43.isMDXComponent = true;
+const notes = [MDXContentWrapperNotes0, MDXContentWrapperNotes1, MDXContentWrapperNotes2, MDXContentWrapperNotes3, MDXContentWrapperNotes4, MDXContentWrapperNotes5, MDXContentWrapperNotes6, MDXContentWrapperNotes7, MDXContentWrapperNotes8, MDXContentWrapperNotes9, MDXContentWrapperNotes10, MDXContentWrapperNotes11, MDXContentWrapperNotes12, MDXContentWrapperNotes13, MDXContentWrapperNotes14, MDXContentWrapperNotes15, MDXContentWrapperNotes16, MDXContentWrapperNotes17, MDXContentWrapperNotes18, MDXContentWrapperNotes19, MDXContentWrapperNotes20, MDXContentWrapperNotes21, MDXContentWrapperNotes22, MDXContentWrapperNotes23, MDXContentWrapperNotes24, MDXContentWrapperNotes25, MDXContentWrapperNotes26, MDXContentWrapperNotes27, MDXContentWrapperNotes28, MDXContentWrapperNotes29, MDXContentWrapperNotes30, MDXContentWrapperNotes31, MDXContentWrapperNotes32, MDXContentWrapperNotes33, MDXContentWrapperNotes34, MDXContentWrapperNotes35, MDXContentWrapperNotes36, MDXContentWrapperNotes37, MDXContentWrapperNotes38, MDXContentWrapperNotes39, MDXContentWrapperNotes40, MDXContentWrapperNotes41, MDXContentWrapperNotes42, MDXContentWrapperNotes43];
+/* harmony default export */ __webpack_exports__["default"] = ([MDXContentWrapperSlide0, MDXContentWrapperSlide1, MDXContentWrapperSlide2, MDXContentWrapperSlide3, MDXContentWrapperSlide4, MDXContentWrapperSlide5, MDXContentWrapperSlide6, MDXContentWrapperSlide7, MDXContentWrapperSlide8, MDXContentWrapperSlide9, MDXContentWrapperSlide10, MDXContentWrapperSlide11, MDXContentWrapperSlide12, MDXContentWrapperSlide13, MDXContentWrapperSlide14, MDXContentWrapperSlide15, MDXContentWrapperSlide16, MDXContentWrapperSlide17, MDXContentWrapperSlide18, MDXContentWrapperSlide19, MDXContentWrapperSlide20, MDXContentWrapperSlide21, MDXContentWrapperSlide22, MDXContentWrapperSlide23, MDXContentWrapperSlide24, MDXContentWrapperSlide25, MDXContentWrapperSlide26, MDXContentWrapperSlide27, MDXContentWrapperSlide28, MDXContentWrapperSlide29, MDXContentWrapperSlide30, MDXContentWrapperSlide31, MDXContentWrapperSlide32, MDXContentWrapperSlide33, MDXContentWrapperSlide34, MDXContentWrapperSlide35, MDXContentWrapperSlide36, MDXContentWrapperSlide37, MDXContentWrapperSlide38, MDXContentWrapperSlide39, MDXContentWrapperSlide40, MDXContentWrapperSlide41, MDXContentWrapperSlide42, MDXContentWrapperSlide43]);
 
 /***/ }),
 
