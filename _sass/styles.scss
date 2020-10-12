@@ -1,0 +1,63 @@
+@charset "utf-8";
+@import "../node_modules/bulma/bulma.sass";
+@import "../node_modules/bulma/sass/helpers/color.sass";
+
+.hljs {
+  background: none;
+  padding: 0;
+}
+
+header {
+  .section {
+    padding-bottom: 0;
+  }
+}
+
+.terminal-themes {
+  --postType: "terminal theme";
+  --color: #{$black};
+  --bg: #{$yellow};
+}
+
+.posts {
+  --postType: "blog post";
+  --color: #{$black};
+  --bg: #{$turquoise};
+}
+
+article.card {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  position: relative;
+
+  &:hover {
+    box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
+      0 0px 0 1px var(--bg);
+  }
+
+  &:before {
+    @extend .is-size-7, .tag;
+    position: absolute;
+    content: var(--postType);
+    color: var(--color) !important;
+    background-color: var(--bg) !important;
+    border-top-right-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+  }
+
+  & > a:first-child {
+    color: unset;
+  }
+
+  .content {
+    time.subtitle {
+      display: block;
+      margin-top: 1rem;
+      margin-bottom: 0;
+
+      & + h1:not(:first-child) {
+        margin-top: 0;
+      }
+    }
+  }
+}

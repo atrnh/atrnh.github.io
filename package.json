@@ -1,0 +1,15 @@
+{
+  "devDependencies": {
+    "@11ty/eleventy": "^0.11.0",
+    "bulma": "^0.9.1",
+    "node-sass": "^4.14.1"
+  },
+  "scripts": {
+    "start": "npx @11ty/eleventy --serve",
+    "build": "npx @11ty/eleventy",
+    "css-build": "npx node-sass --omit-source-map-url _sass/styles.scss _sass/styles.css"
+  },
+  "dependencies": {
+    "moment": "^2.29.1"
+  }
+}

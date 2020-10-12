@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang en="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ashley</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+    {% block extraHead %}{% endblock extraHead %}
+  </head>
+  <body>
+    <header class="container is-max-desktop">
+      <div class="section">
+        <h1 class="title is-1">
+          {% block title %}{% endblock title %}
+        </h1>
+        <h2 class="subtitle">
+          {% block subtitle %}{% endblock subtitle %}
+        </h2>
+        <nav class="navbar">
+          {% block nav %}{% endblock nav %}
+        </nav>
+      </div>
+    </header>
+    <main>
+      {% block content %}{% endblock content %}
+      {% block extraBody %}{% endblock extraBody %}
+    </main>
+  </body>
+</html>

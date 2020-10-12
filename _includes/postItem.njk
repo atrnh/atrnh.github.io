@@ -1,0 +1,21 @@
+<article class="card {{ post.data.postType }}">
+  <a href="{{ post.url }}">
+    <div class="card-content">
+      <div class="content">
+        <time
+          datetime="{{ post.date.toUTCString() }}"
+          class="subtitle is-7">
+          {{ post.date | displayDate }}
+        </time>
+        <h1>
+          {{ post.data.title }}
+        </h1>
+        {%- if post.data.postType === "posts" %}
+          {{ post.templateContent | safe }}
+        {%- elif post.data.postType === "terminal-themes" %}
+          {{ post.templateContent | safe }}
+        {%- endif %}
+      </div>
+    </div>
+  </a>
+</article>

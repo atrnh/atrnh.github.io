@@ -1,0 +1,31 @@
+---
+eleventyExcludeFromCollections: true
+---
+
+{% extends "base.njk" %}
+
+{% block title %}Ashley Trinh{% endblock title %}
+{% block subtitle %}This is my blog.{% endblock subtitle %}
+
+{% block nav %}
+  <ul class="is-flex">
+    {%- for postType in collections.postTypes %}
+      <li>
+        <a class="navbar-item">
+          {{ postType.title }}
+        </a>
+      </li>
+    {%- endfor %}
+  </ul>
+{% endblock nav %}
+
+{% block content %}
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h1 class="title is-2">Latest Stuff</h1>
+      {%- for post in collections.all | reverse %}
+        {% include "postItem.njk" %}
+      {%- endfor %}
+    </div>
+  </section>
+{% endblock content %}
