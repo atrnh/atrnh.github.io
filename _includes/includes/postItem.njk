@@ -1,0 +1,38 @@
+{% macro continueBtn(postUrl, label, icon='fa-arrow-right') %}
+<p>
+  <a href="{{ postUrl }}" class="button">
+    <span class="icon is-small">
+      <i class="fas {{ icon }}"></i>
+    </span>
+    <span>{{ label }}</span>
+  </a>
+</p>
+{% endmacro %}
+
+{% macro timestampLink(dt, linkUrl) %}
+<time
+  datetime="{{ dt.toUTCString() }}"
+  class="subtitle is-6 mt-4 mb-0">
+  <a href="{{ linkUrl }}">
+    {{ dt | displayDate }}
+  </a>
+</time>
+{% endmacro %}
+
+<article class="card {{ post.data.postType }}" data-url="{{ post.url }}">
+  <div class="card-content">
+    <div class="content">
+      {{ timestampLink(post.date, post.url) }}
+      <h1>{{ post.data.title }}</h1>
+      {%- if post.data.postType === "posts" %}
+        <div class="excerpt">{{ post.templateContent | safe }}</div>
+        {{ continueBtn(post.url, "Continue reading over here") }}
+      {%- elif post.data.postType === "terminal-themes" %}
+        {% set colors = post.data.colors %}
+        {% set bg = post.data.bg %}
+        {% include "includes/themeColors.njk" %}
+        {{ continueBtn(post.url, "Click to view & download theme", "fa-eye") }}
+      {%- endif %}
+    </div>
+  </div>
+</article>

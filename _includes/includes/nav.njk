@@ -1,0 +1,14 @@
+<ul class="is-flex">
+  <li>
+    <a class="navbar-item home" href="/">
+      Home
+    </a>
+  <li>
+  {%- for postType in collections.postTypes %}
+    <li>
+      <a class="navbar-item {{ postType.slug }}" href="/{{ postType.slug }}">
+        {{ postType.title }}
+      </a>
+    </li>
+  {%- endfor %}
+</ul>

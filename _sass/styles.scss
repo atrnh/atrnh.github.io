@@ -1,6 +1,33 @@
 @charset "utf-8";
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code&display=swap");
+
+$family-sans-serif: "Public Sans", BlinkMacSystemFont, -apple-system, sans-serif;
+$family-monospace: "Fira Code", "Inconsolata", monospace;
 @import "../node_modules/bulma/bulma.sass";
 @import "../node_modules/bulma/sass/helpers/color.sass";
+
+@import "prism.scss";
+
+.home {
+  --color: #{$black};
+  --bg: #{$red};
+  --emoji: "🏠";
+}
+
+.terminal-themes {
+  --postType: "terminal theme";
+  --color: #{$black};
+  --bg: #{$yellow};
+  --emoji: "✨";
+}
+
+.posts {
+  --postType: "blog post";
+  --color: #{$black};
+  --bg: #{$turquoise};
+  --emoji: "📓";
+}
 
 .hljs {
   background: none;
@@ -8,21 +35,28 @@
 }
 
 header {
-  .section {
-    padding-bottom: 0;
+  & > div {
+    border-bottom: 3px solid #{$black};
   }
-}
 
-.terminal-themes {
-  --postType: "terminal theme";
-  --color: #{$black};
-  --bg: #{$yellow};
-}
+  nav {
+    .navbar-item {
+      text-decoration: underline;
+      text-decoration-color: var(--bg);
+      text-decoration-style: wavy;
 
-.posts {
-  --postType: "blog post";
-  --color: #{$black};
-  --bg: #{$turquoise};
+      &:before {
+        content: var(--emoji) + " ";
+      }
+
+      &:hover,
+      &:focus,
+      &:focus-within,
+      &.is-active {
+        color: var(--bg);
+      }
+    }
+  }
 }
 
 article.card {
@@ -45,19 +79,39 @@ article.card {
     border-bottom-left-radius: 0 !important;
   }
 
-  & > a:first-child {
-    color: unset;
-  }
-
   .content {
     time.subtitle {
       display: block;
-      margin-top: 1rem;
-      margin-bottom: 0;
 
       & + h1:not(:first-child) {
         margin-top: 0;
       }
     }
+  }
+}
+
+.content pre {
+  @extend .box;
+  box-shadow: none;
+  background-color: $white-bis;
+}
+
+.excerpt {
+  max-height: 200px;
+  overflow: hidden;
+  position: relative;
+
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      180deg,
+      transparent,
+      rgba(255, 255, 255, 0.2) 80%,
+      white
+    );
   }
 }

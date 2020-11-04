@@ -1,7 +1,9 @@
 {
   "devDependencies": {
     "@11ty/eleventy": "^0.11.0",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.3",
     "bulma": "^0.9.1",
+    "highlight.js": "^10.2.1",
     "node-sass": "^4.14.1"
   },
   "scripts": {
@@ -10,6 +12,7 @@
     "css-build": "npx node-sass --omit-source-map-url _sass/styles.scss _sass/styles.css"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.1",
     "moment": "^2.29.1"
   }
 }

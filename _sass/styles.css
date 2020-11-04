@@ -1,3 +1,6 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code&display=swap");
 /*! bulma.io v0.9.1 | MIT License | github.com/jgthms/bulma */
 /* Bulma Utilities */
 @keyframes spinAround {
@@ -32,7 +35,7 @@
   transform-origin: center;
   width: 0.625em; }
 
-.box:not(:last-child), .content:not(:last-child), .notification:not(:last-child), .progress:not(:last-child), .table:not(:last-child), .table-container:not(:last-child), .title:not(:last-child),
+.box:not(:last-child), .content pre:not(:last-child), .content:not(:last-child), .notification:not(:last-child), .progress:not(:last-child), .table:not(:last-child), .table-container:not(:last-child), .title:not(:last-child),
 .subtitle:not(:last-child), .block:not(:last-child), .highlight:not(:last-child), .breadcrumb:not(:last-child), .level:not(:last-child), .message:not(:last-child), .pagination:not(:last-child), .tabs:not(:last-child) {
   margin-bottom: 1.5rem; }
 
@@ -288,13 +291,13 @@ input,
 optgroup,
 select,
 textarea {
-  font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif; }
+  font-family: "Public Sans", BlinkMacSystemFont, -apple-system, sans-serif; }
 
 code,
 pre {
   -moz-osx-font-smoothing: auto;
   -webkit-font-smoothing: auto;
-  font-family: monospace; }
+  font-family: "Fira Code", "Inconsolata", monospace; }
 
 body {
   color: #4a4a4a;
@@ -373,7 +376,7 @@ table th {
   color: #363636; }
 
 /* Bulma Elements */
-.box {
+.box, .content pre {
   background-color: white;
   border-radius: 6px;
   box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02);
@@ -6886,19 +6889,19 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
   font-weight: 700 !important; }
 
 .is-family-primary {
-  font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif !important; }
+  font-family: "Public Sans", BlinkMacSystemFont, -apple-system, sans-serif !important; }
 
 .is-family-secondary {
-  font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif !important; }
+  font-family: "Public Sans", BlinkMacSystemFont, -apple-system, sans-serif !important; }
 
 .is-family-sans-serif {
-  font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif !important; }
+  font-family: "Public Sans", BlinkMacSystemFont, -apple-system, sans-serif !important; }
 
 .is-family-monospace {
-  font-family: monospace !important; }
+  font-family: "Fira Code", "Inconsolata", monospace !important; }
 
 .is-family-code {
-  font-family: monospace !important; }
+  font-family: "Fira Code", "Inconsolata", monospace !important; }
 
 .is-block {
   display: block !important; }
@@ -7955,22 +7958,162 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
 .has-background-white-bis {
   background-color: #fafafa !important; }
 
-.hljs {
-  background: none;
-  padding: 0; }
+.token.number {
+  background-color: none;
+  align-items: unset;
+  border-radius: unset;
+  display: unset;
+  font-size: unset;
+  height: unset;
+  justify-content: unset;
+  margin-right: unset;
+  min-width: unset;
+  padding: unset;
+  vertical-align: unset; }
 
-header .section {
-  padding-bottom: 0; }
+.token.atrule {
+  color: #7c4dff; }
+
+.token.attr-name {
+  color: #39adb5; }
+
+.token.attr-value {
+  color: #f6a434; }
+
+.token.attribute {
+  color: #f6a434; }
+
+.token.boolean {
+  color: #7c4dff; }
+
+.token.builtin {
+  color: #39adb5; }
+
+.token.cdata {
+  color: #39adb5; }
+
+.token.char {
+  color: #39adb5; }
+
+.token.class {
+  color: #39adb5; }
+
+.token.class-name {
+  color: #6182b8; }
+
+.token.comment {
+  font-style: italic;
+  color: #8f9fa7; }
+
+.token.constant {
+  color: #7c4dff; }
+
+.token.deleted {
+  color: #e53935; }
+
+.token.doctype {
+  color: #aabfc9; }
+
+.token.entity {
+  color: #e53935; }
+
+.token.function {
+  color: #7c4dff; }
+
+.token.hexcode {
+  color: #f76d47; }
+
+.token.id {
+  color: #7c4dff;
+  font-weight: bold; }
+
+.token.important {
+  color: #7c4dff;
+  font-weight: bold; }
+
+.token.inserted {
+  color: #39adb5; }
+
+.token.keyword {
+  color: #7c4dff; }
+
+.token.number {
+  color: #f76d47; }
+
+.token.operator {
+  color: #39adb5; }
+
+.token.prolog {
+  color: #aabfc9; }
+
+.token.property {
+  color: #39adb5; }
+
+.token.pseudo-class {
+  color: #f6a434; }
+
+.token.pseudo-element {
+  color: #f6a434; }
+
+.token.punctuation {
+  color: #39adb5; }
+
+.token.regex {
+  color: #6182b8; }
+
+.token.selector {
+  color: #e53935; }
+
+.token.string {
+  color: #00905b; }
+
+.token.symbol {
+  color: #7c4dff; }
+
+.token.tag, article.token.card:before {
+  color: #e53935; }
+
+.token.unit {
+  color: #f76d47; }
+
+.token.url {
+  color: #e53935; }
+
+.token.variable {
+  color: #e53935; }
+
+.home {
+  --color: #0a0a0a;
+  --bg: #f14668;
+  --emoji: "🏠"; }
 
 .terminal-themes {
   --postType: "terminal theme";
   --color: #0a0a0a;
-  --bg: #ffdd57; }
+  --bg: #ffdd57;
+  --emoji: "✨"; }
 
 .posts {
   --postType: "blog post";
   --color: #0a0a0a;
-  --bg: #00d1b2; }
+  --bg: #00d1b2;
+  --emoji: "📓"; }
+
+.hljs {
+  background: none;
+  padding: 0; }
+
+header > div {
+  border-bottom: 3px solid #0a0a0a; }
+
+header nav .navbar-item {
+  text-decoration: underline;
+  text-decoration-color: var(--bg);
+  text-decoration-style: wavy; }
+  header nav .navbar-item:before {
+    content: var(--emoji) ; }
+  header nav .navbar-item:hover, header nav .navbar-item:focus, header nav .navbar-item:focus-within, header nav .navbar-item.is-active {
+    color: var(--bg); }
 
 article.card {
   margin-top: 1rem;
@@ -7985,11 +8128,23 @@ article.card {
     background-color: var(--bg) !important;
     border-top-right-radius: 0 !important;
     border-bottom-left-radius: 0 !important; }
-  article.card > a:first-child {
-    color: unset; }
   article.card .content time.subtitle {
-    display: block;
-    margin-top: 1rem;
-    margin-bottom: 0; }
+    display: block; }
     article.card .content time.subtitle + h1:not(:first-child) {
       margin-top: 0; }
+
+.content pre {
+  box-shadow: none;
+  background-color: #fafafa; }
+
+.excerpt {
+  max-height: 200px;
+  overflow: hidden;
+  position: relative; }
+  .excerpt:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.2) 80%, white); }

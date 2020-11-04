@@ -5,24 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ashley</title>
     <link rel="stylesheet" href="/static/styles.css" />
+    <link rel="stylesheet" href="/static/prism.css" />
+    <link rel="stylesheet" href="/static/fontawesome.css" />
     {% block extraHead %}{% endblock extraHead %}
   </head>
   <body>
-    <header class="container is-max-desktop">
-      <div class="section">
-        <h1 class="title is-1">
-          {% block title %}{% endblock title %}
+    <header class="pt-6">
+      <div class="container is-max-desktop">
+        <h1 class="title is-1 has-text-centered-touch">
+          {% block title %}Ashley Trinh{% endblock title %}
         </h1>
-        <h2 class="subtitle">
-          {% block subtitle %}{% endblock subtitle %}
+        <h2 class="subtitle has-text-centered-touch">
+          {% block subtitle %}This is my website.{% endblock subtitle %}
         </h2>
-        <nav class="navbar">
-          {% block nav %}{% endblock nav %}
+        <nav class="navbar is-size-5 has-text-weight-bold">
+          {%- block nav %}
+            {% include "includes/nav.njk" %}
+          {%- endblock nav %}
         </nav>
       </div>
     </header>
     <main>
-      {% block content %}{% endblock content %}
+      {%- block main %}
+        <section class="section">
+          <div class="container is-max-desktop">
+            {%- block contentTitle %}
+              <h1 class="title is-2">
+                {{ page.data.title }}
+              </h1>
+            {%- endblock contentTitle %}
+
+            {% block content %}{% endblock content %}
+          </div>
+        </section>
+      {%- endblock main %}
+
       {% block extraBody %}{% endblock extraBody %}
     </main>
   </body>

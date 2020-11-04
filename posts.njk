@@ -1,18 +1,17 @@
 ---
 eleventyExcludeFromCollections: true
-title: Latest Stuff
 ---
 
 {% extends "base.njk" %}
 
 {%- block contentTitle %}
   <h1 class="title is-2">
-    Latest Stuff
+    Blog Posts
   </h1>
 {%- endblock contentTitle %}
 
 {%- block content %}
-  {%- for post in collections.all | reverse %}
+  {%- for post in collections.posts | reverse %}
     {% include "includes/postItem.njk" %}
   {%- endfor %}
 {%- endblock content %}

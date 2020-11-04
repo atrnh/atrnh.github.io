@@ -1,9 +1,10 @@
 ---
 title: Teatime
+date: 2018-05-10
+fg: "#1b1b2e"
+bg: "#fff6f6"
+cc: "#1b1b2e"
 colors:
-  fg: "#1b1b2e"
-  bg: "#fff6f6"
-  cc: "#1b1b2e"
   black: "#c5e1e3"
   light_black: "#889499"
   red: "#f3c4c4"

@@ -1,0 +1,21 @@
+{% macro continueBtn(postUrl, label, icon='fa-arrow-right') %}
+<p>
+  <a href="{{ postUrl }}" class="button">
+    <span class="icon is-small">
+      <i class="fas {{ icon }}"></i>
+    </span>
+    <span>{{ label }}</span>
+  </a>
+</p>
+{% endmacro %}
+
+{% macro timestampLink(dt, linkUrl) %}
+<time
+  datetime="{{ dt.toUTCStrint() }}"
+  class="subtitle is-6 mt-4 mb-0">
+  <a href="{{ linkUrl }}">
+    {{ dt | displayDate }}
+  </a>
+</time>
+{% endmacro %}
+

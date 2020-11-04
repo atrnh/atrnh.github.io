@@ -1,0 +1,27 @@
+{% extends "base.njk" %}
+
+{% macro timestampLink(dt, linkUrl) %}
+<time
+  datetime="{{ dt.toUTCString() }}"
+  class="subtitle is-6 mt-4 mb-0">
+  <a href="{{ linkUrl }}">
+    {{ dt | displayDate }}
+  </a>
+</time>
+{% endmacro %}
+
+{%- block contentTitle %}
+  <header>
+    <h2 class="is-subtitle">{{ timestampLink(date, url) }}</h2>
+    <h1 class="title is-2">{{ title }}</h1>
+  </header>
+{%- endblock contentTitle %}
+
+{%- block content %}
+  <div class="section px-0">
+    <div class="content">
+      {{ content | safe }}
+    </div>
+  </div>
+{%- endblock content %}
+

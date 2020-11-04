@@ -1,20 +1,30 @@
 ---
-title: Self-referential lists
+date: 2018-12-11
+title: Fun with self-referential lists
 ---
 
-Let's say you need to rotate a list but you don't want to bother doing tedious
-arithmetic on indices. Try this instead:
+Ah, the self-referential list:
 
 ```python
->>> a = [1, 2]
->>> a.append(a)
->>> a[-1]
-[1, 2, [...]]
->>> a[-1][-1][-1][-1]  # ...etc.
-[1, 2, [...]]
+a = [1, 2]
+a.append(a)
+
+a[-1]  # => [1, 2, [...]]
 ```
 
-...but that only gets us partway there.
+The last item of `a` is a reference to `a`, so `a[-1]` is `a` and `a[-1][-1]` is
+`a`, etc., etc.:
+
+```python
+a[-1]              # => [1, 2, [...]]
+a[-1][-1]          # => [1, 2, [...]]
+a[-1][-1][-1]      # => [1, 2, [...]]
+a[-1][-1][-1][-1]  # => [1, 2, [...]]
+```
+
+Of course, you should never actually do this in real life but it's fun to think
+of different ways to use a circular list. Especially because programming circular
+things can be pretty annoying.
 
 - We don't want `a[-1]` to be `[1, 2, [...]]`
 - We want it to point to `a[0]` (which evaluates to `1`)
