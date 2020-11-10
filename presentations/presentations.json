@@ -1,7 +1,7 @@
 {
-  "layout": "terminalTheme.njk",
+  "layout": "post.njk",
   "postType": "presentations",
-  "postTypeTitle": "Talks & Presentations",
+  "postTypeTitle": "Presentations",
   "tags": [
     "presentations"
   ]

@@ -7,6 +7,7 @@ module.exports = function (eleventyConfig) {
     "node_modules/@fortawesome/fontawesome-free/webfonts": "webfonts",
     "node_modules/@fortawesome/fontawesome-free/css/all.css":
       "static/fontawesome.css",
+    "assets": "static/assets"
   });
   eleventyConfig.addWatchTarget("_sass/styles.css");
   eleventyConfig.setTemplateFormats(["md", "njk", "html"]);

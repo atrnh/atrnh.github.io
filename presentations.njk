@@ -6,12 +6,12 @@ eleventyExcludeFromCollections: true
 
 {%- block contentTitle %}
   <h1 class="title is-2">
-    Posts
+    Presentations
   </h1>
 {%- endblock contentTitle %}
 
 {%- block content %}
-  {%- for post in collections.posts | reverse %}
-    {% include "includes/postItem.njk" %}
+  {%- for post in collections.presentations | reverse %}
+    {% include "includes/postItem.njk" %} 
   {%- endfor %}
 {%- endblock content %}

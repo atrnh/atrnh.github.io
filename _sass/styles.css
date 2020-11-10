@@ -8099,6 +8099,12 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
   --bg: #00d1b2;
   --emoji: "📓"; }
 
+.presentations {
+  --postType: "presentation";
+  --color: #0a0a0a;
+  --bg: #b86bff;
+  --emoji: "🔮"; }
+
 .hljs {
   background: none;
   padding: 0; }

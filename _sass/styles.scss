@@ -29,6 +29,13 @@ $family-monospace: "Fira Code", "Inconsolata", monospace;
   --emoji: "📓";
 }
 
+.presentations {
+  --postType: "presentation";
+  --color: #{$black};
+  --bg: #{$purple};
+  --emoji: "🔮";
+}
+
 .hljs {
   background: none;
   padding: 0;
