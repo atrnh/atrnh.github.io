@@ -1,0 +1,17 @@
+---
+eleventyExcludeFromCollections: true
+---
+
+{% extends "base.njk" %}
+
+{%- block contentTitle %}
+  <h1 class="title is-2">
+    Terminal Themes
+  </h1>
+{%- endblock contentTitle %}
+
+{%- block content %}
+  {%- for post in collections.termThemes | reverse %}
+    {% include "includes/postItem.njk" %}
+  {%- endfor %}
+{%- endblock content %}
