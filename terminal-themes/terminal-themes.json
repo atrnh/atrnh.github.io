@@ -4,5 +4,9 @@
   "postTypeTitle": "Terminal Themes",
   "tags": [
     "termThemes"
-  ]
+  ],
+  "continueButton": {
+    "label": "Click to preview theme",
+    "icon": "fa-eye"
+  }
 }

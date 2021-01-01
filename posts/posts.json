@@ -4,5 +4,9 @@
   "postTypeTitle": "Blog",
   "tags": [
     "posts"
-  ]
+  ],
+  "continueButton": {
+    "label": "Continue reading over here",
+    "icon": "fa-arrow-right"
+  }
 }

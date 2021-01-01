@@ -1,8 +1,11 @@
 {
-  "layout": "post.njk",
   "postType": "presentations",
   "postTypeTitle": "Presentations",
   "tags": [
     "presentations"
-  ]
+  ],
+  "continueButton": {
+      "label": "View presentation",
+      "icon": "fa-arrow-right"
+  }
 }

@@ -11,7 +11,9 @@ eleventyExcludeFromCollections: true
 {%- endblock contentTitle %}
 
 {%- block content %}
-  {%- for post in collections.presentations | reverse %}
-    {% include "includes/postItem.njk" %} 
-  {%- endfor %}
+  <ul>
+    {%- for post in collections.presentations | reverse %}
+      <li id="{{ post.slug }}"><a href="{{ post.data.location }}">{{ post.data.title }}</a></li>
+    {%- endfor %}
+  </ul>
 {%- endblock content %}

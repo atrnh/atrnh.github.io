@@ -15,10 +15,10 @@
   </header>
 {%- endblock %}
 
-{%- block content %}
+{%- block contentwrapper %}
   <div class="section px-0">
     <div class="content">
-      {{ content | safe }}
+      {%- block content %}{{ content | safe }}{% endblock content %}
     </div>
   </div>
-{%- endblock content %}
+{%- endblock contentwrapper %}
