@@ -12,7 +12,7 @@ title: Latest Stuff
 {%- endblock contentTitle %}
 
 {%- block content %}
-  {%- for post in collections.all | reverse %}
+  {%- for post in collections.allWithData | reverse %}
     {% include "includes/postItem.njk" %}
   {%- endfor %}
 {%- endblock content %}

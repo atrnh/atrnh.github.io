@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.1",
-    "moment": "^2.29.1"
+    "moment": "^2.29.1",
+    "slugify": "^1.4.6"
   }
 }

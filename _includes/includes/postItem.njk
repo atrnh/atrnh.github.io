@@ -19,7 +19,7 @@
 </time>
 {% endmacro %}
 
-{%- set url = post.url or "/{{ post.data.postType }}" %}
+{%- set url = post.url or post.permalink %}
 
 <article class="card {{ post.data.postType }}" data-url="{{ post.url }}">
   <div class="card-content">
@@ -35,7 +35,7 @@
       {%- endif %}
 
       {%- if post.data.continueButton %}
-        {{ continueBtn(url, post.data.continueButton.label, post.data.continueButton.icon) }}
+        {{ continueBtn(post.data.continueButton.url or url, post.data.continueButton.label, post.data.continueButton.icon) }}
       {%- endif %}
     </div>
   </div>

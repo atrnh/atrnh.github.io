@@ -11,9 +11,12 @@ eleventyExcludeFromCollections: true
 {%- endblock contentTitle %}
 
 {%- block content %}
-  <ul>
-    {%- for post in collections.presentations | reverse %}
-      <li id="{{ post.slug }}"><a href="{{ post.data.location }}">{{ post.data.title }}</a></li>
-    {%- endfor %}
-  </ul>
+  <div class="content">
+    <ul>
+        {%- for presentation in presentations.posts %}
+        
+        <li id="{{ presentation.title | slug }}" class="subtitle is-4"><a href="{{ presentation.permalink }}">{{ presentation.title }}</a></li>
+        {%- endfor %}
+    </ul>
+  </div>
 {%- endblock content %}
