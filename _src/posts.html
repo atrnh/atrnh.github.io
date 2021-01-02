@@ -2,7 +2,7 @@
 eleventyExcludeFromCollections: true
 ---
 
-{% extends "base.njk" %}
+{% extends "base.html" %}
 
 {%- block contentTitle %}
   <h1 class="title is-2">
@@ -12,6 +12,6 @@ eleventyExcludeFromCollections: true
 
 {%- block content %}
   {%- for post in collections.posts | reverse %}
-    {% include "includes/postItem.njk" %}
+    {% include "includes/postItem.html" %}
   {%- endfor %}
 {%- endblock content %}

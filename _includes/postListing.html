@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{%- set collection = [] %}
+
+{%- block content %}
+  {%- for post in collection | reverse %}
+    {%- include "includes/postItem.html" %}
+  {%- endfor %}
+{%- endblock content %}

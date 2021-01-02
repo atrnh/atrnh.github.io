@@ -5,6 +5,7 @@ const fs = require("fs");
 const path = require("path");
 
 module.exports = function (eleventyConfig) {
+  eleventyConfig.addPlugin(require('@11ty/eleventy-navigation'));
   const dataFiles = fs.readdirSync("./_data", {withFileTypes: true})
     .map((direntry) => direntry.isFile() && path.basename(direntry.name, ".js"))
     .map(fname => {
@@ -30,7 +31,7 @@ module.exports = function (eleventyConfig) {
     "node_modules/@fortawesome/fontawesome-free/webfonts": "webfonts",
     "node_modules/@fortawesome/fontawesome-free/css/all.css":
       "static/fontawesome.css",
-    "assets": "static/assets"
+    "_assets": "static/assets"
   });
   eleventyConfig.addWatchTarget("_sass/styles.css");
   eleventyConfig.setTemplateFormats(["md", "njk", "html"]);
@@ -77,7 +78,7 @@ module.exports = function (eleventyConfig) {
     htmlTemplateEngine: "njk",
     dataTemplateEngine: "njk",
     dir: {
-      input: ".",
+      input: "./_src"
     },
   };
 };

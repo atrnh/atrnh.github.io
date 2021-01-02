@@ -12,6 +12,7 @@
     "css-build": "npx node-sass --omit-source-map-url _sass/styles.scss _sass/styles.css"
   },
   "dependencies": {
+    "@11ty/eleventy-navigation": "^0.1.6",
     "@fortawesome/fontawesome-free": "^5.15.1",
     "moment": "^2.29.1",
     "slugify": "^1.4.6"

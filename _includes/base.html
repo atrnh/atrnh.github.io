@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ashley</title>
+    <title>{%- block titlePrefix %}Ashley{%- endblock %}{%- block titleSuffix %}{%- endblock titleSuffix %}</title>
     <link rel="stylesheet" href="/static/styles.css" />
     <link rel="stylesheet" href="/static/prism.css" />
     <link rel="stylesheet" href="/static/fontawesome.css" />
-    {% block extraHead %}{% endblock extraHead %}
+    {%- block extraHead %}{%- endblock extraHead %}
   </head>
   <body>
     <header class="pt-6">
@@ -26,12 +26,13 @@
       </div>
     </header>
     <main>
+      {%- block beforeMain %}{%- endblock beforeMain %}
       {%- block main %}
         <section class="section">
           <div class="container is-max-desktop">
             {%- block contentTitle %}
               <h1 class="title is-2">
-                {{ page.data.title }}
+                {%- block pageTitle %}{{ page.data.title }}{%- endblock pageTitle %}
               </h1>
             {%- endblock contentTitle %}
 
