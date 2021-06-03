@@ -4,10 +4,10 @@
       Home
     </a>
   <li>
-  {%- for postType in collections.postTypes %}
+  {%- for category in collections.categories %}
     <li>
-      <a class="navbar-item {{ postType.slug }}" href="/{{ postType.slug }}">
-        {{ postType.title }}
+      <a class="navbar-item {{ category.slug }}" href="/{{ category.slug }}">
+        {{ category.title }}
       </a>
     </li>
   {%- endfor %}

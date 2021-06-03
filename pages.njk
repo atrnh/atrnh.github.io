@@ -1,0 +1,24 @@
+---
+eleventyExcludeFromCollections: true
+pagination:
+  data: collections.categories
+  size: 1
+  alias: cat
+permalink: "{{ cat.slug }}/index.html"
+---
+
+{% extends "base.njk" %}
+
+{%- block contentTitle %}
+  <h1 class="title is-2">
+    {{ cat.title  }}
+  </h1>
+{%- endblock contentTitle %}
+
+{%- block content %}
+  {%- for post in collections.all | reverse %}
+    {% if post.data.category == cat.slug %}
+      {% include "includes/postItem.njk" %}
+    {% endif %}
+  {%- endfor %}
+{%- endblock content %}

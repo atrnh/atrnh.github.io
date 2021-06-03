@@ -2,8 +2,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Public+Sans&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code&display=swap");
 
+$body-font-size: 18px;
+
 $family-sans-serif: "Public Sans", BlinkMacSystemFont, -apple-system, sans-serif;
 $family-monospace: "Fira Code", "Inconsolata", monospace;
+
 @import "../node_modules/bulma/bulma.sass";
 @import "../node_modules/bulma/sass/helpers/color.sass";
 
@@ -64,10 +67,10 @@ article.card {
   margin-bottom: 1rem;
   position: relative;
 
-  &:hover {
-    box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
-      0 0px 0 1px var(--bg);
-  }
+  // &:hover {
+  //   box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
+  //     0 0px 0 1px var(--bg);
+  // }
 
   &:before {
     @extend .is-size-7, .tag;
@@ -96,22 +99,22 @@ article.card {
   background-color: $white-bis;
 }
 
-.excerpt {
-  max-height: 200px;
-  overflow: hidden;
-  position: relative;
+// .excerpt {
+//   // max-height: 200px;
+//   // overflow: hidden;
+//   // position: relative;
 
-  &:before {
-    content: "";
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-      180deg,
-      transparent,
-      rgba(255, 255, 255, 0.2) 80%,
-      white
-    );
-  }
-}
+//   // &:before {
+//   //   content: "";
+//   //   display: block;
+//   //   position: absolute;
+//   //   width: 100%;
+//   //   height: 100%;
+//   //   background: linear-gradient(
+//   //     180deg,
+//   //     transparent,
+//   //     rgba(255, 255, 255, 0.2) 80%,
+//   //     white
+//   //   );
+//   // }
+// }
