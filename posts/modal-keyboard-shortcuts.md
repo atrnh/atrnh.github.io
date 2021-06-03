@@ -1,23 +1,6 @@
 ---
 date: 2018-07-19
 title: I can't live without my modal keyboard shortcut daemon
-excerpt: |
-  I don't like taking my hands off my keyboard.
-
-  Keyboard shortcuts (combined with a tiling windows manager) are my bread and
-  butter. Most of my shortcuts help me manipulate or switch between open
-  windows/applications.
-
-  - **Problem:** I need a lot of shortcuts.
-  - **Problem:** I was tired of having to _get creative_ with my shortcuts
-    (`cmd+r`, `cmd-shift+r`, `ctrl-cmd-shift+r`, etc...)
-  - **Solution:** [khd](https://github.com/koekeishiya/khd) — a modal hotkey daemon!
-
-  ## Modal hotkey daemon??
-
-  Modal == modes
-
-  If you've ever used vim, ...
 ---
 
 I don't like taking my hands off my keyboard.

@@ -93,10 +93,16 @@ article.card {
   }
 }
 
-.content pre {
-  @extend .box;
-  box-shadow: none;
-  background-color: $white-bis;
+.content {
+  pre {
+    @extend .box;
+    box-shadow: none;
+    background-color: $white-bis;
+  }
+
+  h1 {
+    font-size: 1.7em;
+  }
 }
 
 // .excerpt {
