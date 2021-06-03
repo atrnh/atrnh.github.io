@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang en="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ashley Trinh</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+    <link rel="stylesheet" href="/static/prism.css" />
+    <link rel="stylesheet" href="/static/fontawesome.css" />
+    
+  </head>
+  <body>
+    <header class="pt-6">
+      <div class="container is-max-desktop">
+        <h1 class="title is-1 has-text-centered-touch">
+          Ashley Trinh
+        </h1>
+        <h2 class="subtitle has-text-centered-touch">
+          (BTW this is a WIP)
+        </h2>
+        <nav class="navbar is-size-5 has-text-weight-bold">
+            <ul class="is-flex">
+  <li>
+    <a class="navbar-item home" href="/">
+      Home
+    </a>
+  <li>
+    <li>
+      <a class="navbar-item posts" href="/posts">
+        Blog
+      </a>
+    </li>
+    <li>
+      <a class="navbar-item terminal-themes" href="/terminal-themes">
+        Terminal Themes
+      </a>
+    </li>
+</ul>
+
+        </nav>
+      </div>
+    </header>
+    <main>
+        <section class="section">
+          <div class="container is-max-desktop">
+  <header>
+    <h2 class="is-subtitle">
+<time
+  datetime="Tue, 11 Dec 2018 00:00:00 GMT"
+  class="subtitle is-6 mt-4 mb-0">
+  <a href="">
+    Monday, Dec 10th 2018
+  </a>
+</time>
+</h2>
+    <h1 class="title is-2">Fun with self-referential lists</h1>
+  </header>
+
+            
+  <div class="section px-0">
+    <div class="content">
+      <p>Ah, the self-referential list:</p>
+<pre class="language-python"><code class="language-python">a <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><br>a<span class="token punctuation">.</span>append<span class="token punctuation">(</span>a<span class="token punctuation">)</span><br><br>a<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span>  <span class="token comment"># => [1, 2, [...]]</span></code></pre>
+<p>The last item of <code>a</code> is a reference to <code>a</code>, so <code>a[-1]</code> is <code>a</code> and <code>a[-1][-1]</code> is
+<code>a</code>, etc., etc.:</p>
+<pre class="language-python"><code class="language-python">a<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span>              <span class="token comment"># => [1, 2, [...]]</span><br>a<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span>          <span class="token comment"># => [1, 2, [...]]</span><br>a<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span>      <span class="token comment"># => [1, 2, [...]]</span><br>a<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span>  <span class="token comment"># => [1, 2, [...]]</span></code></pre>
+<p>Of course, you should never actually do this in real life but it's fun to think
+of different ways to use a circular list. Especially because programming circular
+things can be pretty annoying.</p>
+<ul>
+<li>We don't want <code>a[-1]</code> to be <code>[1, 2, [...]]</code></li>
+<li>We want it to point to <code>a[0]</code> (which evaluates to <code>1</code>)</li>
+</ul>
+<p>What we <em>really</em> want to do is to create a sort-of linked list by somehow
+appending a reference to the <em>beginning</em> of <code>a</code>... but we're lazy.</p>
+<p>We need some way to flatten the list. Except we can't flatten the list <em>because
+the list has an infinite amount of lists in it</em>.</p>
+<p>Instead, we'll write a generator that takes a self-referential list and
+<em>behaves</em> like a circular linked list:</p>
+<pre class="language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">circular_generator</span><span class="token punctuation">(</span>infinite_list<span class="token punctuation">)</span><span class="token punctuation">:</span><br>    <span class="token keyword">for</span> x <span class="token keyword">in</span> infinite_list<span class="token punctuation">:</span><br>        <span class="token keyword">if</span> <span class="token builtin">isinstance</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> <span class="token builtin">list</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>            <span class="token keyword">yield</span> <span class="token keyword">from</span> circular_generator<span class="token punctuation">(</span>x<span class="token punctuation">)</span><br>        <span class="token keyword">yield</span> x</code></pre>
+<pre class="language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> g <span class="token operator">=</span> next_item<span class="token punctuation">(</span>a<span class="token punctuation">)</span><br><span class="token operator">>></span><span class="token operator">></span> <span class="token builtin">next</span><span class="token punctuation">(</span>g<span class="token punctuation">)</span><br><span class="token number">1</span><br><span class="token operator">>></span><span class="token operator">></span> <span class="token builtin">next</span><span class="token punctuation">(</span>g<span class="token punctuation">)</span><br><span class="token number">2</span><br><span class="token operator">>></span><span class="token operator">></span> <span class="token builtin">next</span><span class="token punctuation">(</span>g<span class="token punctuation">)</span><br><span class="token number">1</span><br><span class="token operator">>></span><span class="token operator">></span> <span class="token comment"># ...etc.</span></code></pre>
+<p>Here's an example using <code>circular_generator</code> to decipher messages encrypted
+with the Caesar cipher:</p>
+<pre class="language-python"><code class="language-python">plain_alphabet <span class="token operator">=</span> <span class="token builtin">list</span><span class="token punctuation">(</span><span class="token string">'abcdefghijklmnopqrstuvwxyz'</span><span class="token punctuation">)</span><br><br>rotary_alphabet <span class="token operator">=</span> plain_alphabet<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">]</span><br>rotary_alphabet<span class="token punctuation">.</span>append<span class="token punctuation">(</span>rotary_alphabet<span class="token punctuation">)</span><br><br>rotated <span class="token operator">=</span> circular_generator<span class="token punctuation">(</span>rotary_alphabet<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">)</span><br><br>decipherer <span class="token operator">=</span> <span class="token punctuation">{</span>                       <span class="token comment"># {'a': 'd', 'b': 'e', ...}</span><br>    plainchar<span class="token punctuation">:</span> <span class="token builtin">next</span><span class="token punctuation">(</span>rotated<span class="token punctuation">)</span><br>    <span class="token keyword">for</span> plainchar <span class="token keyword">in</span> plain_alphabet<br><span class="token punctuation">}</span></code></pre>
+<p><em>Edit 3/7</em>: I had to fix the code in my <code>circular_generator</code> function because it
+didn't work. At all. Whoops!</p>
+<p>Also, you'll probably notice that we don't actually need a self-referential
+list to accomplish any of this. I'll admit that this was an attempt to get
+students to think about self-referential lists and imagine a possible, practical
+application.</p>
+<p>Here's the <code>circular_generator</code> function that takes in a normal list:</p>
+<pre class="language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">circular_generator</span><span class="token punctuation">(</span>l<span class="token punctuation">)</span><span class="token punctuation">:</span><br>    <span class="token keyword">for</span> x <span class="token keyword">in</span> l<span class="token punctuation">:</span><br>        <span class="token keyword">yield</span> x<br>    <span class="token keyword">yield</span> <span class="token keyword">from</span> circular_generator<span class="token punctuation">(</span>l<span class="token punctuation">)</span></code></pre>
+
+    </div>
+  </div>
+          </div>
+        </section>
+
+      
+    </main>
+  </body>
+</html>
