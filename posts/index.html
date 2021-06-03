@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang en="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ashley Trinh</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+    <link rel="stylesheet" href="/static/prism.css" />
+    <link rel="stylesheet" href="/static/fontawesome.css" />
+    
+  </head>
+  <body>
+    <header class="pt-6">
+      <div class="container is-max-desktop">
+        <h1 class="title is-1 has-text-centered-touch">
+          Ashley Trinh
+        </h1>
+        <h2 class="subtitle has-text-centered-touch">
+          (BTW this is a WIP)
+        </h2>
+        <nav class="navbar is-size-5 has-text-weight-bold">
+            <ul class="is-flex">
+  <li>
+    <a class="navbar-item home" href="/">
+      Home
+    </a>
+  <li>
+    <li>
+      <a class="navbar-item posts" href="/posts">
+        Blog
+      </a>
+    </li>
+    <li>
+      <a class="navbar-item terminal-themes" href="/terminal-themes">
+        Terminal Themes
+      </a>
+    </li>
+</ul>
+
+        </nav>
+      </div>
+    </header>
+    <main>
+        <section class="section">
+          <div class="container is-max-desktop">
+  <h1 class="title is-2">
+    Blog
+  </h1>
+
+            
+    
+      
+
+
+
+<article class="card posts" data-url="/posts/fun-with-self-referential-lists/">
+  <div class="card-content">
+    <div class="content">
+      
+<time
+  datetime="Tue, 11 Dec 2018 00:00:00 GMT"
+  class="subtitle is-6 mt-4 mb-0">
+  <a href="/posts/fun-with-self-referential-lists/">
+    Monday, Dec 10th 2018
+  </a>
+</time>
+
+      <h1>Fun with self-referential lists</h1>
+        <div class="excerpt"><p>Ah, the self-referential list:</p>
+<pre class="language-python"><code class="language-python">a <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><br>a<span class="token punctuation">.</span>append<span class="token punctuation">(</span>a<span class="token punctuation">)</span><br><br>a<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span>  <span class="token comment"># => [1, 2, [...]]</span></code></pre>
+<p>The last item of <code>a</code> is a reference to <code>a</code>, so <code>a[-1]</code> is <code>a</code> and <code>a[-1][-1]</code> is
+<code>a</code>, etc., etc.:</p>
+<pre class="language-python"><code class="language-python">a<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span>              <span class="token comment"># => [1, 2, [...]]</span><br>a<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span>          <span class="token comment"># => [1, 2, [...]]</span><br>a<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span>      <span class="token comment"># => [1, 2, [...]]</span><br>a<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span>  <span class="token comment"># => [1, 2, [...]]</span></code></pre>
+<p>Of course, you should never actually do this in real life but it's fun to think
+of different ways to use a circular list. Especially because programming circular
+things can be pretty annoying.</p>
+<ul>
+<li>We don't want <code>a[-1]</code> to be <code>[1, 2, [...]]</code></li>
+<li>We want it to point to <code>a[0]</code> (which evaluates to <code>1</code>)</li>
+</ul>
+<p>What we <em>really</em> want to do is to create a sort-of linked list by somehow
+appending a reference to the <em>beginning</em> of <code>a</code>... but we're lazy.</p>
+<p>We need some way to flatten the list. Except we can't flatten the list <em>because
+the list has an infinite amount of lists in it</em>.</p>
+<p>Instead, we'll write a generator that takes a self-referential list and
+<em>behaves</em> like a circular linked list:</p>
+<pre class="language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">circular_generator</span><span class="token punctuation">(</span>infinite_list<span class="token punctuation">)</span><span class="token punctuation">:</span><br>    <span class="token keyword">for</span> x <span class="token keyword">in</span> infinite_list<span class="token punctuation">:</span><br>        <span class="token keyword">if</span> <span class="token builtin">isinstance</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> <span class="token builtin">list</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>            <span class="token keyword">yield</span> <span class="token keyword">from</span> circular_generator<span class="token punctuation">(</span>x<span class="token punctuation">)</span><br>        <span class="token keyword">yield</span> x</code></pre>
+<pre class="language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> g <span class="token operator">=</span> next_item<span class="token punctuation">(</span>a<span class="token punctuation">)</span><br><span class="token operator">>></span><span class="token operator">></span> <span class="token builtin">next</span><span class="token punctuation">(</span>g<span class="token punctuation">)</span><br><span class="token number">1</span><br><span class="token operator">>></span><span class="token operator">></span> <span class="token builtin">next</span><span class="token punctuation">(</span>g<span class="token punctuation">)</span><br><span class="token number">2</span><br><span class="token operator">>></span><span class="token operator">></span> <span class="token builtin">next</span><span class="token punctuation">(</span>g<span class="token punctuation">)</span><br><span class="token number">1</span><br><span class="token operator">>></span><span class="token operator">></span> <span class="token comment"># ...etc.</span></code></pre>
+<p>Here's an example using <code>circular_generator</code> to decipher messages encrypted
+with the Caesar cipher:</p>
+<pre class="language-python"><code class="language-python">plain_alphabet <span class="token operator">=</span> <span class="token builtin">list</span><span class="token punctuation">(</span><span class="token string">'abcdefghijklmnopqrstuvwxyz'</span><span class="token punctuation">)</span><br><br>rotary_alphabet <span class="token operator">=</span> plain_alphabet<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">]</span><br>rotary_alphabet<span class="token punctuation">.</span>append<span class="token punctuation">(</span>rotary_alphabet<span class="token punctuation">)</span><br><br>rotated <span class="token operator">=</span> circular_generator<span class="token punctuation">(</span>rotary_alphabet<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">)</span><br><br>decipherer <span class="token operator">=</span> <span class="token punctuation">{</span>                       <span class="token comment"># {'a': 'd', 'b': 'e', ...}</span><br>    plainchar<span class="token punctuation">:</span> <span class="token builtin">next</span><span class="token punctuation">(</span>rotated<span class="token punctuation">)</span><br>    <span class="token keyword">for</span> plainchar <span class="token keyword">in</span> plain_alphabet<br><span class="token punctuation">}</span></code></pre>
+<p><em>Edit 3/7</em>: I had to fix the code in my <code>circular_generator</code> function because it
+didn't work. At all. Whoops!</p>
+<p>Also, you'll probably notice that we don't actually need a self-referential
+list to accomplish any of this. I'll admit that this was an attempt to get
+students to think about self-referential lists and imagine a possible, practical
+application.</p>
+<p>Here's the <code>circular_generator</code> function that takes in a normal list:</p>
+<pre class="language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">circular_generator</span><span class="token punctuation">(</span>l<span class="token punctuation">)</span><span class="token punctuation">:</span><br>    <span class="token keyword">for</span> x <span class="token keyword">in</span> l<span class="token punctuation">:</span><br>        <span class="token keyword">yield</span> x<br>    <span class="token keyword">yield</span> <span class="token keyword">from</span> circular_generator<span class="token punctuation">(</span>l<span class="token punctuation">)</span></code></pre>
+</div>
+        
+    </div>
+  </div>
+</article>
+    
+    
+    
+      
+
+
+
+<article class="card posts" data-url="/posts/modal-keyboard-shortcuts/">
+  <div class="card-content">
+    <div class="content">
+      
+<time
+  datetime="Thu, 19 Jul 2018 00:00:00 GMT"
+  class="subtitle is-6 mt-4 mb-0">
+  <a href="/posts/modal-keyboard-shortcuts/">
+    Wednesday, Jul 18th 2018
+  </a>
+</time>
+
+      <h1>I can&#39;t live without my modal keyboard shortcut daemon</h1>
+        <div class="excerpt"><p>I don't like taking my hands off my keyboard.</p>
+<p>Keyboard shortcuts (combined with a tiling windows manager) are my bread and
+butter. Most of my shortcuts help me manipulate or switch between open
+windows/applications.</p>
+<ul>
+<li><strong>Problem:</strong> I need a lot of shortcuts.</li>
+<li><strong>Problem:</strong> I was tired of having to <em>get creative</em> with my shortcuts
+(<code>cmd+r</code>, <code>cmd-shift+r</code>, <code>ctrl-cmd-shift+r</code>, etc...)</li>
+<li><strong>Solution:</strong> <a href="https://github.com/koekeishiya/khd">khd</a> — a modal hotkey daemon!</li>
+</ul>
+<h2>Modal hotkey daemon??</h2>
+<p>Modal == modes</p>
+<p>If you've ever used vim, you're already familiar with this idea:</p>
+<ul>
+<li>Each mode acts like a layer</li>
+<li>For example — in <strong><em>normal</em></strong> mode (vim), <code>hjkl</code> act like directional (arrow)
+keys; in <strong><em>insert</em></strong> mode, they go back to being regular text-input keys</li>
+<li>You activate and deactivate modes as needed</li>
+</ul>
+<p>Probably the most important advantage (imo) of modal shortcuts is being able to
+create multiple, mnemonic shortcuts <em>using the same keys</em>, without having to
+combine/hold down ridiculous amounts of modifier keys.</p>
+<h2>My modes</h2>
+<ul>
+<li><strong><em>Switcher</em></strong> — actions I do <em>a lot</em> (switching focus between
+windows, activating my other modes)</li>
+<li><strong><em>Window</em></strong> — actions on a window (resizing, toggling the window's tiling
+mode)</li>
+<li><strong><em>Space</em></strong> — actions on a desktop/workspace (rotating layout, switching
+desktops)</li>
+</ul>
+<h2>Installing &amp; configuring khd</h2>
+<p>Documentation for writing a configuration file isn't beginner-friendly,
+so here is the relative gist of it:</p>
+<p><em>(Sorry Windows users, khd is only for macOS)</em></p>
+<ul>
+<li><a href="https://github.com/koekeishiya/khd#install">Installation instructions are here</a></li>
+<li>Make a file called <code>.khdrc</code> in your home directory</li>
+</ul>
+<h3>Decide on the names of your modes</h3>
+<p>Maybe write them down on a piece of paper, somewhere.</p>
+<h3>Enable prefixes</h3>
+<p>Prefixes are great; instead of doing something like holding down <code>shift+ctrl-h</code>,
+a prefix allows you to execute the prefix and <em>then</em> tap the shortcut key.</p>
+<p>For example, I can do <code>ctrl-f</code> and then tap <code>h</code> to switch focus to the window
+on the left.</p>
+<p>If I want to enable a prefix for my <strong><em>switcher</em></strong> mode:</p>
+<pre class="language-bash"><code class="language-bash">khd mode switcher prefix on<br><br><span class="token comment"># To specify how long khd should wait for the next keypress:</span><br>khd mode switcher <span class="token function">timeout</span> <span class="token number">0.30</span>  <span class="token comment"># seconds</span></code></pre>
+<h3>Add shortcuts for activating a mode</h3>
+<p>To activate my <strong><em>switcher</em></strong> mode, I use <code>ctrl-f</code>:</p>
+<pre class="language-bash"><code class="language-bash">ctrl - f <span class="token builtin class-name">:</span> khd -e <span class="token string">"mode activate switcher"</span></code></pre>
+<p>While I'm in <strong><em>switcher</em></strong>, I want shortcuts to activate my other modes:</p>
+<pre class="language-bash"><code class="language-bash">switcher - w <span class="token builtin class-name">:</span> khd -e <span class="token string">"mode activate swap"</span><br>switcher - s <span class="token builtin class-name">:</span> khd -e <span class="token string">"mode activate space"</span><br>switcher - o <span class="token builtin class-name">:</span> khd -e <span class="token string">"mode activate window"</span></code></pre>
+<p>Since <strong><em>switcher</em></strong> is prefix-enabled, <code>switcher - w</code> means that I do <code>ctrl-f</code>
+and then hit <code>w</code> to get into <strong><em>swap</em></strong> mode.</p>
+<h3>Getting out of a mode</h3>
+<p>Once you have a mode enabled, you will remain in that mode unless you have a way
+to get back to the <strong><em>default</em></strong> mode.</p>
+<p>In my config, I have several ways to go back to <strong><em>default</em></strong> that cover
+different use-cases:</p>
+<pre class="language-bash"><code class="language-bash"><span class="token comment"># Go back to default if I do ctrl-f again (because that probably means that I</span><br><span class="token comment"># changed my mind halfway through)</span><br>switcher + ctrl - f <span class="token builtin class-name">:</span> khd -e <span class="token string">"mode activate default"</span><br>swap + ctrl - f     <span class="token builtin class-name">:</span> khd -e <span class="token string">"mode activate default"</span><br>space + ctrl - f    <span class="token builtin class-name">:</span> khd -e <span class="token string">"mode activate default"</span><br>window + ctrl - f   <span class="token builtin class-name">:</span> khd -e <span class="token string">"mode activate default"</span><br><br><span class="token comment"># Go back to default if I hit escape (I'm used to doing this in vim)</span><br>switcher - escape   <span class="token builtin class-name">:</span> khd -e <span class="token string">"mode activate default"</span><br>swap - escape       <span class="token builtin class-name">:</span> khd -e <span class="token string">"mode activate default"</span><br>space - escape      <span class="token builtin class-name">:</span> khd -e <span class="token string">"mode activate default"</span><br>window - escape     <span class="token builtin class-name">:</span> khd -e <span class="token string">"mode activate default"</span></code></pre>
+<h3>Everything else</h3>
+<p>Now you have modes that you can assign shortcuts to! Shortcuts are assigned to
+shell commands.</p>
+<p>Here's a shortcut I use to open a terminal window:</p>
+<pre class="language-bash"><code class="language-bash">switcher - <span class="token builtin class-name">return</span>  <span class="token builtin class-name">:</span> <span class="token function">open</span> -na /Applications/kitty.app<span class="token punctuation">;</span><span class="token punctuation">\</span><br>                     khd -e <span class="token string">"mode activate default"</span></code></pre>
+<h2>Syntax &amp; etc.</h2>
+<p>Details on syntax can be found in the <a href="https://github.com/koekeishiya/khd/blob/master/examples/khdrc">official sample config</a></p>
+<p>You can find my config in my <a href="https://github.com/atrnh/.dotfiles/blob/master/.khdrc">.dotfiles repository</a></p>
+</div>
+        
+    </div>
+  </div>
+</article>
+    
+    
+    
+    
+          </div>
+        </section>
+
+      
+    </main>
+  </body>
+</html>
