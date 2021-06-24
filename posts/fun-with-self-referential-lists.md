@@ -1,6 +1,8 @@
 ---
 date: 2018-12-11
 title: Fun with self-referential lists
+summary: |
+  Fun tricky things you can do after appending a list to itself.
 ---
 
 Ah, the self-referential list:

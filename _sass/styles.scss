@@ -1,14 +1,16 @@
 @charset "utf-8";
 @import url("https://fonts.googleapis.com/css2?family=Public+Sans&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code&display=swap");
+@import "../node_modules/bulma/sass/helpers/color.sass";
 
-$body-font-size: 18px;
+$body-font-size: 19px;
 
-$family-sans-serif: "Public Sans", BlinkMacSystemFont, -apple-system, sans-serif;
+$family-sans-serif: "Public Sans", BlinkMacSystemFont, -apple-system, sans-srif;
 $family-monospace: "Fira Code", "Inconsolata", monospace;
+$body-color: $black-bis;
+$family-primary: $family-sans-serif;
 
 @import "../node_modules/bulma/bulma.sass";
-@import "../node_modules/bulma/sass/helpers/color.sass";
 
 @import "prism.scss";
 
@@ -67,10 +69,10 @@ article.card {
   margin-bottom: 1rem;
   position: relative;
 
-  // &:hover {
-  //   box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
-  //     0 0px 0 1px var(--bg);
-  // }
+  &:hover {
+    box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
+      0 0px 0 1px var(--bg);
+  }
 
   &:before {
     @extend .is-size-7, .tag;
@@ -85,10 +87,13 @@ article.card {
   .content {
     time.subtitle {
       display: block;
+      color: inherit;
+    }
+  }
 
-      & + h1:not(:first-child) {
-        margin-top: 0;
-      }
+  .card-content {
+    &:hover {
+      cursor: pointer;
     }
   }
 }
@@ -103,24 +108,29 @@ article.card {
   h1 {
     font-size: 1.7em;
   }
+
+  .post-title h1 {
+    color: $body-color;
+    font-size: 1.5em;
+    margin-top: 0.5em;
+  }
+
+  .post-summary {
+    color: $grey-dark;
+    font-size: 1.3rem;
+
+    & > a {
+      color: inherit;
+    }
+  }
+
+  .post-time {
+    color: $grey;
+  }
 }
 
-// .excerpt {
-//   // max-height: 200px;
-//   // overflow: hidden;
-//   // position: relative;
-
-//   // &:before {
-//   //   content: "";
-//   //   display: block;
-//   //   position: absolute;
-//   //   width: 100%;
-//   //   height: 100%;
-//   //   background: linear-gradient(
-//   //     180deg,
-//   //     transparent,
-//   //     rgba(255, 255, 255, 0.2) 80%,
-//   //     white
-//   //   );
-//   // }
-// }
+.terminal-themes {
+  .is-family-monospace {
+    font-size: 1rem;
+  }
+}

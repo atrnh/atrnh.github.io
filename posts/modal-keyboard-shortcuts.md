@@ -1,6 +1,7 @@
 ---
 date: 2018-07-19
 title: I can't live without my modal keyboard shortcut daemon
+summary: How to set up and use **khd**.
 ---
 
 I don't like taking my hands off my keyboard.

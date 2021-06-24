@@ -3,16 +3,18 @@ const path = require("path");
 const markdownit = require("markdown-it");
 const hljs = require("highlight.js");
 
+const customFilters = require("./src/filters.js");
+
 module.exports = function (eleventyConfig) {
+  // Enable YAML
   eleventyConfig.addDataExtension("yaml", (contents) =>
     require("js-yaml").load(contents)
   );
 
-  // gray-matter config
-  // eleventyConfig.setFrontMatterParsingOptions({
-  //   excerpt: true,
-  //   excerpt_separator: "<!-- excerpt -->",
-  // });
+  eleventyConfig.setFrontMatterParsingOptions({
+    excerpt: true,
+    excerpt_alias: "summary",
+  });
 
   // Syntax highlighting
   eleventyConfig.addPlugin(require("@11ty/eleventy-plugin-syntaxhighlight"));
@@ -23,19 +25,15 @@ module.exports = function (eleventyConfig) {
     "node_modules/@fortawesome/fontawesome-free/webfonts": "webfonts",
     "node_modules/@fortawesome/fontawesome-free/css/all.css":
       "static/fontawesome.css",
+    "assets/js/*": "static/js",
   });
   eleventyConfig.addWatchTarget("_sass/styles.css");
+  eleventyConfig.addWatchTarget("assets/js/*");
 
   // Custom filters
-  eleventyConfig.addFilter("displayDate", (date) => {
-    return require("moment")(date.toUTCString()).format("dddd, MMM Do YYYY");
-  });
-  eleventyConfig.addFilter("markdownit", (val) => {
-    return new markdownit().render(val);
-  });
-  eleventyConfig.addFilter("includes", (arr, obj) => {
-    return arr.includes(obj);
-  });
+  eleventyConfig.addFilter("displayDate", customFilters.displayDate);
+  eleventyConfig.addFilter("markdownit", customFilters.toMarkdown);
+  eleventyConfig.addFilter("includes", customFilters.includes);
 
   // A category is a direct subdir of project root used to separate
   // types of content I like to make (ex.: terminal themes, posts,
@@ -43,7 +41,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addCollection("categories", (collectionApi) => {
     const categories = {};
     collectionApi.getAll().forEach((item, i) => {
-      console.log(`collection: ${i}`);
       const slug = item.inputPath.split(path.sep)[1];
       const title = item.data.postTypeTitle;
 
@@ -54,8 +51,6 @@ module.exports = function (eleventyConfig) {
 
       categories[slug] = { slug, title };
     });
-
-    console.log(categories);
 
     // Only used object to make sure categories are unique --- we only
     // *really* want the object's values

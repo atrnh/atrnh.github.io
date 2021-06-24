@@ -10,29 +10,32 @@
 {% endmacro %}
 
 {% macro timestampLink(dt, linkUrl) %}
-<time
-  datetime="{{ dt.toUTCString() }}"
-  class="subtitle is-6 mt-4 mb-0">
-  <a href="{{ linkUrl }}">
-    {{ dt | displayDate }}
-  </a>
-</time>
+<a class="post-time" href="{{ linkUrl }}">
+  <time
+    datetime="{{ dt.toUTCString() }}"
+    class="subtitle is-6 mt-4 mb-0">
+      {{ dt | displayDate }}
+  </time>
+</a>
 {% endmacro %}
 
-<article class="card {{ post.data.category }}" data-url="{{ post.url }}">
-  <div class="card-content">
+<article class="card {{ post.data.category }}">
+  <div class="card-content" data-url="{{ post.url }}">
     <div class="content">
-      {{ timestampLink(post.date, post.url) }}
-      <h1>{{ post.data.title }}</h1>
+      <a class="post-title" href="{{ post.url }}"><h1>{{ post.data.title }}</h1></a>
+
       {%- if post.data.category === "posts" %}
-        <div class="excerpt">{{ post.templateContent | safe }}</div>
-        {# {{ continueBtn(post.url, "Continue reading over here") }} #}
+        <a class="post-summary" href="{{ post.url }}">
+          {{ post.data.summary | markdownit | safe }}
+        </a>
+
       {%- elif post.data.category === "terminal-themes" %}
         {% set colors = post.data.colors %}
         {% set bg = post.data.bg %}
         {% include "includes/themeColors.njk" %}
-        {# {{ continueBtn(post.url, "Click to view & download theme", "fa-eye") }} #}
       {%- endif %}
+
+      {{ timestampLink(post.date, post.url) }}
     </div>
   </div>
 </article>
