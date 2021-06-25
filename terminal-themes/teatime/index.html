@@ -1,3 +1,7 @@
+
+
+
+
 <!DOCTYPE html>
 <html lang en="en">
   <head>
@@ -7,42 +11,44 @@
     <link rel="stylesheet" href="/static/styles.css" />
     <link rel="stylesheet" href="/static/prism.css" />
     <link rel="stylesheet" href="/static/fontawesome.css" />
+    <link rel="icon" href="/static/favicon.png" />
     
   </head>
-  <body>
-    <header class="pt-6">
-      <div class="container is-max-desktop">
-        <h1 class="title is-1 has-text-centered-touch">
+  <body class="container ml-0">
+    <div class="columns site-layout pl-6">
+      <header class="column is-3-desktop site-title-and-nav has-background-dark">
+        <h1 class="title is-size-4 pt-6 px-2">
           Ashley Trinh
         </h1>
-        <h2 class="subtitle has-text-centered-touch">
+
+        <h2 class="subtitle px-2 is-size-6 has-text-grey">
           (BTW this is a WIP)
         </h2>
-        <nav class="navbar is-size-5 has-text-weight-bold">
-            <ul class="is-flex">
+
+        <nav class="menu has-text-weight-bold flex-direction-column">
+            <ul class="site-nav-menu menu-list">
   <li>
-    <a class="navbar-item home" href="/">
+    <a class="menu-list-item home " href="/">
       Home
     </a>
   <li>
     <li>
-      <a class="navbar-item posts" href="/posts">
+      <a
+        class="menu-list-item posts " href="/posts/">
         Blog
       </a>
     </li>
     <li>
-      <a class="navbar-item terminal-themes" href="/terminal-themes">
+      <a
+        class="menu-list-item terminal-themes is-active" href="/terminal-themes/">
         Terminal Themes
       </a>
     </li>
 </ul>
-
         </nav>
-      </div>
-    </header>
-    <main>
-        <section class="section">
-          <div class="container is-max-desktop">
+      </header>
+      <main class="site-main-content column has-background-light">
+          <section class="section pt-6 column is-9">
   <header>
     <h2 class="is-subtitle">
 <time
@@ -56,7 +62,7 @@
     <h1 class="title is-2">Teatime</h1>
   </header>
 
-            
+              
   <div class="section px-0">
     <div class="content">
       <p>This page is under construction. Sorry!</p>
@@ -232,10 +238,11 @@
 </div>
     </div>
   </div>
-          </div>
-        </section>
+          </section>
+      </main>
+    </div>
 
-      
-    </main>
+    <script src="/static/js/script.js"></script>
+    
   </body>
 </html>
