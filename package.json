@@ -9,8 +9,7 @@
   },
   "scripts": {
     "start": "npx @11ty/eleventy --serve",
-    "build": "npx @11ty/eleventy --output=dist; yarn run css-build",
-    "css-build": "npx node-sass --omit-source-map-url _sass/styles.scss _sass/styles.css",
+    "build": "npx @11ty/eleventy --output=dist",
     "deploy": "git subtree split --prefix dist -b gh-pages; git push -f origin gh-pages:gh-pages; git branch -D gh-pages"
   },
   "dependencies": {
