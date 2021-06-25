@@ -3,12 +3,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code&display=swap");
 @import "../node_modules/bulma/sass/helpers/color.sass";
 
-$body-font-size: 19px;
+$body-font-size: 16px;
+
+$gap: 10px;
 
 $family-sans-serif: "Public Sans", BlinkMacSystemFont, -apple-system, sans-srif;
 $family-monospace: "Fira Code", "Inconsolata", monospace;
 $body-color: $black-bis;
 $family-primary: $family-sans-serif;
+
+$box-shadow: none;
+$box-radius: $radius;
+$box-padding: 1rem;
 
 @import "../node_modules/bulma/bulma.sass";
 
@@ -18,6 +24,7 @@ $family-primary: $family-sans-serif;
   --color: #{$black};
   --bg: #{$red};
   --emoji: "🏠";
+  --invert: #{$red-invert};
 }
 
 .terminal-themes {
@@ -25,6 +32,7 @@ $family-primary: $family-sans-serif;
   --color: #{$black};
   --bg: #{$yellow};
   --emoji: "✨";
+  --invert: #{$yellow-invert};
 }
 
 .posts {
@@ -32,11 +40,27 @@ $family-primary: $family-sans-serif;
   --color: #{$black};
   --bg: #{$turquoise};
   --emoji: "📓";
+  --invert: #{$turquoise-invert};
 }
 
 .hljs {
   background: none;
   padding: 0;
+}
+
+html {
+  background: $dark;
+  height: 100%;
+}
+
+body {
+  height: 100%;
+}
+
+.wavy-underline {
+  text-decoration: underline;
+  text-decoration-color: var(--bg);
+  text-decoration-style: wavy;
 }
 
 header {
@@ -45,7 +69,7 @@ header {
   }
 
   nav {
-    .navbar-item {
+    .menu-list-item {
       text-decoration: underline;
       text-decoration-color: var(--bg);
       text-decoration-style: wavy;
@@ -58,33 +82,43 @@ header {
       &:focus,
       &:focus-within,
       &.is-active {
-        color: var(--bg);
+        background: var(--bg);
+        color: var(--invert);
+        text-decoration-color: var(--invert);
       }
     }
   }
 }
 
-article.card {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  position: relative;
-
-  &:hover {
-    box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
-      0 0px 0 1px var(--bg);
+.has-background-dark {
+  .title,
+  .menu-list a {
+    color: $dark-invert;
   }
+}
 
-  &:before {
-    @extend .is-size-7, .tag;
-    position: absolute;
-    content: var(--postType);
-    color: var(--color) !important;
-    background-color: var(--bg) !important;
-    border-top-right-radius: 0 !important;
-    border-bottom-left-radius: 0 !important;
-  }
+article.box {
+  // margin-top: 1rem;
+  // margin-bottom: 1rem;
+  // position: relative;
+
+  // &:hover {
+  //   box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
+  //     0 0px 0 1px var(--bg);
+  // }
+
+  // &:before {
+  //   @extend .is-size-7, .tag;
+  //   position: absolute;
+  //   content: var(--postType);
+  //   color: var(--color) !important;
+  //   background-color: var(--bg) !important;
+  //   border-top-right-radius: 0 !important;
+  //   border-bottom-left-radius: 0 !important;
+  // }
 
   .content {
+    font-size: 1.1em;
     time.subtitle {
       display: block;
       color: inherit;
@@ -106,31 +140,48 @@ article.card {
   }
 
   h1 {
-    font-size: 1.7em;
+    // font-size: 1.7em;
   }
 
-  .post-title h1 {
-    color: $body-color;
-    font-size: 1.5em;
-    margin-top: 0.5em;
-  }
+  // .post-title h1 {
+  //   color: $body-color;
+  // }
 
   .post-summary {
-    color: $grey-dark;
-    font-size: 1.3rem;
+    // color: $grey-dark;
 
     & > a {
       color: inherit;
     }
   }
 
-  .post-time {
-    color: $grey;
-  }
+  // .post-time {
+  //   color: $grey;
+  // }
 }
 
 .terminal-themes {
   .is-family-monospace {
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
+}
+
+.site-title-and-nav {
+  border-right: 4px solid $black;
+}
+
+.site-nav-menu {
+  font-size: 1.18rem !important;
+}
+
+.site-layout {
+  min-height: 100%;
+
+  main {
+    background: $white;
+  }
+}
+
+.latest-post {
+  border-bottom: 3px solid $grey-lighter;
 }

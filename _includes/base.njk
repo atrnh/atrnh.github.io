@@ -1,3 +1,4 @@
+{%- include "includes/macros.njk" -%}
 <!DOCTYPE html>
 <html lang en="en">
   <head>
@@ -7,41 +8,42 @@
     <link rel="stylesheet" href="/static/styles.css" />
     <link rel="stylesheet" href="/static/prism.css" />
     <link rel="stylesheet" href="/static/fontawesome.css" />
+    <link rel="icon" href="/static/favicon.png" />
     {% block extraHead %}{% endblock extraHead %}
   </head>
-  <body>
-    <header class="pt-6">
-      <div class="container is-max-desktop">
-        <h1 class="title is-1 has-text-centered-touch">
+  <body class="container ml-0">
+    <div class="columns site-layout pl-6">
+      <header class="column is-3-desktop site-title-and-nav has-background-dark">
+        <h1 class="title is-size-4 pt-6 px-2">
           {% block title %}Ashley Trinh{% endblock title %}
         </h1>
-        <h2 class="subtitle has-text-centered-touch">
+
+        <h2 class="subtitle px-2 is-size-6 has-text-grey">
           {% block subtitle %}(BTW this is a WIP){% endblock subtitle %}
         </h2>
-        <nav class="navbar is-size-5 has-text-weight-bold">
+
+        <nav class="menu has-text-weight-bold flex-direction-column">
           {%- block nav %}
             {% include "includes/nav.njk" %}
           {%- endblock nav %}
         </nav>
-      </div>
-    </header>
-    <main>
-      {%- block main %}
-        <section class="section">
-          <div class="container is-max-desktop">
-            {%- block contentTitle %}
-              <h1 class="title is-2">
-                {{ page.data.title }}
-              </h1>
-            {%- endblock contentTitle %}
+      </header>
+      <main class="site-main-content column has-background-light">
+        {%- block main %}
+          <section class="section pt-6 column is-9">
+              {%- block contentTitle %}
+                <h1 class="title is-size-4">
+                  {{ page.data.title }}
+                </h1>
+              {%- endblock contentTitle %}
 
-            {% block content %}{% endblock content %}
-          </div>
-        </section>
-      {%- endblock main %}
+              {% block content %}{% endblock content %}
+          </section>
+        {%- endblock main %}
+      </main>
+    </div>
 
-      <script src="/static/js/script.js"></script>
-      {% block extraBody %}{% endblock extraBody %}
-    </main>
+    <script src="/static/js/script.js"></script>
+    {% block extraBody %}{% endblock extraBody %}
   </body>
 </html>

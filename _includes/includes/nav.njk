@@ -1,12 +1,15 @@
-<ul class="is-flex">
+<ul class="site-nav-menu menu-list">
   <li>
-    <a class="navbar-item home" href="/">
+    <a class="menu-list-item home {% if page.url == '/' %}is-active{% endif %}" href="/">
       Home
     </a>
   <li>
   {%- for category in collections.categories %}
+    {%- set categoryURL = '/' + category.slug + '/' %}
+    {%- set isActiveCategory = page.url == categoryURL or page | getParentURL == categoryURL %}
     <li>
-      <a class="navbar-item {{ category.slug }}" href="/{{ category.slug }}">
+      <a
+        class="menu-list-item {{ category.slug }} {% if isActiveCategory %}is-active{% endif %}" href="{{ categoryURL }}">
         {{ category.title }}
       </a>
     </li>

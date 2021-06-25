@@ -6,6 +6,13 @@ const hljs = require("highlight.js");
 const customFilters = require("./src/filters.js");
 
 module.exports = function (eleventyConfig) {
+  // Plugins
+  eleventyConfig.addPlugin(require("@11ty/eleventy-plugin-syntaxhighlight"));
+  eleventyConfig.addPlugin(require("eleventy-plugin-sass"), {
+    watch: ["_sass/**/*.scss"],
+    outputDir: "_site/static",
+  });
+
   // Enable YAML
   eleventyConfig.addDataExtension("yaml", (contents) =>
     require("js-yaml").load(contents)
@@ -16,24 +23,21 @@ module.exports = function (eleventyConfig) {
     excerpt_alias: "summary",
   });
 
-  // Syntax highlighting
-  eleventyConfig.addPlugin(require("@11ty/eleventy-plugin-syntaxhighlight"));
-
   // Build/watch server settings
   eleventyConfig.addPassthroughCopy({
-    "_sass/*.css": "static/",
     "node_modules/@fortawesome/fontawesome-free/webfonts": "webfonts",
     "node_modules/@fortawesome/fontawesome-free/css/all.css":
       "static/fontawesome.css",
     "assets/js/*": "static/js",
+    "assets/favicon.*": "static",
   });
-  eleventyConfig.addWatchTarget("_sass/styles.css");
   eleventyConfig.addWatchTarget("assets/js/*");
 
   // Custom filters
   eleventyConfig.addFilter("displayDate", customFilters.displayDate);
   eleventyConfig.addFilter("markdownit", customFilters.toMarkdown);
   eleventyConfig.addFilter("includes", customFilters.includes);
+  eleventyConfig.addFilter("getParentURL", customFilters.getParentURL);
 
   // A category is a direct subdir of project root used to separate
   // types of content I like to make (ex.: terminal themes, posts,

@@ -1,18 +1,46 @@
 ---
 eleventyExcludeFromCollections: true
-title: Latest Stuff
+title: Home
 ---
+
+{% macro timestampLink(dt, linkUrl) %}
+<time
+  datetime="{{ dt.toUTCString() }}"
+  class="subtitle is-6 mt-0 mb-4">
+  <a class="has-text-grey-light" href="{{ linkUrl }}">
+    {{ dt | displayDate }}
+  </a>
+</time>
+{% endmacro %}
 
 {% extends "base.njk" %}
 
 {%- block contentTitle %}
-  <h1 class="title is-2">
-    Latest Stuff
-  </h1>
+
 {%- endblock contentTitle %}
 
 {%- block content %}
-  {%- for post in collections.all | reverse %}
-    {% include "includes/postItem.njk" %}
-  {%- endfor %}
+  {%- set allPosts = collections.all | reverse -%}
+  {%- set latestPost = allPosts | first -%}
+
+  <section class="section px-0 pt-0 latest-post">
+    <header>
+      <h1 class="title is-1 mb-0">{{ latestPost.data.title }}</h1>
+      <h2 class="is-subtitle">{{ timestampLink(latestPost.date, latestPost.url) }}</h2>
+    </header>
+
+    <div class="content mt-5 mb-6 is-size-5">
+      {{ latestPost.templateContent | safe }}
+    </div>
+  </section>
+
+  <section class="section px-0">
+    <h1 class="title is-3 wavy-underline home">
+      ✌️ All Latest Posts
+    </h1>
+
+    {%- for post in allPosts %}
+      {% include "includes/postItem.njk" %}
+    {%- endfor %}
+  </section>
 {%- endblock content %}
