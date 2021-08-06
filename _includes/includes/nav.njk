@@ -1,16 +1,22 @@
-<ul class="site-nav-menu menu-list">
-  <li>
-    <a class="menu-list-item home {% if page.url == '/' %}is-active{% endif %}" href="/">
-      Home
+<ul class="mt-4 site-nav-menu menu-list">
+  <li class="home">
+    <a class="menu-list-item wavy-underline home {% if page.url == '/' %}is-active{% endif %}" href="/">
+      <span class="text">🏠 Home</span>
     </a>
+    {%- if page.url == '/' %}
+      <ul class="mr-0">
+        <li><a href="#latest-post">Latest Post</a></li>
+        <li><a href="#most-recent-stuff">Most Recent Stuff</a></li>
+      </ul>
+    {%- endif %}
   <li>
   {%- for category in collections.categories %}
     {%- set categoryURL = '/' + category.slug + '/' %}
     {%- set isActiveCategory = page.url == categoryURL or page | getParentURL == categoryURL %}
     <li>
       <a
-        class="menu-list-item {{ category.slug }} {% if isActiveCategory %}is-active{% endif %}" href="{{ categoryURL }}">
-        {{ category.title }}
+        class="menu-list-item wavy-underline {{ category.slug }} {% if isActiveCategory %}is-active{% endif %}" href="{{ categoryURL }}">
+        <span class="text">{{ category.emoji }} {{ category.title }}</span>
       </a>
     </li>
   {%- endfor %}

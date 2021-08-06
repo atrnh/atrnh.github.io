@@ -15,9 +15,9 @@ title: Home
 
 {% extends "base.njk" %}
 
-{%- block contentTitle %}
+{%- block contentTitle %}{%- endblock contentTitle %}
 
-{%- endblock contentTitle %}
+{%- block anchorTop %}latest-post{%- endblock anchorTop %}
 
 {%- block content %}
   {%- set allPosts = collections.all | reverse -%}
@@ -25,21 +25,24 @@ title: Home
 
   <section class="section px-0 pt-0 latest-post">
     <header>
-      <h1 class="title is-1 mb-0">{{ latestPost.data.title }}</h1>
       <h2 class="is-subtitle">{{ timestampLink(latestPost.date, latestPost.url) }}</h2>
+      <h1 class="title is-1 mb-0">{{ latestPost.data.title }}</h1>
+      <div class="content is-subtitle lead my-2 has-text-grey">
+        {{ latestPost.data.summary | markdownit | safe }}
+      </div>
     </header>
 
-    <div class="content mt-5 mb-6 is-size-5">
+    <div class="content my-5 post-content">
       {{ latestPost.templateContent | safe }}
     </div>
   </section>
 
-  <section class="section px-0">
-    <h1 class="title is-3 wavy-underline home">
-      ✌️ All Latest Posts
+  <section id="most-recent-stuff" class="section px-0">
+    <h1 class="title is-3 wavy-underline">
+      <span class="text">Most Recent Stuff</text>
     </h1>
 
-    {%- for post in allPosts %}
+    {%- for post in allPosts | limit(10) %}
       {% include "includes/postItem.njk" %}
     {%- endfor %}
   </section>

@@ -2,32 +2,32 @@
 <!DOCTYPE html>
 <html lang en="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ashley Trinh</title>
-    <link rel="stylesheet" href="/static/styles.css" />
-    <link rel="stylesheet" href="/static/prism.css" />
-    <link rel="stylesheet" href="/static/fontawesome.css" />
-    <link rel="icon" href="/static/favicon.png" />
-    {% block extraHead %}{% endblock extraHead %}
+    {%- include "includes/head.njk" %}
+    {%- block extraHead %}{% endblock extraHead %}
   </head>
   <body class="container ml-0">
     <div class="columns site-layout pl-6">
-      <header class="column is-3-desktop site-title-and-nav has-background-dark">
-        <h1 class="title is-size-4 pt-6 px-2">
-          {% block title %}Ashley Trinh{% endblock title %}
-        </h1>
+      <div class="column is-3-desktop has-background-dark site-title-and-nav">
+        <div class="sticky-top">
+          <header id="site-header">
+            <h1 class="title is-size-4 pt-6 px-2">
+              {% block title %}Ashley Trinh{% endblock title %}
+            </h1>
 
-        <h2 class="subtitle px-2 is-size-6 has-text-grey">
-          {% block subtitle %}(BTW this is a WIP){% endblock subtitle %}
-        </h2>
+            <h2 class="subtitle px-2 is-size-6 has-text-grey">
+              {% block subtitle %}(BTW this is a WIP){% endblock subtitle %}
+            </h2>
+          </header>
 
-        <nav class="menu has-text-weight-bold flex-direction-column">
-          {%- block nav %}
-            {% include "includes/nav.njk" %}
-          {%- endblock nav %}
-        </nav>
-      </header>
+          <nav id="site-nav" class="menu has-text-weight-bold flex-direction-column">
+            {%- block nav %}
+              {% include "includes/nav.njk" %}
+            {%- endblock nav %}
+          </nav>
+        </div>
+      </div>
+
+      <div id="{%- block anchorTop %}{%- endblock %}" class="anchor"></div>
       <main class="site-main-content column has-background-light">
         {%- block main %}
           <section class="section pt-6 column is-9">
@@ -44,6 +44,7 @@
     </div>
 
     <script src="/static/js/script.js"></script>
+    <script>new Gumshoe('#site-nav a', {contentClass: 'is-active'});</script>
     {% block extraBody %}{% endblock extraBody %}
   </body>
 </html>

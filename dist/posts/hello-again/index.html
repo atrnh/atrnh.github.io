@@ -4,30 +4,35 @@
 
 <!DOCTYPE html>
 <html lang en="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ashley Trinh</title>
-    <link rel="stylesheet" href="/static/styles.css" />
-    <link rel="stylesheet" href="/static/prism.css" />
-    <link rel="stylesheet" href="/static/fontawesome.css" />
-    <link rel="icon" href="/static/favicon.png" />
-    
+  <head><meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ashley Trinh</title>
+<link rel="icon" href="/static/favicon.png" />
+
+<link rel="stylesheet" href="/static/styles.css" />
+<link rel="stylesheet" href="/static/prism.css" />
+<link rel="stylesheet" href="/static/fontawesome.css" />
+
+<script src="https://cdn.jsdelivr.net/gh/cferdinandi/gumshoe@4.0/dist/gumshoe.polyfills.min.js"></script>
+
   </head>
   <body class="container ml-0">
     <div class="columns site-layout pl-6">
-      <header class="column is-3-desktop site-title-and-nav has-background-dark">
-        <h1 class="title is-size-4 pt-6 px-2">
-          Ashley Trinh
-        </h1>
+      <div class="column is-3-desktop has-background-dark site-title-and-nav">
+        <div class="sticky-top">
+          <header id="site-header">
+            <h1 class="title is-size-4 pt-6 px-2">
+              Ashley Trinh
+            </h1>
 
-        <h2 class="subtitle px-2 is-size-6 has-text-grey">
-          (BTW this is a WIP)
-        </h2>
+            <h2 class="subtitle px-2 is-size-6 has-text-grey">
+              (BTW this is a WIP)
+            </h2>
+          </header>
 
-        <nav class="menu has-text-weight-bold flex-direction-column">
-            <ul class="site-nav-menu menu-list">
-  <li>
+          <nav id="site-nav" class="menu has-text-weight-bold flex-direction-column">
+              <ul class="mt-4 site-nav-menu menu-list">
+  <li class="home">
     <a class="menu-list-item home " href="/">
       Home
     </a>
@@ -45,8 +50,11 @@
       </a>
     </li>
 </ul>
-        </nav>
-      </header>
+          </nav>
+        </div>
+      </div>
+
+      <div id="" class="anchor"></div>
       <main class="site-main-content column has-background-light">
           <section class="section pt-6 column is-9">
   <header>
@@ -55,7 +63,7 @@
   datetime="Thu, 03 Jun 2021 00:00:00 GMT"
   class="subtitle is-6 mt-4 mb-0">
   <a href="">
-    Wednesday, Jun 2nd 2021
+    
   </a>
 </time>
 </h2>
@@ -76,6 +84,7 @@ posting more regularly. Hopefully this won't be the last time I make a post in
     </div>
 
     <script src="/static/js/script.js"></script>
+    <script>new Gumshoe('#site-nav a', {contentClass: 'is-active'});</script>
     
   </body>
 </html>

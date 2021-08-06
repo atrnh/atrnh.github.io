@@ -1,0 +1,794 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <title>title</title>
+
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <!-- REVEAL CSS-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="libs/reveal.js/dist/reset.css">
+  <link rel="stylesheet" href="libs/reveal.js/dist/reveal.css">
+  
+  <link rel="stylesheet" href="libs/reveal.js/dist/theme/white.css" id="theme">
+  
+  
+  <!--
+  <link rel="stylesheet" href="libs/reveal.js/plugin/title-footer/title-footer-mod.css" />
+  -->
+
+  <!-- MERMAID-->
+  <!--
+  <script src="libs/reveal.js/plugin/mermaid/mermaid.min.js"></script>
+  <style>
+  .mermaid {
+    font-size: 0.5em;
+  }
+  </style>
+  -->
+  
+  <style>
+    [class*=task-list-item] {
+      min-height: 22px;
+      margin-top: 6px!important;
+      margin-bottom: 6px!important;
+      padding-left: 0;
+      list-style: none;
+    }
+
+    [class*=task-list-item]>input:first-child {
+      position: absolute!important;
+      opacity: 0;
+      margin: 0;
+    }
+
+    [class*=task-list-item]>label {
+      padding-left: 29px!important;
+      min-height: 22px;
+      line-height: 22px;
+      display: inline-block;
+      position: relative;
+      vertical-align: top;
+      margin-bottom: 0;
+      font-weight: 400;
+      cursor: pointer;
+    }
+
+    .task-list-item>input:first-child:checked+input[type=hidden]+label::before, .task-list-item>input:first-child:checked+label::before {
+      background-color: #ecf0f1;
+      border-color: #ecf0f1;
+    }
+
+    [class*=task-list-item]>input:first-child+input[type=hidden]+label::before, [class*=task-list-item]>input:first-child+label::before {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      width: 22px;
+      height: 22px;
+      border: 1px solid #D3CFC8;
+      border-radius: 0;
+      margin-left: -29px;
+    }
+
+    [class*=task-list-item]>input:first-child:checked+input[type=hidden]+label::after, [class*=task-list-item]>input:first-child:checked+label::after {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 7px;
+      height: 10px;
+      border: 2px solid #fff;
+      border-left: none;
+      border-top: none;
+      transform: translate(7.75px,4.5px) rotate(45deg);
+      -ms-transform: translate(7.75px,4.5px) rotate(45deg);
+    }
+
+    .task-list-item>input:first-child:checked+input[type=hidden]+label::after, .task-list-item>input:first-child:checked+label::after {
+      border-bottom-color: #95a5a6;
+      border-right-color: #95a5a6;
+    }
+  </style>
+
+  <!-- Theme used for syntax highlighting of code -->
+  
+  <link rel="stylesheet" href="libs/reveal.js/plugin/highlight/Zenburn.css">
+  
+
+  
+  <link rel="stylesheet" href="custom.css">
+  
+  
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match(/print-pdf/gi) ? 'libs/reveal.js/dist/print/pdf.css' : 'libs/reveal.js/dist/print/paper.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+  </script>
+
+  <style>
+     .line {
+      display: block;
+    }   
+
+    .line.focus {
+      background: #fdf6e3;
+      color: #657b83;
+    }
+
+    .reveal .slides section .fragment.current-only {
+      visibility: visible;
+      display: none;
+    }
+
+    .reveal .slides section .fragment.current-only.current-fragment {
+      display: block;
+    }
+
+    .line.focus {
+       opacity: 1.0;
+    } 
+
+    @media (device-width: 100vw) and (device-height: 100vh) {
+      .reveal pre code {
+        max-height: 50vh !important;
+      }
+    }
+
+    #logo img {
+      max-height: 3.5em;
+      max-width: none;
+      min-width: 50px;
+    }
+
+    .reveal .slides section .code-presenting-annotation {
+      color: white;
+      background: black;
+      padding: 0px 15px;
+      border-radius: 15px;
+      opacity: 0.75 !important;
+      font-size: 50% !important;
+    }
+  </style>
+  <script>
+    if (window.location.search.match(/print-pdf-now/gi)) {
+      window.print();
+    }
+  </script>
+</head>
+
+<body>
+  
+
+  <div class="reveal">
+
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+
+      
+  
+    <section >
+      <h1><a id="user-content---" class="anchor" href="#--" aria-hidden="true"></a>🐍 👍 🎯</h1>
+<h2><a id="user-content-write-right-code" class="anchor" href="#write-right-code" aria-hidden="true"></a>Write Right Code</h2>
+<h4><a id="user-content-by-making-the-machine-do-it-for-you" class="anchor" href="#by-making-the-machine-do-it-for-you" aria-hidden="true"></a>(by making the machine do it for you)</h4>
+
+    </section>
+  
+
+  
+    <section >
+      <h3><a id="user-content-whats-right" class="anchor" href="#whats-right" aria-hidden="true"></a>What’s “right”?</h3>
+<p class="fragment">Code that you’re not ashamed of </p>
+<p class="fragment">Code that works </p>
+<p class="fragment">Code that looks good </p>
+<p class="fragment">😰 </p>
+
+    </section>
+  
+
+  
+    <section >
+      <h3><a id="user-content-whats-this-about-" class="anchor" href="#whats-this-about-" aria-hidden="true"></a>What’s this about 👀</h3>
+<p>Tools to help you write confidently!</p>
+<ul>
+<li>Type hinting w/ type annotations</li>
+<li>Code formatters</li>
+<li>Other stuff</li>
+</ul>
+
+    </section>
+  
+
+  
+    <section >
+      <h3><a id="user-content-types-in-python" class="anchor" href="#types-in-python" aria-hidden="true"></a>Types in Python</h3>
+<p class="fragment">Static </p>
+<pre><code class="fragment language-python">type(&quot;100&quot;)  # -&gt; &lt;class 'str'&gt;
+type(100)    # -&gt; &lt;class 'int'&gt;
+</code></pre>
+<p class="fragment">Dynamic </p>
+<pre><code class="fragment language-python">word = &quot;hi&quot;
+word = 100
+</code></pre>
+<h2 class="fragment"><a id="user-content--neat" class="anchor" href="#-neat" aria-hidden="true"></a>🔥💯 Neat!!! </h2>
+
+    </section>
+  
+
+  
+    <section >
+      <h3><a id="user-content-one-problem-though" class="anchor" href="#one-problem-though" aria-hidden="true"></a>One problem though</h3>
+<pre><code data-line-numbers="3|1-2|1-3|6-7" class="language-python-repl">&gt;&gt;&gt; a = Something()
+&gt;&gt;&gt; b = AnotherThing()
+&gt;&gt;&gt; a.mysterious_method(b)
+Traceback (most recent call last):
+  ...
+TypeError: element index must be an integer, a slice, or
+an attribute name string
+</code></pre>
+<p class="fragment">😡 </p>
+
+    </section>
+  
+
+  
+    <section >
+      <h2 class="fragment"><a id="user-content-well-what-happened-was" class="anchor" href="#well-what-happened-was" aria-hidden="true"></a>Well, what happened was… </h2>
+
+    </section>
+  
+
+  
+    <section >
+      <h3><a id="user-content-hackbrights-build-system" class="anchor" href="#hackbrights-build-system" aria-hidden="true"></a>Hackbright’s build system</h3>
+<p class="fragment">One document → slides &amp; handouts </p>
+<p class="fragment">Implemented with <a href="https://www.sphinx-doc.org/en/master/">Sphinx</a>… </p>
+<p class="fragment">…which is implemented with <a href="https://docutils.sourceforge.io/rst.html">docutils</a> </p>
+
+    </section>
+  
+
+  
+    <section >
+      <p><img src="docutils.png" alt="img"></p>
+
+    </section>
+  
+
+  
+    <section >
+      <img class="fragment" src="howto1.png" style="margin-bottom: 0;"/>
+<img class="fragment" src="howto2.png" style="margin: 0;"/>
+<div style="position: relative;">
+  <img class="fragment" src="howto3.png" style="margin-top: 0;"/>
+  <p class="fragment" style="position: absolute; top: 280px; text-align: center; width: 100%; background: rgba(255,255,255,0.8);">
+    (This goes on for a while)
+  </p>
+</div>
+    </section>
+  
+
+  
+    <section >
+      <h1><a id="user-content-type-annotations" class="anchor" href="#type-annotations" aria-hidden="true"></a>Type Annotations</h1>
+<h3><a id="user-content-the-best-substitute-for-documentation" class="anchor" href="#the-best-substitute-for-documentation" aria-hidden="true"></a>(the best substitute for documentation!)</h3>
+
+    </section>
+  
+
+  
+    <section >
+      <h3><a id="user-content-without-types" class="anchor" href="#without-types" aria-hidden="true"></a>Without types</h3>
+<pre><code data-line-numbers="1-5|2|1|4" class="language-python">def add_data(container, data):
+    &quot;&quot;&quot;Add data to container.&quot;&quot;&quot;
+
+    container.append(data)
+    return container
+</code></pre>
+
+    </section>
+  
+
+  
+    <section >
+      <h3><a id="user-content-in-vscode" class="anchor" href="#in-vscode" aria-hidden="true"></a>…in VSCode</h3>
+<div
+  style="height: 250px; overflow: hidden;">
+  <video
+    style="max-height: unset; max-width: unset; width: 90%;"
+    type="video/mp4"
+    src="no_types.mov">
+  </video>
+</div>
+    </section>
+  
+
+  
+    <section >
+      <h3><a id="user-content-with-type-annotations" class="anchor" href="#with-type-annotations" aria-hidden="true"></a>WITH type annotations</h3>
+<pre><code data-line-numbers="1|4" class="language-python">def add_data(container: List[str], data: str) -&gt; List[str]:
+    &quot;&quot;&quot;Add data to container.&quot;&quot;&quot;
+
+    container.append(data)
+    return container
+</code></pre>
+
+    </section>
+  
+
+  
+    <section >
+      <h3><a id="user-content-once-again-in-vscode" class="anchor" href="#once-again-in-vscode" aria-hidden="true"></a>Once again, in VSCode…</h3>
+<div
+  style="height: 250px; overflow: hidden;">
+  <video
+    style="max-height: unset; max-width: unset; width: 90%;"
+    type="video/mp4"
+    src="types.mov">
+  </video>
+</div>
+    </section>
+  
+
+  
+    <section >
+      <h2><a id="user-content-how" class="anchor" href="#how" aria-hidden="true"></a>How</h2>
+<ul>
+<li>VSCode can do most of this automatically</li>
+<li><a href="https://mypy.readthedocs.io/en/stable/">mypy</a> — a linter that understands type annotations
+<ul>
+<li>Install in your virtual environment or globally</li>
+<li>Using Vagrant? <a href="https://medium.com/@lopezgand/connect-visual-studio-code-with-vagrant-in-your-local-machine-24903fb4a9de">Connect VSCode to Vagrant</a></li>
+</ul>
+</li>
+</ul>
+
+    </section>
+  
+
+  
+    <section >
+      <h2><a id="user-content-but-thats-not-all" class="anchor" href="#but-thats-not-all" aria-hidden="true"></a>But that’s not all!</h2>
+
+    </section>
+  
+
+  
+    <section >
+      <h3><a id="user-content-so-what-happened-was" class="anchor" href="#so-what-happened-was" aria-hidden="true"></a>So, what happened was…</h3>
+<ul>
+<li>I need to write a Google Calendar script
+<ul>
+<li>It should also be flexible so others can use it</li>
+<li>…but it needs to get done <em>quick</em></li>
+</ul>
+</li>
+<li>Parsing JSON by hand is grosssssss
+<ul>
+<li>If only there was something like SQLAlchemy</li>
+<li>JSON &amp; strings → Python data</li>
+</ul>
+</li>
+</ul>
+
+    </section>
+  
+
+  
+    <section >
+      <h1><a id="user-content-type-annotations" class="anchor" href="#type-annotations" aria-hidden="true"></a>Type Annotations</h1>
+<h3><a id="user-content-for-parsing-jsonraw-data" class="anchor" href="#for-parsing-jsonraw-data" aria-hidden="true"></a>(for parsing JSON/raw data)</h3>
+
+    </section>
+  
+
+  
+    <section >
+      <h3><a id="user-content-extracting-json-by-hand" class="anchor" href="#extracting-json-by-hand" aria-hidden="true"></a>Extracting JSON by hand</h3>
+<pre><code data-line-numbers="3|4|5-9|11|13" class="language-python">raw = get_event_from_google()
+
+event_attrs = {}
+if owner_data := raw.get(&quot;owner&quot;):
+    event_attrs[&quot;owner&quot;] = User(
+        owner_data.name,
+        owner_data.email,
+        ...,
+    )
+
+# ...etc
+
+event = Event(**event_attrs)
+</code></pre>
+
+    </section>
+  
+
+  
+    <section >
+      <h3><a id="user-content-parsing-json-with-pydantic" class="anchor" href="#parsing-json-with-pydantic" aria-hidden="true"></a>Parsing JSON with Pydantic</h3>
+<pre><code data-line-numbers="1|3-5" class="language-python">from pydantic import BaseModel
+
+class Event(BaseModel):
+    id: str
+    summary: str
+</code></pre>
+<pre><code class="fragment language-python-repl">&gt;&gt;&gt; data = get_event_from_google()
+&gt;&gt;&gt; Event.parse_obj(data)
+&lt;Event id=&quot;blah&quot; summary=&quot;This is great&quot;&gt;
+</code></pre>
+
+    </section>
+  
+
+  
+    <section >
+      <h3><a id="user-content-great-for-nested-objects" class="anchor" href="#great-for-nested-objects" aria-hidden="true"></a>Great for nested objects!</h3>
+<pre><code data-line-numbers="3-5|10" class="language-python">from pydantic import BaseModel
+
+class User(BaseModel):
+    name: str
+    email: str
+
+class Event(BaseModel):
+    id: str
+    summary: str
+    owner: User
+</code></pre>
+<pre><code class="fragment language-python-repl">&gt;&gt;&gt; data = get_event_from_google()
+&gt;&gt;&gt; event = Event.parse_obj(data)
+&gt;&gt;&gt; event.owner
+&lt;User name=&quot;ashley&quot; email=&quot;ashley@hackbrightacademy.com&quot;&gt;
+</code></pre>
+
+    </section>
+  
+
+  
+    <section >
+      <h2><a id="user-content-how" class="anchor" href="#how" aria-hidden="true"></a>How</h2>
+<ul>
+<li><a href="https://pydantic-docs.helpmanual.io/">Pydantic</a></li>
+<li>Libraries/frameworks that use Pydantic
+<ul>
+<li><a href="https://fastapi.tiangolo.com/">Fastapi</a> — web framework</li>
+<li><a href="https://typer.tiangolo.com/">Typer</a> — CLI framework</li>
+</ul>
+</li>
+</ul>
+
+    </section>
+  
+
+  
+    <section >
+      <h1><a id="user-content-code-formatting" class="anchor" href="#code-formatting" aria-hidden="true"></a>Code Formatting</h1>
+<h3><a id="user-content-turn-disgusting-code-→-pretty-code" class="anchor" href="#turn-disgusting-code-→-pretty-code" aria-hidden="true"></a>Turn disgusting code → pretty code</h3>
+
+    </section>
+  
+
+  
+    <section >
+      <h3><a id="user-content-how-my-coworkers-think-i-write-code" class="anchor" href="#how-my-coworkers-think-i-write-code" aria-hidden="true"></a>How my coworkers think I write code</h3>
+<pre><code class="language-python">my_dict =  {
+    &quot;key&quot;: [
+        &quot;very&quot;,
+        &quot;nice&quot;,
+        &quot;value&quot;,
+        &quot;hi&quot;,
+        &quot;wow this is great&quot;
+    ],
+}
+</code></pre>
+
+    </section>
+  
+
+  
+    <section >
+      <h3><a id="user-content-how-i-actually-write-code" class="anchor" href="#how-i-actually-write-code" aria-hidden="true"></a>How I actually write code</h3>
+<pre><code class="language-python">my_dict = {'key': ['very', 'nice', 'value', 'hi', 'wow this is great']}
+</code></pre>
+
+    </section>
+  
+
+  
+    <section >
+      <h2><a id="user-content-how" class="anchor" href="#how" aria-hidden="true"></a>How</h2>
+<ul>
+<li><a href="https://github.com/psf/black">Black</a> — Python code formatter</li>
+<li><a href="https://prettier.io/">Prettier</a> — for any other language
+<ul>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode">VSCode plugin</a></li>
+</ul>
+</li>
+<li>If you don’t use VSCode, set up a pre-commit hook</li>
+</ul>
+
+    </section>
+  
+
+  
+    <section >
+      <h1><a id="user-content-concluding-slide" class="anchor" href="#concluding-slide" aria-hidden="true"></a>Concluding slide</h1>
+<h3><a id="user-content-im-bad-at-titles" class="anchor" href="#im-bad-at-titles" aria-hidden="true"></a>(I’m bad at titles)</h3>
+
+    </section>
+  
+
+  
+    <section >
+      <h3><a id="user-content-contact-info--links--stuff" class="anchor" href="#contact-info--links--stuff" aria-hidden="true"></a>Contact info &amp; links &amp; stuff</h3>
+<ul>
+<li><a href="https://github.com/hackbrightacademy">Hackbright on GitHub</a></li>
+<li><a href="https://hackbrightacademy.github.io/sphinx-lectern">Sphinx-Lectern</a></li>
+</ul>
+<p><a href="mailto:ashley@hackbrightacademy.com">ashley@hackbrightacademy.com</a></p>
+<p>Office hours: <a href="https://calendly.com/hb-ashley">https://calendly.com/hb-ashley</a></p>
+
+    </section>
+  
+
+
+
+    </div>
+
+  </div>
+
+  <script src="libs/reveal.js/dist/reveal.js"></script>
+
+<script src="libs/reveal.js/plugin/zoom/zoom.js"></script>
+
+<script src="libs/reveal.js/plugin/notes/notes.js"></script>
+<script src="libs/reveal.js/plugin/search/search.js"></script>
+<script src="libs/reveal.js/plugin/markdown/markdown.js"></script>
+<script src="libs/reveal.js/plugin/highlight/highlight.js"></script>
+<script src="libs/reveal.js/plugin/math/math.js"></script>
+<script>
+    // More info https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+
+        controls: false,
+        controlsTutorial: true,
+        controlsLayout: 'bottom-right',
+        controlsBackArrows: 'faded',
+        progress: true,
+        slideNumber: false,
+        history: true,
+        keyboard: true,
+        overview: true,
+        center: true,
+        touch: true,
+        loop: false,
+        rtl: false,
+        shuffle: false,
+        fragments: true,
+        fragmentInURL: false,
+        embedded: false,
+        help: true,
+        showNotes: false,
+        autoPlayMedia: true,
+        autoSlide: 0,
+        autoSlideStoppable: true,
+        autoSlideMethod: Reveal.navigateNext,
+        defaultTiming: 120,
+        mouseWheel: false,
+        hideAddressBar: true,
+        previewLinks: false,
+        transition: 'none',
+        transitionSpeed: 'fast',
+        backgroundTransition: 'default',
+        viewDistance: 3,
+        parallaxBackgroundImage: '',
+        parallaxBackgroundSize: '',
+        parallaxBackgroundHorizontal: 0,
+        parallaxBackgroundVertical: 0,
+        display: 'block',
+
+        plugins: [RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight, RevealMath],
+        
+        math: {
+            mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+            config: 'TeX-AMS_HTML-full',
+            TeX: { Macros: { RR: "{\\bf R}" } }
+        },
+        /*
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [
+            
+            { src: 'libs/reveal.js/3.8.0/plugin/search/search.js', async: true },
+            
+
+            
+            { src: 'libs/reveal.js-plugins/3.8.0/plugin/chalkboard/chalkboard.js' },
+                
+
+            
+            { src: 'libs/reveal.js/3.8.0/plugin/menu/menu.js' },
+            
+
+            
+            { src: 'libs/reveal.js/3.8.0/plugin/title-footer/title-footer.js', async: true, callback: function () { title_footer.initialize(); } },
+            
+            {
+                src: 'libs/highlight.js/9.15.10/reveal-code-focus-1.0.0-mod.js',
+                async: true,
+                callback: function () {
+                    RevealCodeFocus();
+                }
+            },
+            // {src: 'libs/reveal.js/3.8.0/plugin/line-numbers/line-numbers.js'}
+        ],
+        keyboard: {
+            67: function () { RevealChalkboard.toggleNotesCanvas() },	// toggle notes canvas when 'c' is pressed
+            66: function () { RevealChalkboard.toggleChalkboard() },	// toggle chalkboard when 'b' is pressed
+            46: function () { RevealChalkboard.clear() },	// clear chalkboard when 'DEL' is pressed
+            8: function () { RevealChalkboard.reset() },	// reset chalkboard data on current slide when 'BACKSPACE' is pressed
+            68: function () { RevealChalkboard.download() },	// downlad recorded chalkboard drawing when 'd' is pressed
+        },
+        chart: {
+            defaults: {
+                global: {
+                    title: { fontColor: "#FFF" },
+                    legend: {
+                        position: "bottom",
+                            labels: { fontColor: "#FFF" },
+                    },
+                    tooltips: {
+                        labels: { fontColor: "#FFF" },
+                    },
+                },
+                scale: {
+                    scaleLabel: { fontColor: "#FFF" },
+                    gridLines: { color: "#FFF", zeroLineColor: "#FFF" },
+                    ticks: { fontColor: "#FFF" },
+                }
+            },
+            line: { borderColor: ["rgba(20,220,220,.8)", "rgba(220,120,120,.8)", "rgba(20,120,220,.8)"], "borderDash": [[5, 10], [0, 0]] },
+            bar: { backgroundColor: ["rgba(20,220,220,.8)", "rgba(220,120,120,.8)", "rgba(20,120,220,.8)"] },
+            pie: { backgroundColor: [["rgba(0,0,0,.8)", "rgba(220,20,20,.8)", "rgba(20,220,20,.8)", "rgba(220,220,20,.8)", "rgba(20,20,220,.8)"]] },
+            radar: { borderColor: ["rgba(20,220,220,.8)", "rgba(220,120,120,.8)", "rgba(20,120,220,.8)"] },
+        },
+        anything: [ 
+            {
+                className: "mermaid"
+            },
+            // ...
+        ],
+        menu: {
+            // Specifies which side of the presentation the menu will 
+            // be shown. Use 'left' or 'right'.
+            side: 'left',
+
+                // Specifies the width of the menu.
+                // Can be one of the following:
+                // 'normal', 'wide', 'third', 'half', 'full', or
+                // any valid css length value
+                width: 'normal',
+
+                    // Add slide numbers to the titles in the slide list.
+                    // Use 'true' or format string (same as reveal.js slide numbers)
+                    numbers: false,
+
+                        // Specifies which slide elements will be used for generating
+                        // the slide titles in the menu. The default selects the first
+                        // heading element found in the slide, but you can specify any
+                        // valid css selector and the text from the first matching
+                        // element will be used.
+                        // Note: that a section data-menu-title attribute or an element
+                        // with a menu-title class will take precedence over this option
+                        titleSelector: 'h1, h2, h3, h4, h5, h6',
+
+                            // If slides do not have a matching title, attempt to use the
+                            // start of the text content as the title instead
+                            useTextContentForMissingTitles: false,
+
+                                // Hide slides from the menu that do not have a title.
+                                // Set to 'true' to only list slides with titles.
+                                hideMissingTitles: false,
+
+                                    // Adds markers to the slide titles to indicate the 
+                                    // progress through the presentation. Set to 'false'
+                                    // to hide the markers.
+                                    markers: true,
+
+                                        // Specify custom panels to be included in the menu, by
+                                        // providing an array of objects with 'title', 'icon'
+                                        // properties, and either a 'src' or 'content' property.
+                                        // custom: false,
+                                        custom: [],
+                                            // Specifies the themes that will be available in the themes
+                                            // menu panel. Set to 'true' to show the themes menu panel
+                                            // with the default themes list. Alternatively, provide an
+                                            // array to specify the themes to make available in the
+                                            // themes menu panel, for example...
+                                            // [
+                                            //     { name: 'Black', theme: 'css/theme/black.css' },
+                                            //     { name: 'White', theme: 'css/theme/white.css' },
+                                            //     { name: 'League', theme: 'css/theme/league.css' }
+                                            // ]
+                                            themes: false,
+
+                                                // Specifies the path to the default theme files. If your
+                                                // presentation uses a different path to the standard reveal
+                                                // layout then you need to provide this option, but only
+                                                // when 'themes' is set to 'true'. If you provide your own 
+                                                // list of themes or 'themes' is set to 'false' the 
+                                                // 'themesPath' option is ignored.
+                                                themesPath: 'css/theme/',
+
+                                                    // Specifies if the transitions menu panel will be shown.
+                                                    // Set to 'true' to show the transitions menu panel with
+                                                    // the default transitions list. Alternatively, provide an
+                                                    // array to specify the transitions to make available in
+                                                    // the transitions panel, for example...
+                                                    // ['None', 'Fade', 'Slide']
+                                                    transitions: false,
+
+                                                        // Adds a menu button to the slides to open the menu panel.
+                                                        // Set to 'false' to hide the button.
+                                                        openButton: true,
+
+                                                            // If 'true' allows the slide number in the presentation to
+                                                            // open the menu panel. The reveal.js slideNumber option must 
+                                                            // be displayed for this to take effect
+                                                            openSlideNumber: false,
+
+                                                                // If true allows the user to open and navigate the menu using
+                                                                // the keyboard. Standard keyboard interaction with reveal
+                                                                // will be disabled while the menu is open.
+                                                                keyboard: true,
+
+                                                                    // Normally the menu will close on user actions such as
+                                                                    // selecting a menu item, or clicking the presentation area.
+                                                                    // If 'true', the sticky option will leave the menu open
+                                                                    // until it is explicitly closed, that is, using the close
+                                                                    // button or pressing the ESC or m key (when the keyboard 
+                                                                    // interaction option is enabled).
+                                                                    sticky: false,
+
+                                                                        // If 'true' standard menu items will be automatically opened
+                                                                        // when navigating using the keyboard. Note: this only takes 
+                                                                        // effect when both the 'keyboard' and 'sticky' options are enabled.
+                                                                        autoOpen: true,
+
+                                                                            // If 'true' the menu will not be created until it is explicitly
+                                                                            // requested by calling RevealMenu.init(). Note this will delay
+                                                                            // the creation of all menu panels, including custom panels, and
+                                                                            // the menu button.
+                                                                            delayInit: false,
+
+                                                                                // If 'true' the menu will be shown when the menu is initialised.
+                                                                                openOnInit: false,
+
+                                                                                    // By default the menu will load it's own font-awesome library
+                                                                                    // icons. If your presentation needs to load a different
+                                                                                    // font-awesome library the 'loadIcons' option can be set to false
+                                                                                    // and the menu will not attempt to load the font-awesome library.
+                                                                                    loadIcons: false
+        },
+        chalkboard: {
+            toggleChalkboardButton: { left: "60px", bottom: "30px", top: "auto", right: "auto" },
+            toggleNotesButton: { left: "90px", bottom: "30px", top: "auto", right: "auto" },
+
+        }
+        */
+    });
+
+</script>
+
+
+</body>
+
+</html>

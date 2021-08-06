@@ -4,8 +4,7 @@
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.3",
     "bulma": "^0.9.1",
     "highlight.js": "^10.2.1",
-    "js-yaml": "^4.1.0",
-    "node-sass": "^4.14.1"
+    "js-yaml": "^4.1.0"
   },
   "scripts": {
     "start": "npx @11ty/eleventy --serve",
@@ -13,10 +12,13 @@
     "deploy": "git subtree split --prefix dist -b gh-pages; git push -f origin gh-pages:gh-pages; git branch -D gh-pages"
   },
   "dependencies": {
-    "@11ty/eleventy-plugin-rss": "^1.1.1",
     "@fortawesome/fontawesome-free": "^5.15.1",
     "debug": "^4.3.1",
-    "eleventy-plugin-sass": "^1.2.0",
-    "moment": "^2.29.1"
+    "eleventy-plugin-emoji": "^1.1.0",
+    "emoji-name-map": "^1.2.9",
+    "emoji-unicode": "^2.0.1",
+    "moment": "^2.29.1",
+    "moment-timezone": "^0.5.33",
+    "node-sass": "^6.0.1"
   }
 }

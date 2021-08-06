@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@520&family=Public+Sans:wght@300&display=swap");
+@import "dracula.css";
+
+:root {
+  --bg: #ffedec;
+  --secondary: #0000d0;
+  --primary: #272b36;
+  --sans: "Public Sans", Arial, sans-serif;
+  --mono: "Fira Code", monospace;
+}
+
+.reveal {
+  font-family: "Public Sans", Arial, sans-serif;
+  color: var(--primary);
+  font-size: 33px;
+}
+
+.reveal * {
+  box-sizing: border-box;
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5 {
+  font-family: var(--mono);
+  color: var(--secondary);
+  text-transform: unset;
+  margin: 1.8rem 0;
+  letter-spacing: -2px;
+  font-weight: 100;
+}
+
+.reveal h2 {
+  font-size: 1.3em;
+}
+
+.reveal h3 {
+  font-size: 1em;
+}
+.reveal h4 {
+  font-size: 0.9em;
+}
+
+.reveal code:not(.hljs) {
+  font-family: var(--mono);
+  font-weight: 100;
+  color: black;
+}
+
+.reveal-viewport {
+  background: black;
+}
+
+.reveal .slides {
+  background: var(--bg);
+}
+
+.reveal a {
+  color: var(--secondary);
+  text-decoration: underline #ffc951;
+}
+
+.reveal p,
+.reveal ul,
+.reveal ol {
+  margin: 1rem auto;
+  max-width: 80%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.reveal pre {
+  max-width: 50rem;
+  box-shadow: none;
+}
+
+.reveal pre > code {
+  padding: 1rem;
+}
+
+.reveal .slides > section:first-child {
+  text-align: left;
+  font-size: 40px;
+}
+
+.reveal .slides > section:first-child h1 {
+  font-size: 50px;
+}
+
+.reveal .slides > section:first-child h3 {
+  font-size: 1em;
+  color: var(--primary);
+}
+
+.reveal .slides > section:first-child > * {
+  margin-left: 5rem;
+}
+
+.reveal li {
+  margin-bottom: 0.5em;
+}
+
+.left {
+  text-align: left;
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1em;
+  padding-right: 1em;
+}

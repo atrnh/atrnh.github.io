@@ -10,9 +10,7 @@ permalink: "{{ cat.slug }}/index.html"
 {% extends "base.njk" %}
 
 {%- block contentTitle %}
-  <h1 class="title is-2">
-    {{ cat.title  }}
-  </h1>
+  <h1 class="title is-2 wavy-underline {{ cat.slug }}">{{ cat.emoji }} {{ cat.title  }}</h1>
 {%- endblock contentTitle %}
 
 {%- block content %}

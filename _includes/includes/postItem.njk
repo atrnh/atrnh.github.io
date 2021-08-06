@@ -10,12 +10,8 @@
 {% endmacro %}
 
 {% macro timestampLink(dt, linkUrl) %}
-<a class="post-time mt-3 has-text-grey-light is-block" href="{{ linkUrl }}">
-  <time
-    datetime="{{ dt.toUTCString() }}"
-    class="is-size-7">
-      {{ dt | displayDate }}
-  </time>
+<a class="has-text-grey-light" href="{{ linkUrl }}">
+  <time datetime="{{ dt.toUTCString() }}">{{ dt | displayDate }}</time>
 </a>
 {% endmacro %}
 
@@ -37,7 +33,9 @@
       {% include "includes/themeColors.njk" %}
     {%- endif %}
 
-    {{ timestampLink(post.date, post.url) }}
-  </div>
+    <div class="level is-size-7 has-text-grey-light mt-3">
+      <div class="level-left">{{ timestampLink(post.date, post.url) }}</div>
+      <div class="level-right"><a class="has-text-grey-light" href="/{{ post.data.category }}">{{ post.data.postTypeTitle }}</a></div>
+    </div>
 
 </article>
