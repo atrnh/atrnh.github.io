@@ -1,46 +1,57 @@
 @charset "utf-8";
-@import url("https://fonts.googleapis.com/css2?family=Public+Sans&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code&display=swap");
-@import "../node_modules/bulma/sass/helpers/color.sass";
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-$body-font-size: 16px;
+$black: #000000;
 
 $gap: 10px;
 
-$family-sans-serif: "Public Sans", BlinkMacSystemFont, -apple-system, sans-srif;
+$family-sans-serif: "Public Sans", BlinkMacSystemFont, -apple-system, "Segoe UI",
+  "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+  "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 $family-monospace: "Fira Code", "Inconsolata", monospace;
-$body-color: $black-bis;
 $family-primary: $family-sans-serif;
 
+$body-color: $black;
+$body-font-size: 16px;
+
+$strong-color: $black;
+
 $box-shadow: none;
-$box-radius: $radius;
+$box-radius: 4px;
 $box-padding: 1rem;
 
 @import "../node_modules/bulma/bulma.sass";
 
-@import "prism.scss";
-
 .home {
   --color: #{$black};
   --bg: #{$red};
-  --emoji: "🏠";
-  --invert: #{$red-invert};
+  --invert: #{$danger-invert};
+  --dark: #{$danger-dark};
 }
 
 .terminal-themes {
   --postType: "terminal theme";
   --color: #{$black};
   --bg: #{$yellow};
-  --emoji: "✨";
-  --invert: #{$yellow-invert};
+  --invert: #{$warning-invert};
+  --dark: #{$warning-dark};
 }
 
 .posts {
   --postType: "blog post";
   --color: #{$black};
   --bg: #{$turquoise};
-  --emoji: "📓";
-  --invert: #{$turquoise-invert};
+  --invert: #{$primary-invert};
+  --dark: #{$primary-dark};
+}
+
+.slides {
+  --postType: "blog post";
+  --color: #{$black};
+  --bg: #{$cyan};
+  --invert: #{$cyan-invert};
+  --dark: #{$info-dark};
 }
 
 .hljs {
@@ -51,43 +62,15 @@ $box-padding: 1rem;
 html {
   background: $dark;
   height: 100%;
+  scroll-behavior: smooth;
 }
 
 body {
   height: 100%;
 }
 
-.wavy-underline {
-  text-decoration: underline;
-  text-decoration-color: var(--bg);
-  text-decoration-style: wavy;
-}
-
-header {
-  & > div {
-    border-bottom: 3px solid #{$black};
-  }
-
-  nav {
-    .menu-list-item {
-      text-decoration: underline;
-      text-decoration-color: var(--bg);
-      text-decoration-style: wavy;
-
-      &:before {
-        content: var(--emoji) + " ";
-      }
-
-      &:hover,
-      &:focus,
-      &:focus-within,
-      &.is-active {
-        background: var(--bg);
-        color: var(--invert);
-        text-decoration-color: var(--invert);
-      }
-    }
-  }
+.menu a {
+  padding: 0.5em 0.6em;
 }
 
 .has-background-dark {
@@ -97,28 +80,93 @@ header {
   }
 }
 
+.menu-list {
+  ul {
+    li {
+      a {
+        padding: 0.34em 0.6em;
+        font-size: 0.9em;
+        font-weight: 500;
+
+        &:hover,
+        &:focus,
+        &:focus-within {
+          text-decoration: underline;
+          text-decoration-style: wavy;
+          text-decoration-color: var(--invert);
+          background: inherit;
+        }
+      }
+
+      &.is-active,
+      &.active {
+        background: var(--bg);
+        color: var(--invert);
+
+        a {
+          color: inherit;
+          background: inherit;
+        }
+      }
+    }
+  }
+}
+
+.wavy-underline {
+  position: relative;
+  text-decoration: underline;
+  text-decoration-color: var(--bg, #{$purple});
+  text-decoration-style: wavy;
+}
+
+// header {
+//   & > div {
+//     border-bottom: 3px solid #{$black};
+//   }
+// }
+
+#site-nav {
+  .menu-list-item {
+    // text-decoration: underline;
+    // text-decoration-color: var(--bg);
+    // text-decoration-style: wavy;
+
+    // &:before {
+    //   content: var(--emoji);
+    // }
+
+    &:hover,
+    &:focus,
+    &:focus-within {
+      background: var(--bg);
+      color: var(--invert);
+      text-decoration-color: var(--invert);
+    }
+
+    &.is-active {
+      background: var(--bg);
+      color: var(--invert);
+      text-decoration-color: var(--invert);
+
+      &:hover {
+        background: var(--dark);
+      }
+    }
+  }
+}
+
+.site-title-and-nav {
+  min-height: 100%;
+}
+
+.sticky-top {
+  position: sticky;
+  top: 0;
+}
+
 article.box {
-  // margin-top: 1rem;
-  // margin-bottom: 1rem;
-  // position: relative;
-
-  // &:hover {
-  //   box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
-  //     0 0px 0 1px var(--bg);
-  // }
-
-  // &:before {
-  //   @extend .is-size-7, .tag;
-  //   position: absolute;
-  //   content: var(--postType);
-  //   color: var(--color) !important;
-  //   background-color: var(--bg) !important;
-  //   border-top-right-radius: 0 !important;
-  //   border-bottom-left-radius: 0 !important;
-  // }
-
   .content {
-    font-size: 1.1em;
+    // font-size: 1.1em;
     time.subtitle {
       display: block;
       color: inherit;
@@ -133,31 +181,69 @@ article.box {
 }
 
 .content {
+  font-size: 1.1rem;
+  line-height: 1.6em;
+
   pre {
     @extend .box;
     box-shadow: none;
-    background-color: $white-bis;
+    background-color: $black;
   }
-
-  h1 {
-    // font-size: 1.7em;
-  }
-
-  // .post-title h1 {
-  //   color: $body-color;
-  // }
 
   .post-summary {
     // color: $grey-dark;
+    line-height: 1.36em;
 
     & > a {
       color: inherit;
     }
   }
 
-  // .post-time {
-  //   color: $grey;
-  // }
+  &.post-content {
+    a {
+      color: $black;
+      display: inline-block;
+      position: relative;
+      border-radius: $radius;
+      padding: 2px 7px 2px 2px;
+      line-height: 1em;
+      transition: 0.3s ease-out background-color;
+
+      &:hover {
+        background: #ffe786;
+      }
+
+      &::after {
+        content: "▫︎";
+        font-size: 15px;
+        position: absolute;
+        right: 0;
+        top: -4px;
+        font-weight: 900 !important;
+        color: $red;
+      }
+    }
+
+    h1 {
+      display: inline-block;
+      border-bottom: 4px solid $grey-lighter;
+      padding: 0.2em 0;
+      font-size: 1.2em;
+      margin-top: 1.2em;
+      margin-bottom: 0.5em;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-weight: 900;
+      color: $dark;
+    }
+
+    h2 {
+      margin-top: 0.6em;
+      font-size: 1.3em;
+      max-width: 700px;
+      color: $black;
+    }
+  }
 }
 
 .terminal-themes {
@@ -180,6 +266,13 @@ article.box {
   main {
     background: $white;
   }
+}
+
+.lead {
+  font-size: 1rem;
+  line-height: 1.2em;
+  padding-left: 1em;
+  border-left: 2px solid $grey;
 }
 
 .latest-post {

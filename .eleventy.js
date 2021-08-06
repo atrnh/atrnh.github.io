@@ -2,6 +2,8 @@ const path = require("path");
 
 const markdownit = require("markdown-it");
 const hljs = require("highlight.js");
+const toEmoji = require("emoji-name-map");
+const emojiUnicode = require("emoji-unicode");
 
 const customFilters = require("./src/filters.js");
 
@@ -10,8 +12,9 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(require("@11ty/eleventy-plugin-syntaxhighlight"));
   eleventyConfig.addPlugin(require("eleventy-plugin-sass"), {
     watch: ["_sass/**/*.scss"],
-    outputDir: "_site/static",
+    outputDir: "_css",
   });
+  eleventyConfig.addPlugin(require("eleventy-plugin-emoji"));
 
   // Enable YAML
   eleventyConfig.addDataExtension("yaml", (contents) =>
@@ -30,14 +33,18 @@ module.exports = function (eleventyConfig) {
       "static/fontawesome.css",
     "assets/js/*": "static/js",
     "assets/favicon.*": "static",
+    "_css/*.css": "static",
+    "assets/slides": "static/slides",
   });
   eleventyConfig.addWatchTarget("assets/js/*");
+  eleventyConfig.addWatchTarget("_css/*");
 
   // Custom filters
   eleventyConfig.addFilter("displayDate", customFilters.displayDate);
   eleventyConfig.addFilter("markdownit", customFilters.toMarkdown);
   eleventyConfig.addFilter("includes", customFilters.includes);
   eleventyConfig.addFilter("getParentURL", customFilters.getParentURL);
+  eleventyConfig.addFilter("limit", customFilters.limit);
 
   // A category is a direct subdir of project root used to separate
   // types of content I like to make (ex.: terminal themes, posts,
@@ -47,13 +54,14 @@ module.exports = function (eleventyConfig) {
     collectionApi.getAll().forEach((item, i) => {
       const slug = item.inputPath.split(path.sep)[1];
       const title = item.data.postTypeTitle;
+      const emoji = item.data.emoji;
 
       // Categories should be unique
       if (categories[slug]) {
         return;
       }
 
-      categories[slug] = { slug, title };
+      categories[slug] = { slug, title, emoji };
     });
 
     // Only used object to make sure categories are unique --- we only
@@ -69,14 +77,16 @@ module.exports = function (eleventyConfig) {
       collectionApi
         .getAll()
         .map((item) => {
-          const { postType, postTypeTitle } = item.data;
-          console.log(item.inputPath);
+          const { postType, postTypeTitle, emoji } = item.data;
+
           return {
             slug: postType,
-            title: postTypeTitle,
+            title: `${emoji} ${postTypeTitle}`,
+            emoji: emoji,
           };
         })
         .reduce((obj, postType) => {
+          console.log(postType.emoji);
           if (!obj[postType.slug]) {
             obj[postType.slug] = postType;
           }

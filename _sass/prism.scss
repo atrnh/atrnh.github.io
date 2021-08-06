@@ -1,3 +1,12 @@
+[class^="language"] {
+  --foreground: #e0e0e0;
+  --purple: #b59bff;
+  --peach: #ffc3c3;
+  --pink: #ff76ce;
+
+  color: var(--foreground);
+}
+
 .token {
   &.number {
     background-color: none;
@@ -14,7 +23,7 @@
   }
 
   &.atrule {
-    color: #7c4dff;
+    color: var(--purple);
   }
 
   &.attr-name {
@@ -30,7 +39,7 @@
   }
 
   &.boolean {
-    color: #7c4dff;
+    color: var(--purple);
   }
 
   &.builtin {
@@ -59,11 +68,11 @@
   }
 
   &.constant {
-    color: #7c4dff;
+    color: var(--purple);
   }
 
   &.deleted {
-    color: #e53935;
+    color: var(--pink);
   }
 
   &.doctype {
@@ -71,11 +80,11 @@
   }
 
   &.entity {
-    color: #e53935;
+    color: var(--pink);
   }
 
   &.function {
-    color: #7c4dff;
+    color: var(--peach);
   }
 
   &.hexcode {
@@ -83,12 +92,12 @@
   }
 
   &.id {
-    color: #7c4dff;
+    color: var(--purple);
     font-weight: bold;
   }
 
   &.important {
-    color: #7c4dff;
+    color: var(--purple);
     font-weight: bold;
   }
 
@@ -97,7 +106,7 @@
   }
 
   &.keyword {
-    color: #7c4dff;
+    color: var(--purple);
   }
 
   &.number {
@@ -133,7 +142,7 @@
   }
 
   &.selector {
-    color: #e53935;
+    color: var(--pink);
   }
 
   &.string {
@@ -141,11 +150,11 @@
   }
 
   &.symbol {
-    color: #7c4dff;
+    color: var(--purple);
   }
 
   &.tag {
-    color: #e53935;
+    color: var(--pink);
   }
 
   &.unit {
@@ -153,10 +162,10 @@
   }
 
   &.url {
-    color: #e53935;
+    color: var(--pink);
   }
 
   &.variable {
-    color: #e53935;
+    color: var(--pink);
   }
 }
