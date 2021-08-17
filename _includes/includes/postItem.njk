@@ -22,15 +22,15 @@
       <h1 class="is-size-5 mb-3">{{ post.data.title }}</h1>
     </a>
 
-    {%- if post.data.category === "posts" %}
-      <a class="post-summary has-text-grey is-size-6" href="{{ post.url }}">
-        {{ post.data.summary | markdownit | safe }}
-      </a>
-
-    {%- elif post.data.category === "terminal-themes" %}
+    {%- if post.data.category === "terminal-themes" %}
       {% set colors = post.data.colors %}
       {% set bg = post.data.bg %}
       {% include "includes/themeColors.njk" %}
+
+    {%- else %}
+      <a class="post-summary has-text-grey is-size-6" href="{{ post.url }}">
+        {{ post.data.summary | markdownit | safe }}
+      </a>
     {%- endif %}
 
     <div class="level is-size-7 has-text-grey-light mt-3">

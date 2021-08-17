@@ -69,6 +69,11 @@ body {
   height: 100%;
 }
 
+code {
+  background-color: inherit;
+  padding: 0;
+}
+
 .menu a {
   padding: 0.5em 0.6em;
 }
@@ -181,7 +186,7 @@ article.box {
 }
 
 .content {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   line-height: 1.6em;
 
   pre {
@@ -215,12 +220,12 @@ article.box {
 
       &::after {
         content: "▫︎";
-        font-size: 15px;
+        font-size: 18px;
         position: absolute;
         right: 0;
         top: -4px;
         font-weight: 900 !important;
-        color: $red;
+        color: #ff0000;
       }
     }
 
@@ -228,8 +233,8 @@ article.box {
       display: inline-block;
       border-bottom: 4px solid $grey-lighter;
       padding: 0.2em 0;
-      font-size: 1.2em;
-      margin-top: 1.2em;
+      font-size: 1.16rem;
+      margin-top: 1.16rem;
       margin-bottom: 0.5em;
       text-transform: uppercase;
       letter-spacing: 3px;
@@ -239,7 +244,7 @@ article.box {
 
     h2 {
       margin-top: 0.6em;
-      font-size: 1.3em;
+      font-size: 1.12rem;
       max-width: 700px;
       color: $black;
     }

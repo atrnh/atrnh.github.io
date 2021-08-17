@@ -7,7 +7,7 @@ title: Home
 <time
   datetime="{{ dt.toUTCString() }}"
   class="subtitle is-6 mt-0 mb-4">
-  <a class="has-text-grey-light" href="{{ linkUrl }}">
+  <a href="{{ linkUrl }}">
     {{ dt | displayDate }}
   </a>
 </time>
@@ -25,8 +25,11 @@ title: Home
 
   <section class="section px-0 pt-0 latest-post">
     <header>
-      <h2 class="is-subtitle">{{ timestampLink(latestPost.date, latestPost.url) }}</h2>
-      <h1 class="title is-1 mb-0">{{ latestPost.data.title }}</h1>
+      <h2 class="is-subtitle has-text-grey-light">
+        {{ timestampLink(latestPost.date, latestPost.url) }} in
+        <a href="/{{ latestPost.data.category }}">{{ latestPost.data.postTypeTitle }}</a>
+      </h2>
+      <h1 class="title is-2 mb-0">{{ latestPost.data.title }}</h1>
       <div class="content is-subtitle lead my-2 has-text-grey">
         {{ latestPost.data.summary | markdownit | safe }}
       </div>

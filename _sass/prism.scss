@@ -9,7 +9,7 @@
 
 .token {
   &.number {
-    background-color: none;
+    background: inherit;
     align-items: unset;
     border-radius: unset;
     display: unset;

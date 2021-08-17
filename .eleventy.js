@@ -35,6 +35,7 @@ module.exports = function (eleventyConfig) {
     "assets/favicon.*": "static",
     "_css/*.css": "static",
     "assets/slides": "static/slides",
+    "./CNAME": "CNAME",
   });
   eleventyConfig.addWatchTarget("assets/js/*");
   eleventyConfig.addWatchTarget("_css/*");
